@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+}
+
+.Home {
+  background-color: #16243E;
+}
+
+.About {
+  background-color: white;
+}

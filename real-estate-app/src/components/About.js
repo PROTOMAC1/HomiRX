@@ -6,6 +6,7 @@ const About = () => {
     <div>
       About
       <h1>Git Checking</h1>
+      <h2>fehkbieunj</h2>
     </div>
   )
 }

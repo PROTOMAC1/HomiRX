@@ -1,0 +1,20 @@
+
+.masked-image {
+  width: 300px;
+  height: 300px;
+
+  /* Background image to display */
+  background-image: url('./Images/About_image.png');
+  background-size: cover;
+  background-position: center;
+
+  /* Mask image (orange house shape) */
+  mask-image: url('./Images/polygon-image.png');
+  -webkit-mask-image: url('./Images/polygon-image.png'); /* for Safari */
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+}

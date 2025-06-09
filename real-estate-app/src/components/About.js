@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { FaArrowRight, FaHouseUser } from 'react-icons/fa';
 import './About.css'
 
 const About = () => {
@@ -34,9 +35,23 @@ const About = () => {
         <p className='para'>It is a long established fact that a reader will be distracted the readable content 
           of a page when looking at layout the point of using lorem the is Ipsum less normal 
           distribution of letters.</p>
-        <p className='bullet'>Proactively pontificate client</p>
-        <p className='bullet'>Is there a waiting list for desired</p>
-        <p className='bullet'>Immediate 24/ 7 Emergency</p>
+        <div className='about-right-flex'>
+          <ul className='table'>
+            <li><FaArrowRight className='bullet' />Proactively pontificate client</li>
+            <li><FaArrowRight className='bullet' />Is there a waiting list for desired</li>
+            <li><FaArrowRight className='bullet' />Immediate 24/ 7 Emergency</li>
+          </ul>
+          <div className='about-right-circle1'>
+            <p className='about-right-heading1'>30k+</p>
+            <p className='about-right-contect1'>Satisficed</p>
+            <p className='about-right-contect3'>Client</p>
+          </div>
+          <div className='about-right-circle2'>
+            <p className='about-right-heading2'>700+</p>
+            <p className='about-right-contect2'>House</p>
+          </div>
+        </div>
+        <button className='about-btn'><FaHouseUser /> Explor More</button>
       </div>
     </div>
   )

@@ -20,6 +20,7 @@
   background-image: url('./Images/About_image.png');
   background-size: cover;
   background-position: center;
+  transition: background-size 2.5s ease-in-out;  /* Smooth transition */
   
   /* Mask image (orange house shape) */
   mask-image: url('./Images/polygon-image.png');
@@ -33,6 +34,10 @@
   cursor: pointer;
 }
 
+.masked-image:hover {
+  background-size: 130%;
+}
+
 .grid-background {
   position: relative;
   border-radius: 25px;
@@ -42,55 +47,51 @@
 }
 
 /* Rotating Circle */
-.about .left-content .rotating-circle1 {
-  position: absolute;
-  top: 292%;
-  right: 55%;
-  transform: translateY(-50%);
-  width: 180px;
-  height: 180px;
-  background-color: rgba(255, 136, 0, 0.89);
+.circle {
+  position: relative;
+  bottom: 20%;
+  left: 55%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 136, 0, 0.89);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   z-index: 1;
 }
 
-.about .left-content .circle-text1 {
+.circletext {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba(255, 136, 0, 0.89);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 15px;
-  text-align: center;
-  animation: rotateText 10s linear infinite;
+  width: 115.5%;
+  height: 115.5%;
   color: white;
-  pointer-events: none;
+  animation: anim 10s linear infinite;
 }
 
-@keyframes rotateText1 {
-  from {
+@keyframes anim {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
 
-.about .left-content .play-button1 {
-  font-size: 22px;
-  background: rgba(255, 255, 255, 0.1);
+.circletext span {
+  position: absolute;
+  left: 50%;
+  font-size: 1.2rem;
+  transform-origin: 0 100px;
+}
+
+.play-button1 {
+  font-size: 30px;
   color: rgba(255, 136, 0, 0.89);
   border: 2px solid rgba(255, 136, 0, 0.89);
   border-radius: 50%;
   background-color: white;
-  padding: 18px 20px;
+  padding: 35px 35px;
   cursor: pointer;
   z-index: 2;
 }

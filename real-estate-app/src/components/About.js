@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './About.css'
 
 const About = () => {
+  useEffect(() => {
+    const textElement = document.querySelector('.circletext p');
+    if (textElement) {
+      const text = textElement.innerText;
+      textElement.innerHTML = text
+        .split('')
+        .map(
+          (char, i) =>
+            `<span style="transform:rotate(${i * 5.85}deg); display:inline-block;">${char}</span>`
+        )
+        .join('');
+    }
+  }, []);
+
   return (
     <div className='about'>
       <div className='left-content'>
-        <div className="rotating-circle1">
-          <div className="circle-text1">
-            · PLAY INTRO VIDEO · PLAY INTRO VIDEO · PLAY ·
+        <div className="circle">
+          <div className="circletext">
+            <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
           </div>
           <button className="play-button1">▶</button>
         </div>

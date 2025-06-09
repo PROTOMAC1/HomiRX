@@ -1,5 +1,5 @@
 .section2 {
-    height: 90vh;
+    height: 100vh;
     margin: auto;
     padding: auto;
     justify-content: center;
@@ -88,16 +88,16 @@
     transition: all 0.3s ease-in;
 }
 
+.card-border:hover .ic-icon {
+    color: red;
+}
+
 .card-border:hover {
     border-color: red !important;
 }
 
 .card-border:hover .icon-border {
     border-color: red !important;
-}
-
-.card-border:hover .ic-icon {
-    color: red;
 }
 
 .card-name1,

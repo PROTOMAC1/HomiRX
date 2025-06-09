@@ -72,7 +72,7 @@ const Navbar = () => {
         >
           <FaBars />
         </button>
-        {/* <ul className={`menu ${menuActive ? 'active' : ''}`}>
+        <ul className={`menu ${menuActive ? 'active' : ''}`}>
           <li className="dropdown" onClick={() => toggleDropdown(0)}>
             Home 
             <span className="arrow">
@@ -140,7 +140,7 @@ const Navbar = () => {
             </ul>
           </li>
           <li>Contact</li>
-        </ul> */}
+        </ul>
         <div className={`right-btn ${menuActive ? 'active' : ''}`}>
           <button className="cart-btn"><FaShoppingCart /></button>
           <button className="sea-btn"><FaSearch /></button>

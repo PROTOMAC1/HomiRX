@@ -5,11 +5,24 @@ const About = () => {
   return (
     <div className='about'>
       <div className='left-content'>
+        <div className="rotating-circle1">
+          <div className="circle-text1">
+            · PLAY INTRO VIDEO · PLAY INTRO VIDEO · PLAY ·
+          </div>
+          <button className="play-button1">▶</button>
+        </div>
+        <div className='grid-background'></div>
         <div class="masked-image"></div>
       </div>
       <div className='right-content'>
-        <h1>Git Checking</h1>
-        <h2>fehkbieunj</h2>
+        <p className='heading1'>About Company</p>
+        <p className='heading2'>Welcome To Properties</p>
+        <p className='para'>It is a long established fact that a reader will be distracted the readable content 
+          of a page when looking at layout the point of using lorem the is Ipsum less normal 
+          distribution of letters.</p>
+        <p className='bullet'>Proactively pontificate client</p>
+        <p className='bullet'>Is there a waiting list for desired</p>
+        <p className='bullet'>Immediate 24/ 7 Emergency</p>
       </div>
     </div>
   )

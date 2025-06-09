@@ -4,23 +4,23 @@
   height: 100vh;
 }
 
-.left-contect {
-  background-color: aqua;
-}
-
-.right-contect {
-  background-color: chartreuse;
+/* for left content */
+.left-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .masked-image {
-  width: 300px;
-  height: 300px;
-
+  width: 512px;
+  height: 512px;
+  position: absolute;
+  
   /* Background image to display */
   background-image: url('./Images/About_image.png');
   background-size: cover;
   background-position: center;
-
+  
   /* Mask image (orange house shape) */
   mask-image: url('./Images/polygon-image.png');
   -webkit-mask-image: url('./Images/polygon-image.png'); /* for Safari */
@@ -30,4 +30,93 @@
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
   -webkit-mask-position: center;
+  cursor: pointer;
+}
+
+.grid-background {
+  position: relative;
+  border-radius: 25px;
+  width: 420px;
+  height: 450px;
+  margin-top: 63px;
+  z-index: 0;
+}
+
+/* Rotating Circle */
+.about .left-content .rotating-circle1 {
+  position: absolute;
+  top: 292%;
+  right: 55%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: 180px;
+  background-color: rgb(212, 28, 28);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.about .left-content .circle-text1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(212, 28, 28);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  text-align: center;
+  animation: rotateText 10s linear infinite;
+  color: white;
+  pointer-events: none;
+}
+
+@keyframes rotateText1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.about .left-content .play-button1 {
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgb(212, 28, 28);
+  border: 2px solid rgb(212, 28, 28);
+  border-radius: 50%;
+  background-color: white;
+  padding: 18px 20px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* for right contect */
+.right-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+}
+
+.heading1 {
+  font-size: 20px;
+}
+
+.heading2 {
+  font-size: 35px;
+}
+
+.para {
+  font-size: 15px;
+  color: gray;
+}
+
+.bullet {
+  font-size: 20px;
 }

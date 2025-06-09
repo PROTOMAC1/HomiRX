@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Section2 from './components/Section2';
 import About from './components/About';
+import About1 from './components/About1';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </section>
       <section className="About">
         <About />
+        <About1 />
       </section>
     </div>
   );

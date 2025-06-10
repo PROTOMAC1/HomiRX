@@ -79,5 +79,55 @@
 .last-about-card-details {
     justify-content: center;
     align-items: center;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-profile img {
+    border-radius: 50%;
+    margin-top: -25px;
+    margin-left: 250px;
+    width: 50px;
+}
+
+.last-about-card-raiting-and-numerical {
+    display: flex;
+    gap: 2px;
+    margin-left: 20px;
+}
+
+.last-about-card-raiting-and-numerical span {
+    margin-top: -3px;
+}
+
+.last-about-card-heading {
+    margin-left: 20px;
+    margin-top: 0;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.last-about-card-loaction {
+    margin-top: -12px;
+    margin-left: 25px;
+    color: gray;
+}
+
+.last-about-card-loaction .symbollo {
+    margin-bottom: -1px;
+}
+
+.last-about-card-paragraph {
+    margin-left: 20px;
+    color: gray;
+}
+
+.last-about-card-area-icon {
+    display: flex;
+    margin-left: 20px;
+    color: gray;
+}
+
+.last-about-card-bottom-margin {
+    display: flex;
 }

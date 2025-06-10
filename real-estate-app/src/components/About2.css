@@ -63,6 +63,21 @@
 .last-about-card {
     width: 30%;
     border-radius: 25px;
-    background-color: rgb(228, 222, 222);
 
+    background-color: rgb(228, 222, 222);
+    overflow: hidden;
+}
+
+.last-about-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+}
+
+.last-about-card-details {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
 }

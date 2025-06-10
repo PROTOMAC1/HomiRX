@@ -184,21 +184,19 @@ ul {
 
 /* Mobile styles */
 @media (max-width: 768px) {
-
   .navbar .top-bar {
-    padding: auto;
+    padding: 8px 15px;
+    font-size: 13px;
   }
   
   .top-bar-right {
     display: flex;
     margin-left: auto;
+    gap: 10px;
   }
   
   .top-bar-left {
     display: none;
-    background: none;
-    z-index: 1001;
-    flex-wrap: wrap;
   }
   
   .top-bar button {
@@ -207,16 +205,23 @@ ul {
   }
   
   .navbar .main-nav {
-    padding: auto;
+    padding: 15px;
     flex-wrap: wrap;
-    top: 40px;
+    top: 37px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 180px;
+    height: 40px;
+    background-size: contain;
   }
   
   .hamburger {
     display: block;
     order: 1;
-    gap: 10px;
-    margin-left: auto;
+    padding: 5px;
+    margin-left: 10px;
   }
   
   .right-btn {
@@ -225,47 +230,79 @@ ul {
     margin-top: 15px;
     justify-content: flex-end;
     display: none;
+    padding: 10px 0;
   }
   
   .right-btn.active {
     display: flex;
   }
+
+  .right-btn button {
+    padding: 8px 12px;
+    font-size: 16px;
+  }
+
+  .right-btn .add-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
   
   .menu {
     position: fixed;
-    top: 100px;
+    top: 92px;
     left: 0;
     right: 0;
     background: #16243E;
     flex-direction: column;
     padding: 20px;
-    gap: 15px;
+    gap: 0;
     display: none;
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    max-height: calc(100vh - 92px);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
   }
   
   .menu.active {
     display: flex;
+    transform: translateX(0);
   }
-  
-  .menu li {
-    width: 100%;
-    padding: 12px 0;
+
+  /* Hide dropdown arrows by default on mobile */
+  .menu li .arrow {
+    display: none;
+  }
+
+  /* Show dropdown arrows only when menu is active */
+  .menu.active li .arrow {
+    display: block;
   }
   
   .dropdown-menu {
     position: static !important;
     box-shadow: none;
     background: rgba(0,0,0,0.1);
-    margin-top: 10px;
+    margin-top: 0;
     display: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
   
   .dropdown-menu.active {
     display: block;
+    max-height: 500px; /* Adjust this value based on your needs */
   }
-  
-  .dropdown-menu li {
-    padding-left: 20px !important;
+
+  /* Ensure dropdowns are hidden by default on mobile */
+  .navbar .main-nav ul.menu li.dropdown:hover > .dropdown-menu {
+    display: none;
+  }
+
+  /* Only show dropdowns when explicitly active */
+  .navbar .main-nav ul.menu li.dropdown .dropdown-menu.active {
+    display: block;
   }
 }

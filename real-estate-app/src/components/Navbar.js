@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram,
   FaPinterestP, FaHouseUser, FaUserCircle, FaShoppingCart,
@@ -10,35 +10,64 @@ import Logo from "./Images/logo.png";
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
-  const topBar = document.getElementById('topBar');
-  const mainNav = document.getElementById('mainNav');
+    const topBar = document.getElementById('topBar');
+    const mainNav = document.getElementById('mainNav');
 
-  if (!topBar || !mainNav) return;
+    if (!topBar || !mainNav) return;
 
-  const topBarHeight = topBar.offsetHeight;
+    const topBarHeight = topBar.offsetHeight;
 
-  const handleScroll = () => {
-    if (window.scrollY === 0) {
-      topBar.style.top = '0px';
-      mainNav.style.top = `${topBarHeight}px`;
-    } else {
-      topBar.style.top = `-${topBarHeight}px`;
-      mainNav.style.top = '0px';
-    }
-  };
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        topBar.style.top = '0px';
+        mainNav.style.top = `${topBarHeight}px`;
+      } else {
+        topBar.style.top = `-${topBarHeight}px`;
+        mainNav.style.top = '0px';
+      }
+    };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuActive ? 'hidden' : 'auto';
   }, [menuActive]);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target) && 
+          !event.target.closest('.hamburger')) {
+        setMenuActive(false);
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const toggleDropdown = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
+    if (window.innerWidth <= 768) {
+      setActiveDropdown(activeDropdown === index ? null : index);
+    }
+  };
+
+  const handleMenuClick = (e) => {
+    if (window.innerWidth <= 768) {
+      e.stopPropagation();
+    }
+  };
+
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+    if (!menuActive) {
+      setActiveDropdown(null);
+    }
   };
 
   return (
@@ -64,12 +93,16 @@ const Navbar = () => {
         ></div>
         <button 
           className="hamburger" 
-          onClick={() => setMenuActive(!menuActive)} 
+          onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           <FaBars />
         </button>
-        <ul className={`menu ${menuActive ? 'active' : ''}`}>
+        <ul 
+          ref={menuRef}
+          className={`menu ${menuActive ? 'active' : ''}`}
+          onClick={handleMenuClick}
+        >
           <li className="dropdown" onClick={() => toggleDropdown(0)}>
             Home 
             <span className="arrow">

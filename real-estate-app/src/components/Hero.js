@@ -10,7 +10,17 @@ const images = [
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
-  const [activeTab, setActiveTab] = useState('General'); // Track active tab
+  const [activeTab, setActiveTab] = useState('General');
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,7 +41,7 @@ const Hero = () => {
   };
 
   return (
-    <div>
+    <div className="hero-container">
       <div
         className="hero"
         style={{
@@ -41,7 +51,11 @@ const Hero = () => {
         }}
       >
         <div className="hero-overlay">
-          <h1>Let’s Find Your <br />Dream House.</h1>
+          <h1>
+            Let's Find Your
+            {!isMobile && <br />} Dream House.
+          </h1>
+          
           <div className="rotating-circle">
             <div className="circle-text">
               · PLAY INTRO VIDEO · PLAY INTRO VIDEO · PLAY ·
@@ -83,7 +97,6 @@ const Hero = () => {
               <input type="text" placeholder="Location" />
               <button className="search-btn">Search</button>
             </div>
-            <div className="filters"></div>
           </div>
 
           <div className="tabs-buttons">

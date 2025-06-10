@@ -16,9 +16,19 @@ function About2() {
           <button className='last-about-btn'><FaHouseUser />Villa</button>
         </div>
       </div>
-      <div className='last-about-card'>
-        <div className='last-about-card-image'>ada</div>
-        <div className='last-about-card-content'></div>
+      <div className='last-about-card-content'>
+        <div className='last-about-card'>
+          <div className='last-about-card-image'><img src='./Images/last-about-image1.jpg' alt='image1'/></div>
+          <div className='last-about-card-details'></div>
+        </div>
+        <div className='last-about-card'>
+          <div className='last-about-card-image'><img src='./Images/last-about-image2.jpg' alt='image2'/></div>
+          <div className='last-about-card-details'></div>
+        </div>
+        <div className='last-about-card'>
+          <div className='last-about-card-image'><img src='./Images/last-about-image3.jpg' alt='image3'/></div>
+          <div className='last-about-card-details'></div>
+        </div>
       </div>
     </div>
   )

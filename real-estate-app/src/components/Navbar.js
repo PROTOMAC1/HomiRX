@@ -12,29 +12,26 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
 
   useEffect(() => {
-    let lastScrolly = window.scrollY;
+  const topBar = document.getElementById('topBar');
+  const mainNav = document.getElementById('mainNav');
 
-    const handleScroll = () => {
-      const topBar = document.getElementById('topBar');
-      const mainNav = document.getElementById('mainNav');
-      if (!topBar || !mainNav) return;
+  if (!topBar || !mainNav) return;
 
-      const topBarHeight = topBar.offsetHeight;
+  const topBarHeight = topBar.offsetHeight;
 
-      if (window.scrollY > lastScrolly) {
-        topBar.style.top = `-${topBarHeight}px`;
-        mainNav.style.top = '0px';
-      } else {
-        topBar.style.top = '0px';
-        mainNav.style.top = `${topBarHeight}px`;
-      }
+  const handleScroll = () => {
+    if (window.scrollY === 0) {
+      topBar.style.top = '0px';
+      mainNav.style.top = `${topBarHeight}px`;
+    } else {
+      topBar.style.top = `-${topBarHeight}px`;
+      mainNav.style.top = '0px';
+    }
+  };
 
-      lastScrolly = window.scrollY;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   useEffect(() => {
     document.body.style.overflow = menuActive ? 'hidden' : 'auto';

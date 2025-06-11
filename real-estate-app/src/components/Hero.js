@@ -23,6 +23,21 @@ const Hero = () => {
   }, []);
 
   useEffect(() => {
+      const txtElement = document.querySelector('.circle-text p');
+
+      if (txtElement) {
+        const txt = txtElement.innerText;
+        txtElement.innerHTML = txt
+          .split('')
+          .map(
+            (char, i) =>
+              `<span style="transform:rotate(${i * 6}deg); display:inline-block;">${char}</span>`
+          )
+          .join('');
+      }
+    }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
     }, 4000);
@@ -58,7 +73,7 @@ const Hero = () => {
           
           <div className="rotating-circle">
             <div className="circle-text">
-              · PLAY INTRO VIDEO · PLAY INTRO VIDEO · PLAY ·
+              <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
             </div>
             <button className="play-button">▶</button>
           </div>

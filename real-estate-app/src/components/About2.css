@@ -40,14 +40,14 @@
     border-radius: 5px;
     height: 35px;
     border: none;
-    background-color: rgb(228, 222, 222);
+    background-color: rgb(241, 236, 236);
     font-size: 20px;
     transition: about-bc-color 0.5s ease-in-out;
     cursor: pointer;
 }
 
 .last-about-btn:hover {
-    background-color: rgba(255, 136, 0, 0.89);
+    background-color: #E3572B;
     color: white;
 }
 
@@ -130,4 +130,35 @@
 
 .last-about-card-bottom-margin {
     display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 45px;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.last-about-card-bottom-price {
+    color: #E3572B;
+    margin-left: 10px;
+}
+
+.last-about-bottom-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    width: 90px;
+    border: none;
+    background: #16243E;
+    color: #C2DF93;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: bg-color 0.5s ease-in;
+}
+
+.last-about-bottom-btn:hover {
+    background-color: #E3572B;
+    color: white;
 }

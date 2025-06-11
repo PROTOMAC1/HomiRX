@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaBuilding, FaLocationDot, FaHouseUser, FaStar } from 'react-icons/fa6';
 import Image1 from './Images/last-about-image1.jpg';
 import Image2 from './Images/last-about-image2.jpg';
@@ -7,6 +7,12 @@ import Authoruser from './Images/author-image.jpg';
 import './About2.css';
 
 function About2() {
+  const [activeTab, setActiveTab] = useState('Apartment');
+
+  const handleBtnClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
   return (
     <div className='last-about'>
       <div className='last-about-top-content'>
@@ -15,9 +21,24 @@ function About2() {
           <p className='last-about-top-left-heading'>Find Home Listing<br /> in Your Area</p>
         </div>
         <div className='last-about-top-right'>
-          <button className='last-about-btn'><FaBuilding />Apartments</button>
-          <button className='last-about-btn'><FaLocationDot />General</button>
-          <button className='last-about-btn'><FaHouseUser />Villa</button>
+          <button
+            className={`last-about-btn ${activeTab === 'Apartment' ? 'active' : ''}`}
+              onClick={() => handleBtnClick('Apartment')}
+          >
+              <FaBuilding />Apartments
+          </button>
+          <button
+            className={`last-about-btn ${activeTab === 'General' ? 'active' : ''}`}
+            onClick={() => handleBtnClick('General')}
+          >
+            <FaLocationDot />General
+          </button>
+          <button
+            className={`last-about-btn ${activeTab === 'Villa' ? 'active' : ''}`}
+            onClick={() => handleBtnClick('Villa')}
+          >
+            <FaHouseUser />Villa
+          </button>
         </div>
       </div>
       <div className='last-about-card-content'>
@@ -42,7 +63,7 @@ function About2() {
             </div>
             <div className='last-about-card-bottom-margin'>
               <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'>Details</button>
+              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
             </div>
           </div>
         </div>
@@ -67,7 +88,7 @@ function About2() {
             </div>
             <div className='last-about-card-bottom-margin'>
               <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'>Details</button>
+              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
             </div>
           </div>
         </div>
@@ -92,7 +113,7 @@ function About2() {
             </div>
             <div className='last-about-card-bottom-margin'>
               <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'>Details</button>
+              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
             </div>
           </div>
         </div>

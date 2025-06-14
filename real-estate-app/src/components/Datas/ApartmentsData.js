@@ -7,7 +7,7 @@ import Image5 from './ImagesData/last-about-image5.jpg';
 import Image6 from './ImagesData/last-about-image6.jpg';
 import Authoruser from './ImagesData/author-image.jpg';
 
-const data = [
+const ApartmentsData = [
     {
         img: Image1,
         autherimg: Authoruser,
@@ -131,4 +131,4 @@ const data = [
 
 ];
 
-export default data;
+export default ApartmentsData;

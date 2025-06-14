@@ -44,11 +44,12 @@
     border: none;
     background-color: rgb(241, 236, 236);
     font-size: 20px;
-    transition: about-bc-color 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-.last-about-btn:hover {
+.last-about-btn:hover,
+.last-about-btn.active {
     background-color: #E3572B;
     color: white;
 }

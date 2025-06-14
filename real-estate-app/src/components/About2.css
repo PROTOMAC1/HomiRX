@@ -55,9 +55,7 @@
 
 .last-about-card-content {
     width: 94%;
-    /* overflow: hidden; */
     display: flex;
-    background-color: #E3572B;
     gap: 63px;
     position: relative;
     justify-content: center;
@@ -130,7 +128,9 @@
 
 .last-about-card-area-icon {
     display: flex;
-    margin-left: 20px;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
     color: gray;
 }
 

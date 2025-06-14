@@ -112,9 +112,9 @@ function About2() {
                 <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
                 <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
                 <div className='last-about-card-area-icon'>
-                  <p>1860 sqft</p>
-                  <p>Bed 6</p>
-                  <p>Bath 6</p>
+                  <p className='last-about-card-icon-contents'><d.icononeimg />1860 sqft</p>
+                  <p className='last-about-card-icon-contents'><d.icontwoimg />Bed 6</p>
+                  <p className='last-about-card-icon-contents'><d.iconthreeimg />Bath 6</p>
                 </div>
               </div>
               <div className='last-about-card-bottom-margin'>

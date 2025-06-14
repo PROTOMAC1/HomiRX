@@ -1,4 +1,4 @@
-import { FaLocationDot, FaHouseUser, FaStar } from 'react-icons/fa6';
+import { FaLocationDot, FaHouseUser, FaStar, FaExpand, FaBed, FaShower } from 'react-icons/fa6';
 import Image1 from './ImagesData/General-img-1.jpg';
 import Image2 from './ImagesData/General-img-2.jpg';
 import Image3 from './ImagesData/General-img-3.jpg';

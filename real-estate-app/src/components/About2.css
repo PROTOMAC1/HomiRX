@@ -5,6 +5,7 @@
     position: absolute;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 }
 
 .last-about-top-content {
@@ -62,7 +63,6 @@
     margin-left: 40px;
     justify-content: center;
     height: 90vh;
-    overflow: hidden;
     scroll-behavior: smooth;
     transition: transform 0.3s ease;
 }
@@ -73,7 +73,6 @@
     position: relative;
     cursor: pointer;
     background-color: rgb(228, 222, 222);
-    overflow: hidden;
 }
 
 .last-about-card-image img {
@@ -185,22 +184,9 @@
     border: none;
     color: #E3572B;
     cursor: pointer;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
     z-index: 1;
 }
 
-.last-about-card-left-btn {
-    left: -30px;
-}
-
 .last-about-card-right-btn {
-    margin-left: 100%;
-}
-
-.last-about-card-content .last-about-card:hover .last-about-card-left-btn,
-.last-about-card-content .last-about-card:hover .last-about-card-right-btn {
-    opacity: 1;
-    pointer-events: auto;
+    margin-left: 96%;
 }

@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { FaBuilding, FaLocationDot, FaHouseUser, FaStar } from 'react-icons/fa6';
-import Image1 from './Images/last-about-image1.jpg';
-import Image2 from './Images/last-about-image2.jpg';
-import Image3 from './Images/last-about-image3.jpg';
-import Image4 from './Images/last-about-image4.jpg';
-import Image5 from './Images/last-about-image5.jpg';
-import Authoruser from './Images/author-image.jpg';
+import { FaBuilding, FaLocationDot, FaHouseUser } from 'react-icons/fa6';
 import './About2.css';
+import data from './Datas/ApartmentsData';
 
 function About2() {
   const [activeTab, setActiveTab] = useState('Apartment');
@@ -18,8 +13,8 @@ function About2() {
   useEffect(() => {
   const track = document.querySelector('.last-about-card-content');
   const cards = document.querySelectorAll('.last-about-card');
-  const leftBtn = document.querySelector('.last-about-card-left-btn');
-  const rightBtn = document.querySelector('.last-about-card-right-btn');
+  const leftBtn = document.getElementsByClassName('.last-about-card-left-btn');
+  const rightBtn = document.getElementsByClassName('.last-about-card-right-btn');
 
   const cardsToShow = 3;
   let idx = 0;
@@ -99,136 +94,128 @@ function About2() {
         </div>
       </div>
       <div className='last-about-card-content'>
-        <div className='last-about-card'>
-          <div className='last-about-card-image'><img src={Image1} alt='image1'/></div>
-          <div className='last-about-card-details'>
-            <div className='author-profile'><img src={Authoruser} alt='author-user' /></div>
-            <div className='last-about-card-words'>
-              <div className='last-about-card-raiting-and-numerical'>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><span style={{color: 'red'}}>5.0</span><span>(1)</span>
+        {data.map((d) => 
+          <div className='last-about-card'>
+          <div className='last-about-card-image'><img src={d.img} alt='image1'/></div>
+            <div className='last-about-card-details'>
+              <div className='author-profile'><img src={d.autherimg} alt='author-user' /></div>
+              <div className='last-about-card-words'>
+                <div className='last-about-card-raiting-and-numerical'>
+                    <d.starraiting style={{color: 'orange'}}/><d.starraiting style={{color: 'orange'}}/>
+                    <d.starraiting style={{color: 'orange'}}/><d.starraiting style={{color: 'orange'}}/>
+                    <d.starraiting style={{color: 'orange'}}/><span style={{color: 'red'}}>5.0</span><span>(1)</span>
+                </div>
+                <p className='last-about-card-heading'>Nova Quincy Apartment</p>
+                <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
+                <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
+                <div className='last-about-card-area-icon'>
+                  <p>1860 sqft</p>
+                  <p>Bed 6</p>
+                  <p>Bath 6</p>
+                </div>
               </div>
-              <p className='last-about-card-heading'>Nova Quincy Apartment</p>
-              <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
-              <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
-              <div className='last-about-card-area-icon'>
-                <p>1860 sqft</p>
-                <p>Bed 6</p>
-                <p>Bath 6</p>
+              <div className='last-about-card-bottom-margin'>
+                <p className='last-about-card-bottom-price'>$1800</p>
+                <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
               </div>
-            </div>
-            <div className='last-about-card-bottom-margin'>
-              <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
             </div>
           </div>
-        </div>
-        <div className='last-about-card'>
-          <div className='last-about-card-image'><img src={Image2} alt='image2'/></div>
-          <div className='last-about-card-details'>
-            <div className='author-profile'><img src={Authoruser} alt='author-user' /></div>
-            <div className='last-about-card-words'>
-              <div className='last-about-card-raiting-and-numerical'>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><span style={{color: 'red'}}>5.0</span><span>(1)</span>
-              </div>
-              <p className='last-about-card-heading'>West Squaer Apartments</p>
-              <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
-              <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
-              <div className='last-about-card-area-icon'>
-                <p>1860 sqft</p>
-                <p>Bed 6</p>
-                <p>Bath 6</p>
-              </div>
-            </div>
-            <div className='last-about-card-bottom-margin'>
-              <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
-            </div>
-          </div>
-        </div>
-        <div className='last-about-card'>
-          <div className='last-about-card-image'><img src={Image3} alt='image3'/></div>
-          <div className='last-about-card-details'>
-            <div className='author-profile'><img src={Authoruser} alt='author-user' /></div>
-            <div className='last-about-card-words'>
-              <div className='last-about-card-raiting-and-numerical'>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar /><span style={{color: 'red'}}>4.0</span><span>(1)</span>
-              </div>
-              <p className='last-about-card-heading'>Peninsula Apartments</p>
-              <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
-              <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
-              <div className='last-about-card-area-icon'>
-                <p>1860 sqft</p>
-                <p>Bed 6</p>
-                <p>Bath 6</p>
-              </div>
-            </div>
-            <div className='last-about-card-bottom-margin'>
-              <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
-            </div>
-          </div>
-        </div>
-        <div className='last-about-card'>
-          <div className='last-about-card-image'><img src={Image4} alt='image4'/></div>
-          <div className='last-about-card-details'>
-            <div className='author-profile'><img src={Authoruser} alt='author-user' /></div>
-            <div className='last-about-card-words'>
-              <div className='last-about-card-raiting-and-numerical'>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar /><span style={{color: 'red'}}>4.0</span><span>(1)</span>
-              </div>
-              <p className='last-about-card-heading'>Peninsula Apartments</p>
-              <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
-              <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
-              <div className='last-about-card-area-icon'>
-                <p>1860 sqft</p>
-                <p>Bed 6</p>
-                <p>Bath 6</p>
-              </div>
-            </div>
-            <div className='last-about-card-bottom-margin'>
-              <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
-            </div>
-          </div>
-        </div>
-        <div className='last-about-card'>
-          <div className='last-about-card-image'><img src={Image5} alt='image5'/></div>
-          <div className='last-about-card-details'>
-            <div className='author-profile'><img src={Authoruser} alt='author-user' /></div>
-            <div className='last-about-card-words'>
-              <div className='last-about-card-raiting-and-numerical'>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar style={{color: 'orange'}}/><FaStar style={{color: 'orange'}}/>
-                  <FaStar /><span style={{color: 'red'}}>4.0</span><span>(1)</span>
-              </div>
-              <p className='last-about-card-heading'>Peninsula Apartments</p>
-              <p className='last-about-card-loaction'><FaLocationDot className="symbollo" style={{color: 'red'}} />18 Broklyn Street, New York</p>
-              <p className='last-about-card-paragraph'>It is a long established fact that a reader will be distracted the readable content.</p>
-              <div className='last-about-card-area-icon'>
-                <p>1860 sqft</p>
-                <p>Bed 6</p>
-                <p>Bath 6</p>
-              </div>
-            </div>
-            <div className='last-about-card-bottom-margin'>
-              <p className='last-about-card-bottom-price'>$1800</p>
-              <button className='last-about-bottom-btn'><FaHouseUser />Details</button>
-            </div>
-          </div>
-        </div>
-        <button className='last-about-card-left-btn'>&#11160;</button>
-        <button className='last-about-card-right-btn'>&#11162;</button>
+        )}
       </div>
+      <button className='last-about-card-left-btn'>&#11160;</button>
+      <button className='last-about-card-right-btn'>&#11162;</button>
     </div>
   )
 }
+
+
+// const data = [
+//     {
+//         img: Image1,
+//         autherimg: Authoruser,
+//         starraiting: FaStar,
+//         raitingnumerical: `5.0`,
+//         raitingnumericaluser: `(1)`,
+//         heading: `Nova Quincy Apartment`,
+//         locationsymboll: FaLocationDot,
+//         locationaddress: `18 Broklyn Street, New York`,
+//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
+//         iconone: `1860 sqft`,
+//         icontwo: `Bed 6`,
+//         iconthree: `Bath 6`,
+//         bottomprice: `$1800`,
+//         bottombtnicon: FaHouseUser,
+//         bottombtn: `Details`,
+//     },
+//     {
+//         img: Image2,
+//         autherimg: Authoruser,
+//         starraiting: FaStar,
+//         raitingnumerical: `5.0`,
+//         raitingnumericaluser: `(1)`,
+//         heading: `West Squaer Apartments`,
+//         locationsymboll: FaLocationDot,
+//         locationaddress: `18 Broklyn Street, New York`,
+//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
+//         iconone: `1860 sqft`,
+//         icontwo: `Bed 6`,
+//         iconthree: `Bath 6`,
+//         bottomprice: `$1800`,
+//         bottombtnicon: FaHouseUser,
+//         bottombtn: `Details`,
+//     }    ,
+//     {
+//         img: Image3,
+//         autherimg: Authoruser,
+//         starraiting: FaStar,
+//         raitingnumerical: `4.0`,
+//         raitingnumericaluser: `(1)`,
+//         heading: `Peninsula Apartments`,
+//         locationsymboll: FaLocationDot,
+//         locationaddress: `18 Broklyn Street, New York`,
+//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
+//         iconone: `1860 sqft`,
+//         icontwo: `Bed 6`,
+//         iconthree: `Bath 6`,
+//         bottomprice: `$1800`,
+//         bottombtnicon: FaHouseUser,
+//         bottombtn: `Details`,
+//     }  ,
+//     {
+//         img: Image4,
+//         autherimg: Authoruser,
+//         starraiting: FaStar,
+//         raitingnumerical: `5.0`,
+//         raitingnumericaluser: `(1)`,
+//         heading: `West Squaer Apartments`,
+//         locationsymboll: FaLocationDot,
+//         locationaddress: `18 Broklyn Street, New York`,
+//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
+//         iconone: `1860 sqft`,
+//         icontwo: `Bed 6`,
+//         iconthree: `Bath 6`,
+//         bottomprice: `$1800`,
+//         bottombtnicon: FaHouseUser,
+//         bottombtn: `Details`,
+//     }      ,
+//     {
+//         img: Image5,
+//         autherimg: Authoruser,
+//         starraiting: FaStar,
+//         raitingnumerical: `5.0`,
+//         raitingnumericaluser: `(1)`,
+//         heading: `West Squaer Apartments`,
+//         locationsymboll: FaLocationDot,
+//         locationaddress: `18 Broklyn Street, New York`,
+//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
+//         iconone: `1860 sqft`,
+//         icontwo: `Bed 6`,
+//         iconthree: `Bath 6`,
+//         bottomprice: `$1800`,
+//         bottombtnicon: FaHouseUser,
+//         bottombtn: `Details`,
+//     }    
+
+// ];
 
 export default About2

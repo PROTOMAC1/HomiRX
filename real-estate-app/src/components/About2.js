@@ -13,22 +13,23 @@ function About2() {
   useEffect(() => {
   const track = document.querySelector('.last-about-card-content');
   const cards = document.querySelectorAll('.last-about-card');
-  const leftBtn = document.getElementsByClassName('.last-about-card-left-btn');
-  const rightBtn = document.getElementsByClassName('.last-about-card-right-btn');
+  const leftBtn = document.querySelector('.last-about-card-left-btn');
+  const rightBtn = document.querySelector('.last-about-card-right-btn');
+
+  if (!track || cards.length === 0) return;
 
   const cardsToShow = 3;
   let idx = 0;
   let interval;
+  const cardWidth = cards[0].offsetWidth + 63;
 
-  const cardWidth = cards[0].offsetWidth + 63; // 63px gap from CSS
+  function updateSlider() {
+    track.style.transform = `translateX(-${idx * cardWidth}px)`;
+  }
 
   function slide() {
     idx = (idx + 1) % (cards.length - cardsToShow + 1);
     updateSlider();
-  }
-
-  function updateSlider() {
-    track.style.transform = `translateX(-${idx * cardWidth}px)`;
   }
 
   function startSlider() {
@@ -39,19 +40,19 @@ function About2() {
     clearInterval(interval);
   }
 
-  leftBtn.onclick = () => {
+  leftBtn.addEventListener('click', () => {
     idx = (idx - 1 + (cards.length - cardsToShow + 1)) % (cards.length - cardsToShow + 1);
     updateSlider();
     stopSlider();
     startSlider();
-  };
+  });
 
-  rightBtn.onclick = () => {
+  rightBtn.addEventListener('click', () => {
     idx = (idx + 1) % (cards.length - cardsToShow + 1);
     updateSlider();
     stopSlider();
     startSlider();
-  };
+  });
 
   track.addEventListener('mouseenter', stopSlider);
   track.addEventListener('mouseleave', startSlider);
@@ -60,6 +61,8 @@ function About2() {
 
   return () => {
     stopSlider();
+    leftBtn.removeEventListener('click', updateSlider);
+    rightBtn.removeEventListener('click', updateSlider);
     track.removeEventListener('mouseenter', stopSlider);
     track.removeEventListener('mouseleave', startSlider);
   };
@@ -127,95 +130,5 @@ function About2() {
     </div>
   )
 }
-
-
-// const data = [
-//     {
-//         img: Image1,
-//         autherimg: Authoruser,
-//         starraiting: FaStar,
-//         raitingnumerical: `5.0`,
-//         raitingnumericaluser: `(1)`,
-//         heading: `Nova Quincy Apartment`,
-//         locationsymboll: FaLocationDot,
-//         locationaddress: `18 Broklyn Street, New York`,
-//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
-//         iconone: `1860 sqft`,
-//         icontwo: `Bed 6`,
-//         iconthree: `Bath 6`,
-//         bottomprice: `$1800`,
-//         bottombtnicon: FaHouseUser,
-//         bottombtn: `Details`,
-//     },
-//     {
-//         img: Image2,
-//         autherimg: Authoruser,
-//         starraiting: FaStar,
-//         raitingnumerical: `5.0`,
-//         raitingnumericaluser: `(1)`,
-//         heading: `West Squaer Apartments`,
-//         locationsymboll: FaLocationDot,
-//         locationaddress: `18 Broklyn Street, New York`,
-//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
-//         iconone: `1860 sqft`,
-//         icontwo: `Bed 6`,
-//         iconthree: `Bath 6`,
-//         bottomprice: `$1800`,
-//         bottombtnicon: FaHouseUser,
-//         bottombtn: `Details`,
-//     }    ,
-//     {
-//         img: Image3,
-//         autherimg: Authoruser,
-//         starraiting: FaStar,
-//         raitingnumerical: `4.0`,
-//         raitingnumericaluser: `(1)`,
-//         heading: `Peninsula Apartments`,
-//         locationsymboll: FaLocationDot,
-//         locationaddress: `18 Broklyn Street, New York`,
-//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
-//         iconone: `1860 sqft`,
-//         icontwo: `Bed 6`,
-//         iconthree: `Bath 6`,
-//         bottomprice: `$1800`,
-//         bottombtnicon: FaHouseUser,
-//         bottombtn: `Details`,
-//     }  ,
-//     {
-//         img: Image4,
-//         autherimg: Authoruser,
-//         starraiting: FaStar,
-//         raitingnumerical: `5.0`,
-//         raitingnumericaluser: `(1)`,
-//         heading: `West Squaer Apartments`,
-//         locationsymboll: FaLocationDot,
-//         locationaddress: `18 Broklyn Street, New York`,
-//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
-//         iconone: `1860 sqft`,
-//         icontwo: `Bed 6`,
-//         iconthree: `Bath 6`,
-//         bottomprice: `$1800`,
-//         bottombtnicon: FaHouseUser,
-//         bottombtn: `Details`,
-//     }      ,
-//     {
-//         img: Image5,
-//         autherimg: Authoruser,
-//         starraiting: FaStar,
-//         raitingnumerical: `5.0`,
-//         raitingnumericaluser: `(1)`,
-//         heading: `West Squaer Apartments`,
-//         locationsymboll: FaLocationDot,
-//         locationaddress: `18 Broklyn Street, New York`,
-//         paragraph: `It is a long established fact that a reader will be distracted the readable content.`,
-//         iconone: `1860 sqft`,
-//         icontwo: `Bed 6`,
-//         iconthree: `Bath 6`,
-//         bottomprice: `$1800`,
-//         bottombtnicon: FaHouseUser,
-//         bottombtn: `Details`,
-//     }    
-
-// ];
 
 export default About2

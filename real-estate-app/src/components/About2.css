@@ -54,13 +54,10 @@
 }
 
 .last-about-card-content {
-    min-width: 340px;
-    /* width: 94%; */
-    flex: 0 0 auto;
+    width: 94%;
     display: flex;
     gap: 63px;
     position: relative;
-    margin-left: 40px;
     justify-content: center;
     height: 90vh;
     scroll-behavior: smooth;
@@ -131,7 +128,9 @@
 
 .last-about-card-area-icon {
     display: flex;
-    margin-left: 20px;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
     color: gray;
 }
 

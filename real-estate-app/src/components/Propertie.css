@@ -1,0 +1,24 @@
+.Properties {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #16243E;
+    height: 120vh;
+}
+
+.propertiescontent {
+    display: flex;
+    flex-direction: column;
+}
+
+.PropertiesImageCard {
+    display: flex;
+    flex-direction: row;
+}
+
+.ImageCard {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30vh;
+    height: 80vh;
+}

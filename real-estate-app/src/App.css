@@ -6,8 +6,14 @@ body {
 
 .Home {
   background-color: #16243E;
+  height: 240vh;
 }
 
 .About {
   background-color: white;
+  height: 340vh;
+}
+
+.Propertie {
+  height: 140vh;
 }

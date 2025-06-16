@@ -6,6 +6,7 @@ import Section2 from './components/Section2';
 import About from './components/About';
 import About1 from './components/About1';
 import About2 from './components/About2';
+import Propertie from './components/Propertie';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
         <About />
         <About1 />
         <About2 />
+      </section>
+      <section className='Propertie'>
+        <Propertie />
       </section>
     </div>
   );

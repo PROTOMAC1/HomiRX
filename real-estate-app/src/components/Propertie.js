@@ -9,31 +9,18 @@ import './Propertie.css';
 
 const Propertie = () => {
   return (
-    <div className='w-full Properties'>
-        <div className='propertiescontent w-fit'>
-            <h2>Our Property List</h2>
-            <h1>Our Top Location For You Property</h1>
-            <div className='PropertiesImageCard'>
-                <div className='ImageCard' style={{backgroundImage: `url(${Propertieimg1})`}}>
-                  <h1>Checking</h1>
-                </div>
-                <div className='ImageCard' style={{backgroundImage: `url(${Propertieimg2})`}}>
-                  <h1>Checking</h1>
-                </div>
-                <div className='ImageCard' style={{backgroundImage: `url(${Propertieimg3})`}}>
-                  <h1>Checking</h1>
-                </div>
-                <div className='ImageCard' style={{backgroundImage: `url(${Propertieimg4})`}}>
-                  <h1>Checking</h1>
-                </div>
-                <div className='ImageCard' style={{backgroundImage: `url(${Propertieimg5})`}}>
-                  <h1>Checking</h1>
-                </div>
-                <div className='ImageCard' style={{backgroundImage: `url(${Propertieimg6})`}}>
-                  <h1>Checking</h1>
-                </div>
-            </div>
+    <div className='body'>
+      <div className='gallery'>
+        <div className='gallery-container'>
+          <img className='gallery-item gallery-item-1' src={Propertieimg1} data-index='1' />
+          <img className='gallery-item gallery-item-2' src={Propertieimg2} data-index='2' />
+          <img className='gallery-item gallery-item-3' src={Propertieimg3} data-index='3' />
+          <img className='gallery-item gallery-item-4' src={Propertieimg4} data-index='4' />
+          <img className='gallery-item gallery-item-5' src={Propertieimg5} data-index='5' />
+          <img className='gallery-item gallery-item-6' src={Propertieimg6} data-index='6' />
         </div>
+        <div className='gallery-controls'></div>
+      </div>
     </div>
   )
 }

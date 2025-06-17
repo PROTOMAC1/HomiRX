@@ -8,6 +8,8 @@ import Vdata from './Datas/VillaData';
 function About2() {
   const [activeTab, setActiveTab] = useState('ApartmentsData');
   const [carouselItems, setCarouselItems] = useState([]);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [direction, setDirection] = useState('');
 
   const handleBtnClick = (tabName) => {
     setActiveTab(tabName);
@@ -23,13 +25,29 @@ function About2() {
   }, [activeTab]);
 
   const handlePrevious = () => {
-    const updated = [carouselItems[carouselItems.length - 1], ...carouselItems.slice(0, -1)];
-    setCarouselItems(updated);
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection('prev');
+    
+    setTimeout(() => {
+      const updated = [carouselItems[carouselItems.length - 1], ...carouselItems.slice(0, -1)];
+      setCarouselItems(updated);
+      setIsAnimating(false);
+      setDirection('');
+    }, 300);
   };
 
   const handleNext = () => {
-    const updated = [...carouselItems.slice(1), carouselItems[0]];
-    setCarouselItems(updated);
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setDirection('next');
+    
+    setTimeout(() => {
+      const updated = [...carouselItems.slice(1), carouselItems[0]];
+      setCarouselItems(updated);
+      setIsAnimating(false);
+      setDirection('');
+    }, 300);
   };
 
   return (
@@ -60,7 +78,7 @@ function About2() {
           </button>
         </div>
       </div>
-      <div className='last-about-card-content'>
+      <div className={`last-about-card-content ${isAnimating ? `animating-${direction}` : ''}`}>
         {carouselItems.slice(0, 3).map((item, index) => (
           <div key={index} className={`last-about-card last-about-card-${index + 1}`}>
             <div className='last-about-card-image'>

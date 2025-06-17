@@ -75,12 +75,6 @@
     transform: translateX(-50%);
 }
 
-.last-about-card-2 {
-    left: 50%;
-    opacity: 1;
-    z-index: 2;
-}
-
 .last-about-card-1 {
     left: 25%;
     opacity: 0.4;
@@ -88,11 +82,89 @@
     z-index: 1;
 }
 
+.last-about-card-2 {
+    left: 50%;
+    opacity: 1;
+    z-index: 2;
+}
+
 .last-about-card-3 {
     left: 75%;
     opacity: 0.4;
     transform: translateX(-50%) scale(0.9);
     z-index: 1;
+}
+
+.animating-next .last-about-card-1 {
+    animation: slideOutLeft 0.3s forwards;
+}
+
+.animating-next .last-about-card-2 {
+    animation: slideCenterToLeft 0.3s forwards;
+}
+
+.animating-next .last-about-card-3 {
+    animation: slideRightToCenter 0.3s forwards;
+}
+
+.animating-prev .last-about-card-1 {
+    animation: slideLeftToCenter 0.3s forwards;
+}
+
+.animating-prev .last-about-card-2 {
+    animation: slideCenterToRight 0.3s forwards;
+}
+
+.animating-prev .last-about-card-3 {
+    animation: slideInRight 0.3s forwards;
+}
+
+@keyframes slideOutLeft {
+    to {
+        left: 0%;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+@keyframes slideCenterToLeft {
+    to {
+        left: 25%;
+        opacity: 0.4;
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+@keyframes slideRightToCenter {
+    to {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes slideLeftToCenter {
+    to {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes slideCenterToRight {
+    to {
+        left: 75%;
+        opacity: 0.4;
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        left: 100%;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
 }
 
 .last-about-card-image img {

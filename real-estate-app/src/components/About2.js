@@ -7,76 +7,30 @@ import Vdata from './Datas/VillaData';
 
 function About2() {
   const [activeTab, setActiveTab] = useState('ApartmentsData');
+  const [carouselItems, setCarouselItems] = useState([]);
 
   const handleBtnClick = (tabName) => {
     setActiveTab(tabName);
   };
 
   useEffect(() => {
-  const track = document.querySelector('.last-about-card-content');
-  const cards = document.querySelectorAll('.last-about-card');
-  const leftBtn = document.querySelector('.last-about-card-left-btn');
-  const rightBtn = document.querySelector('.last-about-card-right-btn');
+    const categoryOptions = {
+      ApartmentsData,
+      Gdata,
+      Vdata
+    };
+    setCarouselItems(categoryOptions[activeTab] || []);
+  }, [activeTab]);
 
-  if (!track || cards.length === 0) return;
-
-  const cardsToShow = 3;
-  let idx = 0;
-  let interval;
-  const cardWidth = cards[0].offsetWidth + 63;
-
-  function updateSlider() {
-    track.style.transform = `translateX(-${idx * cardWidth}px)`;
-  }
-
-  function slide() {
-    idx = (idx + 1) % (cards.length - cardsToShow + 1);
-    updateSlider();
-  }
-
-  function startSlider() {
-    interval = setInterval(slide, 3000);
-  }
-
-  function stopSlider() {
-    clearInterval(interval);
-  }
-
-  leftBtn.addEventListener('click', () => {
-    idx = (idx - 1 + (cards.length - cardsToShow + 1)) % (cards.length - cardsToShow + 1);
-    updateSlider();
-    stopSlider();
-    startSlider();
-  });
-
-  rightBtn.addEventListener('click', () => {
-    idx = (idx + 1) % (cards.length - cardsToShow + 1);
-    updateSlider();
-    stopSlider();
-    startSlider();
-  });
-
-  track.addEventListener('mouseenter', stopSlider);
-  track.addEventListener('mouseleave', startSlider);
-
-  startSlider();
-
-  return () => {
-    stopSlider();
-    leftBtn.removeEventListener('click', updateSlider);
-    rightBtn.removeEventListener('click', updateSlider);
-    track.removeEventListener('mouseenter', stopSlider);
-    track.removeEventListener('mouseleave', startSlider);
+  const handlePrevious = () => {
+    const updated = [carouselItems[carouselItems.length - 1], ...carouselItems.slice(0, -1)];
+    setCarouselItems(updated);
   };
-}, []);
 
-const categoryOptions = {
-  ApartmentsData,
-  Gdata,
-  Vdata
-};
-
-const currentData = categoryOptions[activeTab] || [];
+  const handleNext = () => {
+    const updated = [...carouselItems.slice(1), carouselItems[0]];
+    setCarouselItems(updated);
+  };
 
   return (
     <div className='last-about'>
@@ -107,8 +61,8 @@ const currentData = categoryOptions[activeTab] || [];
         </div>
       </div>
       <div className='last-about-card-content'>
-        {currentData.map((item, index) => (
-          <div key={index} className='last-about-card'>
+        {carouselItems.slice(0, 3).map((item, index) => (
+          <div key={index} className={`last-about-card last-about-card-${index + 1}`}>
             <div className='last-about-card-image'>
               <img src={item.img} alt={`property-${index}`} />
             </div>
@@ -152,8 +106,8 @@ const currentData = categoryOptions[activeTab] || [];
           </div>
         ))}
       </div>
-      <button className='last-about-card-left-btn'>&#11160;</button>
-      <button className='last-about-card-right-btn'>&#11162;</button>
+      <button className='last-about-card-left-btn' onClick={handlePrevious}>&#11160;</button>
+      <button className='last-about-card-right-btn' onClick={handleNext}>&#11162;</button>
     </div>
   )
 }

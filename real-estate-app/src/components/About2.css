@@ -57,20 +57,42 @@
 .last-about-card-content {
     width: 94%;
     display: flex;
-    gap: 63px;
     position: relative;
     justify-content: center;
     height: 90vh;
-    scroll-behavior: smooth;
-    transition: transform 0.3s ease;
+    margin: 0 auto;
 }
 
 .last-about-card {
+    height: 90%;
     width: 30%;
     border-radius: 25px;
-    position: relative;
+    position: absolute;
     cursor: pointer;
     background-color: rgb(228, 222, 222);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+
+.last-about-card-2 {
+    left: 50%;
+    opacity: 1;
+    z-index: 2;
+}
+
+.last-about-card-1 {
+    left: 25%;
+    opacity: 0.4;
+    transform: translateX(-50%) scale(0.9);
+    z-index: 1;
+}
+
+.last-about-card-3 {
+    left: 75%;
+    opacity: 0.4;
+    transform: translateX(-50%) scale(0.9);
+    z-index: 1;
 }
 
 .last-about-card-image img {
@@ -162,7 +184,7 @@
     color: #C2DF93;
     border-radius: 28px;
     cursor: pointer;
-    transition: bg-color 0.5s ease-in;
+    transition: all 0.3s ease-in-out;
 }
 
 .last-about-bottom-btn:hover {
@@ -178,15 +200,26 @@
     border-radius: 50%;
     font-size: 35px;
     justify-content: center;
-    bottom: 235px;
+    bottom: 40%;
     align-items: center;
     display: flex;
     border: none;
     color: #E3572B;
     cursor: pointer;
-    z-index: 1;
+    z-index: 3;
+    transition: all 0.3s ease-in-out;
+}
+
+.last-about-card-left-btn:hover,
+.last-about-card-right-btn:hover {
+    background-color: #E3572B;
+    color: white;
+}
+
+.last-about-card-left-btn {
+    margin-left: 12%;
 }
 
 .last-about-card-right-btn {
-    margin-left: 96%;
+    margin-left: 85%;
 }

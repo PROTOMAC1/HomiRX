@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: white;
+  background: #FFF8F2;
 }
 
 .Home {
@@ -10,11 +10,11 @@ body {
 }
 
 .About {
-  background-color: white;
+  background-color: #FFF8F2;
   height: 340vh;
 }
 
 .Propertie {
   margin-top: 150px;
-  height: 140vh;
+  height: 240vh;
 }

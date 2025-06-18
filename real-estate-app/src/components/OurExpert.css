@@ -1,0 +1,37 @@
+.teams-body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 120vh;
+    background: #FFF8F2;
+}
+
+.teams-page {
+    margin: 8% 10%;
+}
+
+.teams-headings {
+    color: black;
+}
+
+.teams-cards-view {
+    display: flex;
+    /* overflow: hidden; */
+}
+
+.Teams-crads {
+    border-radius: 5%;
+    background-color: aquamarine;
+}
+
+.teams-cards-img {
+    border-radius: 5%;
+    width: 80%;
+    background-color: black;
+}
+
+.Teams-crads img {
+    border-radius: 5%;
+    width: 100%;
+    height: 100%;
+}

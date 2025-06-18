@@ -8,13 +8,43 @@ import Propertieimg6 from './Images/Properties6.jpg';
 import './Propertie.css';
 
 const Propertie = () => {
-  const Imagestab = [
-    Propertieimg1,
-    Propertieimg2,
-    Propertieimg3,
-    Propertieimg4,
-    Propertieimg5,
-    Propertieimg6,
+  const propertiesData = [
+    {
+      img: Propertieimg1,
+      name: "Luxury Villa",
+      description: "Luxury Property With Convenience",
+      properties: "13 properties"
+    },
+    {
+      img: Propertieimg2,
+      name: "Downtown Apartment",
+      description: "Luxury Property With Convenience",
+      properties: "8 properties"
+    },
+    {
+      img: Propertieimg3,
+      name: "Suburban House",
+      description: "Luxury Property With Convenience",
+      properties: "15 properties"
+    },
+    {
+      img: Propertieimg4,
+      name: "Beachfront Condo",
+      description: "Luxury Property With Convenience",
+      properties: "6 properties"
+    },
+    {
+      img: Propertieimg5,
+      name: "Mountain Retreat",
+      description: "Luxury Property With Convenience",
+      properties: "12 properties"
+    },
+    {
+      img: Propertieimg6,
+      name: "Urban Loft",
+      description: "Luxury Property With Convenience",
+      properties: "10 properties"
+    }
   ];
   
   return (
@@ -25,9 +55,17 @@ const Propertie = () => {
       </div>
       <div className='properties-1-body'>
         <div className='properties-1-gallery'>
-          {Imagestab.map((img, index) =>(
-            <div className='properties-1-gallery-container'>
-              <img key={index} src={img} alt={`Property ${index + 1}`} />
+          {propertiesData.map((property, index) =>(
+            <div key={index} className='properties-1-gallery-container'>
+              <img src={property.img} alt={`Property ${index + 1}`} />
+              <div className='property-overlay'>
+                <button className='property-button'>&#8599;</button>
+                <div className='property-info'>
+                  <p className='property-count'>{property.properties}</p>
+                  <h3 className='property-name'>{property.name}</h3>
+                  <p className='property-description'>{property.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>

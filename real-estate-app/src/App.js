@@ -8,6 +8,7 @@ import About1 from './components/About1';
 import About2 from './components/About2';
 import Propertie from './components/Propertie';
 import OurExpert from './components/OurExpert';
+import Bookproperties from './components/Bookproperties';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <section className='Propertie'>
         <Propertie />
         <OurExpert />
+        <Bookproperties />
       </section>
     </div>
   );

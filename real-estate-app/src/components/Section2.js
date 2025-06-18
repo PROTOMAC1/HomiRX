@@ -1,11 +1,6 @@
 import React from 'react';
 import './Section2.css';
 import { FaWarehouse, FaBuilding, FaHouseUser } from 'react-icons/fa';
-// import Commercial from './Images/cityscape.png';
-// import Warehouse from './Images/warehouse.png';
-// import Villa from './Images/home.png';
-// import Apartment from './Images/apartment.png';
-// import Homestay from './Images/store.png';
 
 const Section2 = () => {
   return (

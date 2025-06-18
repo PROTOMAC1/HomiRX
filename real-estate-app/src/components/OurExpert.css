@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 120vh;
+    height: 110vh;
     background: #FFF8F2;
 }
 
@@ -11,27 +11,122 @@
 }
 
 .teams-headings {
-    color: black;
+    margin: 6% auto;
+}
+
+.teams-headings-sub-heading {
+    font-size: 1rem;
+    font-weight: bold;
+    color: chocolate;
+}
+
+.teams-headings-main {
+    display: flex;
+    gap: 42%;
+}
+
+.teams-headings-main-heading {
+    font-size: 2.45rem;
+    color: #16243E;
+    font-weight: bolder;
+}
+
+.teams-headings-main-btn {
+    width: 18%;
+    border: none;
+    font-size: 1.11rem;
+    background: #16243E;
+    color: #d4f3b5;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: btn 0.3s ease;
+}
+
+.teams-headings-main-btn:hover {
+    background: #ff5200;
+    color: #FFF8F2;
+}
+
+.teams-cards-wrapper {
+    position: relative;
+    overflow: hidden;
 }
 
 .teams-cards-view {
     display: flex;
-    /* overflow: hidden; */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.teams-cards-view::-webkit-scrollbar {
+    display: none;
 }
 
 .Teams-crads {
     border-radius: 5%;
-    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
 }
 
 .teams-cards-img {
     border-radius: 5%;
-    width: 80%;
-    background-color: black;
+    width: 410px;
 }
 
 .Teams-crads img {
     border-radius: 5%;
     width: 100%;
     height: 100%;
+}
+
+.teams-contents {
+    margin-left: 5.6%;
+    margin-top: -50px;
+    width: 90%;
+    background-color: white;
+    border-radius: 12px;
+    transform: skewX(10deg);
+}
+
+.teams-name {
+    margin: 15px 25px;
+    font-size: 20px;
+}
+
+.teams-phonenumbers {
+    margin: 8px 25px;
+}
+
+.teams-phonenumbers span {
+    color: rgb(167, 165, 165);
+}
+
+.teams-btn {
+    display: flex;
+    margin-top: 2%;
+    justify-content: center;
+}
+
+.teams-btn-left, .teams-btn-right {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 35px;
+    justify-content: center;
+    font-weight: bolder;
+    align-items: center;
+    display: flex;
+    border: none;
+    color: #16243E;
+    cursor: pointer;
+}
+
+.teams-btn-left:hover,
+.teams-btn-right:hover {
+    color: #E3572B;
 }

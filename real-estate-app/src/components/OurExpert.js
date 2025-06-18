@@ -1,5 +1,6 @@
 import React from 'react'
 import './OurExpert.css';
+import { FaHouseUser } from 'react-icons/fa6';
 import Team1 from './Images/Team-Images/team-1.jpg'
 import Team2 from './Images/Team-Images/team-2.jpg'
 import Team3 from './Images/Team-Images/team-3.jpg'
@@ -39,9 +40,11 @@ const OurExpert = () => {
     <div className='teams-body'>
       <div className='teams-page'>
         <div className='teams-headings'>
-          <p>Our Expert</p>
-          <span>Meet Our Real Estate Team</span>
-          <button>View All Members</button>
+          <p className='teams-headings-sub-heading'>Our Expert</p>
+          <div className='teams-headings-main'>
+            <span className='teams-headings-main-heading'>Meet Our Real Estate Team</span>
+            <button className='teams-headings-main-btn'><FaHouseUser /> View All Members</button>
+          </div>
         </div>
         <div className='teams-cards-view'>
           {TeamsData.map((Teams, index) =>(
@@ -49,20 +52,16 @@ const OurExpert = () => {
               <div className='teams-cards-img'>
                 <img src={Teams.img} alt={`Teams ${index + 1}`} />
               </div>
-              <div className='toggle-btn'>
-                <div className='facebook-btn'></div>
-                <div className='twitter-aka-X-btn'></div>
-                <div className='instagram-btn'></div>
-                <div className='pinterest-btn'></div>
-              </div>
               <div className='teams-contents'>
                 <p className='teams-name'>{Teams.name}</p>
-                <p className='teams-phonenumbers'>{Teams.phno}</p>
+                <p className='teams-phonenumbers'>Call: <span>{Teams.phno}</span></p>
               </div>
             </div>
           ))}
-          <div className='teams-btn-left'></div>
-          <div className='teams-btn-right'></div>
+        </div>
+        <div className='teams-btn'>
+          <div className='teams-btn-left'>&#11160;</div>
+          <div className='teams-btn-right'>&#11162;</div>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Bookproperties.css'
+import { FaHouseUser, FaArrowRight, FaExpand, FaBed, FaShower } from 'react-icons/fa6'
 import Book1 from './Images/Book-Images/book-image1.jpg'
 import Book2 from './Images/Book-Images/book-image2.jpg'
 
@@ -38,10 +39,12 @@ const Bookproperties = () => {
     return (
         <div className='book-body'>
             <div className='book-content'>
-                <div className='book-content-headings'>
+                <div className='book-content-headings-1'>
                     <h1>Bookproperties</h1>
+                </div>
+                <div className='book-content-headings-2'>
                     <span>Discover Your Perfect Property Match</span>
-                    <button>Add Properties</button>
+                    <button><FaHouseUser /> Add Properties</button>
                 </div>
                 <div className='book-content-view'>
                     <div className='book-content-img-view'>
@@ -51,10 +54,19 @@ const Bookproperties = () => {
                         />
                         <div className='book-image-overlay'>
                             <div className='book-image-info'>
-                                <h3>{BookImages[currentImage].location}</h3>
-                                <p>Size: {BookImages[currentImage].size}</p>
-                                <p>{BookImages[currentImage].bed}</p>
-                                <p>{BookImages[currentImage].bath}</p>
+                                <div className='bii1'>
+                                    <p>Premium</p>
+                                    <h1>LUXURY HOME</h1>
+                                </div>
+                                <div className='bii2'>
+                                    <p>Location</p>
+                                    <h1>{BookImages[currentImage].location}</h1>
+                                </div>
+                                <p><FaExpand /> Size: {BookImages[currentImage].size}</p>
+                                <p><FaBed /> {BookImages[currentImage].bed}</p>
+                                <p><FaShower /> {BookImages[currentImage].bath}</p>
+                                <h2>$456.00<span><img /></span></h2>
+                                <button>View Details <FaArrowRight /></button>
                             </div>
                         </div>
                         <div className='book-navigation'>
@@ -64,15 +76,6 @@ const Bookproperties = () => {
                             <button className='book-nav-btn book-nav-right' onClick={nextImage}>
                                 &#11162;
                             </button>
-                        </div>
-                        <div className='book-indicators'>
-                            {BookImages.map((_, index) => (
-                                <div 
-                                    key={index}
-                                    className={`book-indicator ${index === currentImage ? 'active' : ''}`}
-                                    onClick={() => setCurrentImage(index)}
-                                />
-                            ))}
                         </div>
                     </div>
                 </div>

@@ -16,5 +16,10 @@ body {
 
 .Propertie {
   margin-top: 150px;
-  height: 340vh;
+  height: 397vh;
+}
+
+.Blog {
+  background-color: #FFF8F2;
+  height: 320vh;
 }

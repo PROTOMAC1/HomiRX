@@ -103,18 +103,7 @@ const Navbar = () => {
           className={`menu ${menuActive ? 'active' : ''}`}
           onClick={handleMenuClick}
         >
-          <li className="dropdown" onClick={() => toggleDropdown(0)}>
-            Home 
-            <span className="arrow">
-              {activeDropdown === 0 ? <FaChevronUp /> : <FaChevronDown />}
-            </span>
-            <ul className={`dropdown-menu ${activeDropdown === 0 ? 'active' : ''}`}>
-              <li>Home 1</li>
-              <li>Home 2</li>
-              <li>Home 3</li>
-              <li>Home 4</li>
-            </ul>
-          </li>
+          <li>Home</li>
           <li className="dropdown" onClick={() => toggleDropdown(1)}>
             Properties 
             <span className="arrow">
@@ -122,10 +111,6 @@ const Navbar = () => {
             </span>
             <ul className={`dropdown-menu ${activeDropdown === 1 ? 'active' : ''}`}>
               <li>Properties</li>
-              <li>Properties - Grid View</li>
-              <li>Properties - List View</li>
-              <li>Properties - Map View</li>
-              <li>Property Detail</li>
               <li>Property Detail</li>
               <li>All Category</li>
               <li>All Locations</li>
@@ -148,25 +133,10 @@ const Navbar = () => {
               {activeDropdown === 3 ? <FaChevronUp /> : <FaChevronDown />}
             </span>
             <ul className={`dropdown-menu ${activeDropdown === 3 ? 'active' : ''}`}>
-              <li>About</li>
-              <li>How It Works</li>
-              <li>Portfolio</li>
               <li>Shop Page</li>
               <li>Events Page</li>
               <li>Testimonial</li>
               <li>Our Partner</li>
-              <li>404 Page</li>
-            </ul>
-          </li>
-          <li className="dropdown" onClick={() => toggleDropdown(4)}>
-            News 
-            <span className="arrow">
-              {activeDropdown === 4 ? <FaChevronUp /> : <FaChevronDown />}
-            </span>
-            <ul className={`dropdown-menu ${activeDropdown === 4 ? 'active' : ''}`}>
-              <li>News 01</li>
-              <li>News 02</li>
-              <li>News 03</li>
             </ul>
           </li>
           <li>Contact</li>

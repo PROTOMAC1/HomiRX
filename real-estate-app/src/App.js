@@ -9,6 +9,8 @@ import About2 from './components/About2';
 import Propertie from './components/Propertie';
 import OurExpert from './components/OurExpert';
 import Bookproperties from './components/Bookproperties';
+import Testimonial from './components/Testimonial';
+import Appointment from './components/Appointment';
 
 function App() {
   return (
@@ -27,6 +29,10 @@ function App() {
         <Propertie />
         <OurExpert />
         <Bookproperties />
+      </section>
+      <section className='Blog'>
+        <Testimonial />
+        <Appointment />
       </section>
     </div>
   );

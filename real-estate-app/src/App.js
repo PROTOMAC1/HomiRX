@@ -11,6 +11,7 @@ import OurExpert from './components/OurExpert';
 import Bookproperties from './components/Bookproperties';
 import Testimonial from './components/Testimonial';
 import Appointment from './components/Appointment';
+import Blog from './components/Blog';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
       <section className='Blog'>
         <Testimonial />
         <Appointment />
+        <Blog />
       </section>
     </div>
   );

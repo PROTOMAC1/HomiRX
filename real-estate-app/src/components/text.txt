@@ -1,0 +1,40 @@
+const nextCard = () => {
+  if (currentCard + 3 >= Posts.length) {
+    setCurrentCard(0); // loop back to start
+  } else {
+    setCurrentCard(currentCard + 1); // move to next
+  }
+};
+
+const previewCard = () => {
+  if (currentCard === 0) {
+    setCurrentCard(Posts.length - 3); // jump to last 3
+  } else {
+    setCurrentCard(currentCard - 1); // move to previous
+  }
+};
+
+
+
+<Posts.slice(currentCard, currentCard + 3).map((blogpost, i) => (
+  // rest same...
+
+
+<button
+  className='blog-content-btn-left'
+  onClick={previewCard}
+  disabled={currentCard === 0}
+>
+  &#11160;
+</button>
+<button
+  className='blog-content-btn-right'
+  onClick={nextCard}
+  disabled={currentCard + 3 >= Posts.length}
+>
+  &#11162;
+</button>
+
+
+setCurrentCard(currentCard + 3);
+setCurrentCard(currentCard - 3);

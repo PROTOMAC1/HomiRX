@@ -55,50 +55,58 @@ function Footer() {
             <div className='footer-middle-1'>
                 <div className='footer-logo' style={{backgroundImage: `url(${Footerlogo})`}}></div>
                 <p>Nullam interdum libero vitae pretium aliquam donec nibh purus laoreet in ullamcorper vel malesuada sit amet enim.</p>
-                <div>
-                    <span>Follow on</span>
-                    <span><FaFacebook /></span>
-                    <span><FaTwitter /></span>
-                    <span><FaLinkedinIn /></span>
-                    <span><FaInstagram /></span>
+                <div className='follow-on'>
+                    <span className='letter'>Follow on</span>
+                    <span className='social-link'><FaFacebook /></span>
+                    <span className='social-link'><FaTwitter /></span>
+                    <span className='social-link'><FaLinkedinIn /></span>
+                    <span className='social-link'><FaInstagram /></span>
                 </div>
             </div>
             <div className='footer-middle-2'>
                 <h2>Quick Link</h2>
-                <div></div>
-                <p>Startup Business</p>
-                <p>Financial Advice</p>
-                <p>Management</p>
-                <p>Business Advice</p>
-                <p>Strategy Services</p>
+                <div className='bottom-line'></div>
+                <p><span className='symbol-color'>&#8811; </span>Startup Business</p>
+                <p><span className='symbol-color'>&#8811; </span>Financial Advice</p>
+                <p><span className='symbol-color'>&#8811; </span>Management</p>
+                <p><span className='symbol-color'>&#8811; </span>Business Advice</p>
+                <p><span className='symbol-color'>&#8811; </span>Strategy Services</p>
             </div>
             <div className='footer-middle-3'>
                 <h2>Discover</h2>
-                <div></div>
-                <p>About</p>
-                <p>Our Team</p>
-                <p>Testimonials</p>
-                <p>Gallery</p>
-                <p>Contact</p>
+                <div className='bottom-line'></div>
+                <p><span className='symbol-color'>&#8811; </span>About</p>
+                <p><span className='symbol-color'>&#8811; </span>Our Team</p>
+                <p><span className='symbol-color'>&#8811; </span>Testimonials</p>
+                <p><span className='symbol-color'>&#8811; </span>Gallery</p>
+                <p><span className='symbol-color'>&#8811; </span>Contact</p>
             </div>
             <div className='footer-middle-4'>
                 <h2>Gallery</h2>
-                <div></div>
+                <div className='bottom-line-4'></div>
                 <div className='gallery-img-box'>
-                    {Galleryimages.map((gimg, index) => (
-                        <div key={index}>
-                            <img src={gimg} alt={`img ${index + 1}`}/>
-                        </div>
-                    ))}
+                  {[0, 1, 2].map(col => (
+                    <div className='gallery-column' key={col}>
+                      {[0, 1].map(row => {
+                        const index = row * 3 + col;
+                        const gimg = Galleryimages.slice(0, 6)[index];
+                        return (
+                          <div key={row} className='gallery-cell'>
+                            {gimg && (
+                              <img className='image-size' src={gimg} alt={`img ${index + 1}`} />
+                            )}
+                            <div className='overlay'></div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ))}
                 </div>
             </div>
         </div>
         <div className='footer-below'>
             <div className='footer-below-left'><p>© 2024 Copyrights by AjinkyaSasne. All Rights Reserved</p></div>
-            <div className='footer-below-right'>
-                <span>Terms & Conditions</span>
-                <span>Privacy Policy</span>
-            </div>
+            <div className='footer-below-right'><p>Terms & Conditions</p>&nbsp;<p>Privacy Policy</p></div>
         </div>
     </div>
   )

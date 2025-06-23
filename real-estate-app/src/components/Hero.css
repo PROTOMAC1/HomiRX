@@ -6,9 +6,9 @@
 
 .hero {
   display: inline-block;
-  height: 120vh;
+  height: 95%;
   width: 96%;
-  margin: 136px 25px;
+  margin: 9% 2%;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -17,20 +17,22 @@
 }
 
 .hero-overlay {
+  display: flex;
+  border: solid;
   background: rgba(10, 20, 50, 0.4); /* Optional dark overlay */
   border-radius: 25px;
   height: 100%;
+  width: 89.8%;
   color: white;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 50px;
+  padding: 0 5%;
   position: relative;
   z-index: 1;
 }
 
 .hero-overlay h1 {
-  font-size: 80px;
+  font-size: 12vh;
   font-weight: 800;
   margin: 0 0 200px;
   line-height: 1.2;
@@ -87,16 +89,21 @@
   z-index: 2;
 }
 
+.below-content {
+  height: 30%;
+  width: 100%;
+}
+
 /* Search Section */
 .search-bar {
   position: absolute;
-  bottom: 198px;
+  bottom: 23%;
   left: 37%;
   transform: translateX(-50%);
   width: 60%;
-  padding: 30px 30px;
+  padding: 2% 2%;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1% 2% rgba(0, 0, 0, 0.2);
   z-index: 2;
 }
 
@@ -115,9 +122,9 @@
 
 .tabs {
   position: absolute;
-  bottom: 297px;
+  bottom: 33%;
   justify-content: space-betweens;
-  gap: 15px;
+  gap: 1%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -129,7 +136,7 @@
 
 .tabs-buttons {
     position: absolute;
-    bottom: 90px;
+    bottom: 15%;
     gap: 25px;
     left: 24%;
     transform: translateX(-50%);
@@ -140,7 +147,7 @@
 .tabs-buttons button {
     padding: 10px 20px;
     background: rgba(255, 255, 255, 0.2);
-    font-size: 25px;
+    font-size: 3vh;
     color: white;
     border: 1px white;
     border-radius: 30px;
@@ -159,7 +166,7 @@
 }
 
 .tabs button {
-  padding: 10px 20px;
+  padding: 1% 2%;
   border: none;
   background: rgba(255, 255, 255, 0.2);
   color: white;

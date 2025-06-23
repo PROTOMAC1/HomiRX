@@ -78,46 +78,49 @@ const Hero = () => {
             <button className="play-button">▶</button>
           </div>
 
-          {/* Tabs with active class toggle */}
-          <div className="tabs">
-            <button
-              className={`blurred ${activeTab === 'General' ? 'active' : ''}`}
-              onClick={() => handleTabClick('General')}
-            >
-              General
-            </button>
-            <button
-              className={`blurred ${activeTab === 'Villa' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Villa')}
-            >
-              Villa
-            </button>
-            <button
-              className={`blurred ${activeTab === 'Apartment' ? 'active' : ''}`}
-              onClick={() => handleTabClick('Apartment')}
-            >
-              Apartment
-            </button>
-          </div>
+          <div className='below-content'>
 
-          <div className="search-bar blurred">
-            <div className="filters">
-              <input type="text" placeholder="Looking For?" />
-              <select>
-                <option className="search-option">Select Category</option>
-                {categoryOptions[activeTab].map((option, index) => (
-                  <option key={index} className="search-option">{option}</option>
-                ))}
-              </select>
-              <input type="text" placeholder="Location" />
-              <button className="search-btn">Search</button>
+            {/* Tabs with active class toggle */}
+            <div className="tabs">
+              <button
+                className={`blurred ${activeTab === 'General' ? 'active' : ''}`}
+                onClick={() => handleTabClick('General')}
+              >
+                General
+              </button>
+              <button
+                className={`blurred ${activeTab === 'Villa' ? 'active' : ''}`}
+                onClick={() => handleTabClick('Villa')}
+              >
+                Villa
+              </button>
+              <button
+                className={`blurred ${activeTab === 'Apartment' ? 'active' : ''}`}
+                onClick={() => handleTabClick('Apartment')}
+              >
+                Apartment
+              </button>
             </div>
-          </div>
-
-          <div className="tabs-buttons">
-            <button className="commercial">Commercial →</button>
-            <button className="villa">Villa →</button>
-            <button className="sales">Sales →</button>
+        
+            <div className="search-bar blurred">
+              <div className="filters">
+                <input type="text" placeholder="Looking For?" />
+                <select>
+                  <option className="search-option">Select Category</option>
+                  {categoryOptions[activeTab].map((option, index) => (
+                    <option key={index} className="search-option">{option}</option>
+                  ))}
+                </select>
+                <input type="text" placeholder="Location" />
+                <button className="search-btn">Search</button>
+              </div>
+            </div>
+                
+            <div className="tabs-buttons">
+              <button className="commercial">Commercial →</button>
+              <button className="villa">Villa →</button>
+              <button className="sales">Sales →</button>
+            </div>
           </div>
         </div>
       </div>

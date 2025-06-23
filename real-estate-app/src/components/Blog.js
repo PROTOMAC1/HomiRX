@@ -123,9 +123,14 @@ function Blog() {
           ))}
         </div>
         <div className='blog-logos'>
-          {BrandsImg.map((Brandimg, index)=>(
-            <img key={index} src={Brandimg} alt={`brandings ${index}`}  />
-          ))}
+          <div className='logos-slide'>
+            {BrandsImg.map((Brandimg, index) => (
+              <img key={index} src={Brandimg} alt={`brandings ${index}`} />
+            ))}
+            {BrandsImg.map((Brandimg, index) => (
+              <img key={`clone-${index}`} src={Brandimg} alt={`brandings ${index}`} />
+            ))}
+          </div>
         </div>
       </div>
         <button className='blog-content-btn-left' onClick={previewCard}>&#11160;</button>

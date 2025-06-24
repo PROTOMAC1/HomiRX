@@ -183,7 +183,7 @@ ul {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 928px) {
   .navbar .top-bar {
     padding: 8px 15px;
     font-size: 13px;

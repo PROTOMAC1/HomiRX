@@ -52,13 +52,13 @@ const Navbar = () => {
   }, []);
 
   const toggleDropdown = (index) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 928) {
       setActiveDropdown(activeDropdown === index ? null : index);
     }
   };
 
   const handleMenuClick = (e) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 928) {
       e.stopPropagation();
     }
   };

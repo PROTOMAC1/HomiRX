@@ -66,60 +66,66 @@ const Hero = () => {
         }}
       >
         <div className="hero-overlay">
-          <h1>
-            Let's Find Your
-            {!isMobile && <br />} Dream House.
-          </h1>
-          
-          <div className="rotating-circle">
-            <div className="circle-text">
-              <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
-            </div>
-            <button className="play-button">▶</button>
-          </div>
-
-          <div className='below-content'>
-
-            {/* Tabs with active class toggle */}
-            <div className="tabs">
-              <button
-                className={`blurred ${activeTab === 'General' ? 'active' : ''}`}
-                onClick={() => handleTabClick('General')}
-              >
-                General
-              </button>
-              <button
-                className={`blurred ${activeTab === 'Villa' ? 'active' : ''}`}
-                onClick={() => handleTabClick('Villa')}
-              >
-                Villa
-              </button>
-              <button
-                className={`blurred ${activeTab === 'Apartment' ? 'active' : ''}`}
-                onClick={() => handleTabClick('Apartment')}
-              >
-                Apartment
-              </button>
-            </div>
-        
-            <div className="search-bar blurred">
-              <div className="filters">
-                <input type="text" placeholder="Looking For?" />
-                <select>
-                  <option className="search-option">Select Category</option>
-                  {categoryOptions[activeTab].map((option, index) => (
-                    <option key={index} className="search-option">{option}</option>
-                  ))}
-                </select>
-                <input type="text" placeholder="Location" />
-                <button className="search-btn">Search</button>
+          <div className='hero-overlay-content'>
+            <div className='hero-overlay-upper-content'>
+              <div className='hero-overlay-heading'>
+                <h1>
+                  Let's Find Your
+                  {!isMobile && <br />} Dream House.
+                </h1>
+              </div>
+              <div className='circle-box'>
+                <div className="rotating-circle">
+                  <div className="circle-text">
+                    <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
+                  </div>
+                  <button className="play-button">▶</button>
+                </div>
               </div>
             </div>
-                
-            <div className="tabs-buttons">
-              <button className="commercial">Commercial →</button>
-              <button className="villa">Villa →</button>
-              <button className="sales">Sales →</button>
+            <div className='below-content'>
+        
+              {/* Tabs with active class toggle */}
+              <div className="tabs">
+                <button
+                  className={`blurred ${activeTab === 'General' ? 'active' : ''}`}
+                  onClick={() => handleTabClick('General')}
+                >
+                  General
+                </button>
+                <button
+                  className={`blurred ${activeTab === 'Villa' ? 'active' : ''}`}
+                  onClick={() => handleTabClick('Villa')}
+                >
+                  Villa
+                </button>
+                <button
+                  className={`blurred ${activeTab === 'Apartment' ? 'active' : ''}`}
+                  onClick={() => handleTabClick('Apartment')}
+                >
+                  Apartment
+                </button>
+              </div>
+          
+              <div className="search-bar blurred">
+                <div className="filters">
+                  <input type="text" placeholder="Looking For?" />
+                  <select>
+                    <option className="search-option">Select Category</option>
+                    {categoryOptions[activeTab].map((option, index) => (
+                      <option key={index} className="search-option">{option}</option>
+                    ))}
+                  </select>
+                  <input type="text" placeholder="Location" />
+                  <button className="search-btn">Search</button>
+                </div>
+              </div>
+                  
+              <div className="tabs-buttons">
+                <button className="commercial">Commercial →</button>
+                <button className="villa">Villa →</button>
+                <button className="sales">Sales →</button>
+              </div>
             </div>
           </div>
         </div>

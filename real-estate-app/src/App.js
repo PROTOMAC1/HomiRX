@@ -13,7 +13,6 @@ import Testimonial from './components/Testimonial';
 import Appointment from './components/Appointment';
 import Blog from './components/Blog';
 import Footer from './components/Footer';
-import Todolist from './components/Todolist';
 
 function App() {
   return (
@@ -40,9 +39,6 @@ function App() {
       </section>
       <section className='Footer'>
         <Footer />
-      </section> */}
-      {/* <section className='testing'>
-        <Todolist />
       </section> */}
     </div>
   );

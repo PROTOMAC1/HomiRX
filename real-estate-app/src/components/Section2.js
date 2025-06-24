@@ -3,6 +3,25 @@ import './Section2.css';
 import { FaWarehouse, FaBuilding, FaHouseUser } from 'react-icons/fa';
 
 const Section2 = () => {
+
+  const Platform = [
+      {
+        iborder: <FaBuilding className='ic-icon'/>,
+        cname: 'Commercial',
+        csubname: '6 Properties'
+      },
+      {
+        iborder: <FaWarehouse className='ic-icon'/>,
+        cname: 'Warehouse',
+        csubname: '6 Properties'
+      },
+      {
+        iborder: <FaHouseUser className='ic-icon'/>,
+        cname: 'Villa',
+        csubname: '6 Properties'
+      }
+  ];
+
   return (
       <div className="section2">
         <div className="section2-heading">
@@ -11,31 +30,15 @@ const Section2 = () => {
         </div>
         <div className="section2-card">
           <div className="card-border">
-            <div className="platform">
-              <div className="icon-border"><i></i><FaBuilding className="ic-icon"/></div>
-              <div className="card-words">
-                <h4 className="card-name1">Commercial</h4>
-                <h4 className="card-subname">6 Properties</h4>
+            {Platform.map((cards, index) => (
+              <div key={index} className="platform">
+                <div className="icon-border">{cards.iborder}</div>
+                <div className="card-words">
+                  <h4 className="card-name1">{cards.cname}</h4>
+                  <h4 className="card-subname">{cards.csubname}</h4>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="card-border">
-            <div className="platform">
-              <div className="icon-border"><FaWarehouse className="ic-icon"/></div>
-              <div className="card-words">
-                <h4 className="card-name2">Warehouse</h4>
-                <h4 className="card-subname">6 Properties</h4>
-              </div>
-            </div>
-          </div>
-          <div className="card-border">
-            <div className="platform">
-              <div className="icon-border"><FaHouseUser className="ic-icon"/></div>
-              <div className="card-words">
-                <h4 className="card-name3">Villa</h4>
-                <h4 className="card-subname">6 Properties</h4>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

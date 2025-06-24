@@ -1,4 +1,5 @@
 body {
+  /* height: 1417vh; */
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #FFF8F2;
@@ -6,7 +7,7 @@ body {
 
 .Home {
   background-color: #16243E;
-  height: 240vh;
+  height: 290vh;
 }
 
 .About {
@@ -30,6 +31,9 @@ body {
   height: 90vh;
 }
 
-/* .testing {
-  height: 100vh;
-} */
+@media (max-width: 928px) {
+  body {
+    height: auto;
+    width: auto;
+  }
+}

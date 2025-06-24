@@ -1,6 +1,6 @@
 .section2 {
-    height: 100vh;
-    margin: 0 0;
+    height: 120vh;
+    margin-top: 9%;
     padding: 0 0;
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 5vw;
+    gap: 5%;
     justify-content: center;
     margin-top: 1%;
     width: 100%;
@@ -143,20 +143,36 @@
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .section2 .section2-heading h3 {
-        font-size: 4vw;
-        padding-left: 0;
+@media (max-width: 928px) {
+
+    .section2 {
+        margin-top: 10%;
+        width: 100%;
+        height: 100%;
     }
 
-    .section2 .section2-heading h1 {
-        font-size: 6vw;
-        padding-left: 0;
+    .section2-heading {
+        height: 8%;
+        width: 100%;
+    }
+
+    .section2-card {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 80%;
+        border: solid white;
     }
 
     .card-border {
-        width: 40vw;
-        height: 40vw;
+        margin-top: -100%;
+        border: solid white;
+        width: 25%;
+        height: 25%;
+    }
+
+    .platform {
+        width: 115%;
     }
 
     .ic-icon {

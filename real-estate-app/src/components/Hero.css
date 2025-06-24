@@ -18,11 +18,10 @@
 
 .hero-overlay {
   display: flex;
-  border: solid;
   background: rgba(10, 20, 50, 0.4); /* Optional dark overlay */
   border-radius: 25px;
   height: 100%;
-  width: 89.8%;
+  width: 89.95%;
   color: white;
   flex-direction: column;
   justify-content: center;
@@ -219,40 +218,40 @@
   }
 
   .hero .hero-overlay {
-    padding: 10px auto;
+    padding: 5% auto;
     align-items: start;
     height: 100%;
   }
 
   .hero .hero-overlay h1 {
-    font-size: 30px;
-    margin: -667px 0 20px;
+    font-size: 1.875rem;
+    margin: -66.7% 0 2%;
   }
 
   .hero .hero-overlay .tabs {
-    bottom: 674px;
-    left: 54%;
+    bottom: 69.3%;
+    left: 56.5%;
   }
 
   .hero .hero-overlay .search-bar {
     position: absolute;
-    bottom: 479px;
+    bottom: 49%;
     left: 43%;
     width: 59%;
   }
 
   .hero .hero-overlay .tabs-buttons {
-    bottom: 376px;
-    left: 40%; 
+    bottom: 39%;
+    left: 43%; 
   }
 
   .tabs-buttons button {
-    font-size: 15px;
+    font-size: 0.91rem;
   }
 
   .hero .hero-overlay .rotating-circle {
     top: 75%;
-    right: 40%;
+    left: 30%;
   }
 
   h1 br {
@@ -261,7 +260,7 @@
 }
 
 .card {
-  flex: 0 0 32%; /* 3 cards per row with some gap */
+  flex: 0 0 32%;
   margin: 1%;
 }
 

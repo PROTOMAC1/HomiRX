@@ -23,7 +23,7 @@ function App() {
         <Hero />
         <Section2 />
       </section>
-      <section className="About">
+      {/* <section className="About">
         <About />
         <About1 />
         <About2 />
@@ -40,7 +40,7 @@ function App() {
       </section>
       <section className='Footer'>
         <Footer />
-      </section>
+      </section> */}
       {/* <section className='testing'>
         <Todolist />
       </section> */}

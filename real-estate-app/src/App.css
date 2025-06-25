@@ -7,7 +7,7 @@ body {
 
 .Home {
   background-color: #16243E;
-  height: 290vh;
+  height: 320vh;
 }
 
 .About {
@@ -35,5 +35,9 @@ body {
   body {
     height: auto;
     width: auto;
+  }
+
+  .Home {
+    height: 345vh;
   }
 }

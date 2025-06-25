@@ -29,17 +29,17 @@ const Section2 = () => {
           <h1>Explore Apartment <span className="section2-heading-word">Types</span></h1>
         </div>
         <div className="section2-card">
-          <div className="card-border">
             {Platform.map((cards, index) => (
-              <div key={index} className="platform">
-                <div className="icon-border">{cards.iborder}</div>
-                <div className="card-words">
-                  <h4 className="card-name1">{cards.cname}</h4>
-                  <h4 className="card-subname">{cards.csubname}</h4>
-                </div>
+              <div key={index} className="card-border">
+                  <div className="platform">
+                    <div className="icon-border">{cards.iborder}</div>
+                    <div className="card-words">
+                      <h4 className="card-name">{cards.cname}</h4>
+                      <h4 className="card-subname">{cards.csubname}</h4>
+                    </div>
+                  </div>
               </div>
             ))}
-          </div>
         </div>
       </div>
   );

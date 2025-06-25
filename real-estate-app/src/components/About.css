@@ -12,8 +12,8 @@
 }
 
 .masked-image {
-  width: 512px;
-  height: 512px;
+  width: 45%;
+  height: 71%;
   position: absolute;
   
   /* Background image to display */
@@ -101,40 +101,40 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 9vw;
 }
 
 .heading1 {
   color: rgba(255, 136, 0, 0.89);
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   margin-bottom: -50px;
 }
 
 .heading2 {
-  font-size: 55px;
+  font-size: 4rem;
   margin-bottom: -1px;
 }
 
 .para {
-  font-size: 15px;
+  font-size: 1rem;
   color: gray;
   margin-bottom: -1px;
 }
 
 .table {
-  margin-top: 35px;
-  font-size: 20px;
+  margin-top: 2rem;
+  font-size: 1.4rem;
 }
 
 .bullet {
   color: rgba(255, 136, 0, 0.89);
-  height: 15px;
-  width: 50px;
+  height: 1.3rem;
+  width: 4rem;
 }
 
 .table li {
-  margin-bottom: 17px;
+  margin-bottom: 1.5vw;
 }
 
 .about-right-flex {
@@ -146,8 +146,8 @@
   border: 1px solid;
   border-radius: 50%;
   justify-content: center;
-  margin-top: 25px;
-  margin-left: 25px;
+  margin-top: 2vw;
+  margin-left: 2vw;
   width: 130px;
   height: 130px;
 }
@@ -175,8 +175,8 @@
   border: 1px solid;
   border-radius: 50%;
   justify-content: center;
-  margin-top: 25px;
-  margin-left: -15px;
+  margin-top: 2vw;
+  margin-left: -1.4vw;
   width: 130px;
   height: 130px;
 }
@@ -209,4 +209,61 @@
 .about-btn:hover {
   background-color: rgba(255, 136, 0, 0.89);
   color: white;
+}
+
+@media (max-width: 928px) {
+
+  .about {
+    display: flex;
+    height: 130vh;
+    flex-direction: column-reverse;
+    grid-template-columns: none;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  .grid-background {
+    height: 350px;
+  }
+
+  .left-content, .right-content {
+    height: 50%;
+  }
+
+  .right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .masked-image {
+    width: 360px;
+    height: 375px;
+  }
+
+  .about-right-circle1, .about-right-circle2 {
+    display: none;
+  }
+
+  .heading1 {
+    font-size: 3.5vw;
+    margin-bottom: -9vw;
+  }
+
+  .heading2 {
+    font-size: 7.5vw;
+    margin-bottom: -0.1vw;
+  }
+
+  .para {
+    font-size: 2vw;
+    margin: -0.1rem 4rem;
+  }
+
+  .table {
+    font-size: 3vw;
+  }
 }

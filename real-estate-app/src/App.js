@@ -22,12 +22,12 @@ function App() {
         <Hero />
         <Section2 />
       </section>
-      {/* <section className="About">
+      <section className="About">
         <About />
         <About1 />
         <About2 />
       </section>
-      <section className='Propertie'>
+      {/* <section className='Propertie'>
         <Propertie />
         <OurExpert />
         <Bookproperties />

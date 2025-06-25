@@ -1,5 +1,4 @@
 body {
-  /* height: 1417vh; */
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: #FFF8F2;
@@ -7,28 +6,23 @@ body {
 
 .Home {
   background-color: #16243E;
-  height: 320vh;
 }
 
 .About {
   background-color: #FFF8F2;
-  height: 340vh;
 }
 
 .Propertie {
   margin-top: 150px;
-  height: 397vh;
 }
 
 .Blog {
   background-color: #FFF8F2;
-  height: 330vh;
 }
 
 .Footer {
   background-color: #16243E;
   color: #FFF8F2;
-  height: 90vh;
 }
 
 @media (max-width: 928px) {
@@ -38,6 +32,7 @@ body {
   }
 
   .Home {
-    height: 345vh;
+    display: flex;
+    flex-direction: column;
   }
 }

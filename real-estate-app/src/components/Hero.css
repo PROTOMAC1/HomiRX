@@ -230,11 +230,11 @@
 @media (max-width: 928px) {
   
   .hero-container {
-    height: 165vh;
+    height: 155vh;
   }
 
   .hero {
-    height: 86%;
+    height: 90%;
   }
 
   .hero-overlay {
@@ -308,7 +308,7 @@
     justify-content: center;
     width: 30%;
     height: 30%;
-    top: 67%;
+    top: 75%;
   }
 
   h1 br {

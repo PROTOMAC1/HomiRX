@@ -295,3 +295,34 @@
 .last-about-card-right-btn {
     margin-left: 85%;
 }
+
+@media (max-width: 928px) {
+    
+    .last-about {
+        height: auto;
+        position: relative;
+    }
+
+    .last-about-top-content {
+        display: flex;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .last-about-top-left-subheading {
+        font-size: 1.5rem;
+    }
+
+    .last-about-top-left-heading {
+        font-size: 5.5vw;
+    }
+
+    .last-about-card-1, .last-about-card-3 {
+        display: none;
+    }
+
+    .last-about-card {
+        height: auto;
+        width: auto;
+    }
+}

@@ -72,3 +72,15 @@
     background-image: url(./Images/second-about-img);
     background-repeat: no-repeat;
 }
+
+@media (max-width: 928px) {
+
+    .second-about-subheading {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .second-about-heading {
+        font-size: 5.5vw;
+    }
+}

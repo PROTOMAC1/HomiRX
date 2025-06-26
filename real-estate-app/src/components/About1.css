@@ -63,6 +63,7 @@
 
 .second-about-right-contect {
     display: flex;
+    border-radius: 25px;
     justify-content: end;
     align-items: end;
     overflow: hidden;
@@ -77,12 +78,35 @@
 
 @media (max-width: 928px) {
 
+    .second-about-inner-page {
+        display: flex;
+        flex-direction: column;
+        height: 90%;
+        width: 99%;
+    }
+
+    .second-about-left-contect {
+        height: 40%;
+        width: 100%;
+    }
+
     .second-about-subheading {
         font-size: 1.5rem;
-        margin-bottom: 0;
+        margin-bottom: -4%;
     }
 
     .second-about-heading {
-        font-size: 5.5vw;
+        display: flex;
+        font-size: 4.5vw;
+    }
+
+    .second-about-right-contect {
+        height: 60%;
+        width: 100%;
+    }
+
+    .second-about-right-contect img {
+        width: 60%;
+        height: 100%;
     }
 }

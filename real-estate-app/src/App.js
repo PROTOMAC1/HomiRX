@@ -27,11 +27,11 @@ function App() {
         <About1 />
         <About2 />
       </section>
-      {/* <section className='Propertie'> */}
-        {/* <Propertie /> */}
+      <section className='Propertie'>
+        <Propertie />
         {/* <OurExpert /> */}
         {/* <Bookproperties /> */}
-      {/* </section> */}
+      </section>
       {/* <section className='Blog'> */}
         {/* <Testimonial /> */}
         {/* <Appointment /> */}

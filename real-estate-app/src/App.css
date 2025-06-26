@@ -35,4 +35,8 @@ body {
     display: flex;
     flex-direction: column;
   }
+
+  .Propertie {
+    margin-top: 0;
+  }
 }

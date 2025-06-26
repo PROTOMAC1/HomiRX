@@ -5,24 +5,26 @@
     position: absolute;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
 .last-about-top-content {
     display: flex;
-    justify-content: center;
-    gap: 490px;
+    justify-content: space-between;
+    width: 90%;
+    height: 25%;
 }
 
 .last-about-top-left-subheading {
-    font-size: 20px;
+    font-size: 2vw;
     font-weight: 500;
     margin-bottom: -50px;
     color: rgba(255, 136, 0, 0.89);
 }
 
 .last-about-top-left-heading {
-    font-size: 50px;
+    font-size: 4vw;
     font-weight: 500;
 }
 
@@ -56,15 +58,16 @@
 
 .last-about-card-content {
     width: 94%;
+    height: 75%;
     display: flex;
     position: relative;
     justify-content: center;
-    height: 90vh;
+    align-items: center;
     margin: 0 auto;
 }
 
 .last-about-card {
-    height: 90%;
+    height: 80%;
     width: 30%;
     border-radius: 25px;
     position: absolute;
@@ -264,21 +267,27 @@
     color: white;
 }
 
+.about2btns {
+    position: absolute;
+    display: flex;  
+    width: 81%;
+    z-index: 3;
+    justify-content: space-between;
+}
+
 .last-about-card-left-btn,
 .last-about-card-right-btn {
-    position: absolute;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     font-size: 35px;
     justify-content: center;
-    bottom: 40%;
+    /* bottom: 40%; */
     align-items: center;
     display: flex;
     border: none;
     color: #E3572B;
     cursor: pointer;
-    z-index: 3;
     transition: all 0.3s ease-in-out;
 }
 
@@ -288,13 +297,13 @@
     color: white;
 }
 
-.last-about-card-left-btn {
+/* .last-about-card-left-btn {
     margin-left: 12%;
 }
 
 .last-about-card-right-btn {
     margin-left: 85%;
-}
+} */
 
 @media (max-width: 928px) {
     
@@ -324,5 +333,13 @@
     .last-about-card {
         height: auto;
         width: auto;
+    }
+
+    .last-about-card-left-btn {
+        margin-left: 24%;
+    }
+
+    .last-about-card-right-btn {
+        margin-left: 71%;
     }
 }

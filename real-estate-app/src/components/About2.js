@@ -123,9 +123,11 @@ function About2() {
             </div>
           </div>
         ))}
+        <div className='about2btns'>
+          <button className='last-about-card-left-btn' onClick={handlePrevious}>&#11160;</button>
+          <button className='last-about-card-right-btn' onClick={handleNext}>&#11162;</button>
+        </div>
       </div>
-      <button className='last-about-card-left-btn' onClick={handlePrevious}>&#11160;</button>
-      <button className='last-about-card-right-btn' onClick={handleNext}>&#11162;</button>
     </div>
   )
 }

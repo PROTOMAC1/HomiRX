@@ -27,19 +27,19 @@ function App() {
         <About1 />
         <About2 />
       </section>
-      {/* <section className='Propertie'>
-        <Propertie />
-        <OurExpert />
-        <Bookproperties />
-      </section>
-      <section className='Blog'>
-        <Testimonial />
-        <Appointment />
-        <Blog />
-      </section>
-      <section className='Footer'>
-        <Footer />
-      </section> */}
+      {/* <section className='Propertie'> */}
+        {/* <Propertie /> */}
+        {/* <OurExpert /> */}
+        {/* <Bookproperties /> */}
+      {/* </section> */}
+      {/* <section className='Blog'> */}
+        {/* <Testimonial /> */}
+        {/* <Appointment /> */}
+        {/* <Blog /> */}
+      {/* </section> */}
+      {/* <section className='Footer'> */}
+        {/* <Footer /> */}
+      {/* </section> */}
     </div>
   );
 }

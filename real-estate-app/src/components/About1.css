@@ -7,21 +7,16 @@
 }
 
 .second-about-inner-page {
+    display: flex;
     background: #16243E;
     height: 75vh;
     width: 98%;
     border-radius: 25px;
 }
 
-.second-about-contect {
-    display: grid;
-    height: 100%;
-    border-radius: 25px;
-    grid-template-columns: 60% 40%;
-}
-
 .second-about-left-contect {
     display: flex;
+    width: 60%;
     flex-direction: column;
     justify-content: center;
     height: 100%;
@@ -67,10 +62,17 @@
 }
 
 .second-about-right-contect {
-    border-radius: 25px;
-    margin-top: 30px;
-    background-image: url(./Images/second-about-img);
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    overflow: hidden;
+    width: 40%;
+    height: 100%;
+}
+
+.second-about-right-contect img {
+    max-width: 100%;
+    max-height: 90%;
 }
 
 @media (max-width: 928px) {

@@ -148,3 +148,22 @@
 .properties-1-gallery-container:hover .property-overlay {
     opacity: 1;
 }
+
+@media (max-width: 928px) {
+
+    .properties-1-headings {
+        height: 20%;
+    }
+
+    .properties-1-gallery {
+        max-width: 98%;
+    }
+
+    .properties-1-h1 {
+        font-size: 1rem;
+    }
+
+    .properties-1-h2 {
+        font-size: 1.2rem;
+    }
+}

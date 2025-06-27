@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaPhone, FaEnvelope, FaFacebookF, FaTwitter, FaInstagram,
   FaPinterestP, FaHouseUser, FaUserCircle, FaShoppingCart,
@@ -103,14 +104,18 @@ const Navbar = () => {
           className={`menu ${menuActive ? 'active' : ''}`}
           onClick={handleMenuClick}
         >
-          <li>Home</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
           <li className="dropdown" onClick={() => toggleDropdown(1)}>
             Properties 
             <span className="arrow">
               {activeDropdown === 1 ? <FaChevronUp /> : <FaChevronDown />}
             </span>
             <ul className={`dropdown-menu ${activeDropdown === 1 ? 'active' : ''}`}>
-              <li>Properties</li>
+              <li>
+                <Link to="/properties">Properties</Link>
+              </li>
               <li>Property Detail</li>
               <li>All Category</li>
               <li>All Locations</li>

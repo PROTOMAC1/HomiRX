@@ -305,16 +305,40 @@
 
     .last-about-top-content {
         display: flex;
+        justify-content: center;
+        align-items: center;
         justify-content: space-around;
         gap: 0;
     }
-
+    
+    .last-about-top-right {
+        margin-top: 0;
+        width: 45%;
+        justify-content: space-around;
+        gap: 0;
+        height: 20%;
+    }
+    
     .last-about-top-left-subheading {
-        font-size: 1.5rem;
+        height: 50%;
+        font-size: 2.5vw;
+    }
+    
+    .last-about-top-left-heading {
+        height: 50%;
+        font-size: 5.5vw;
     }
 
-    .last-about-top-left-heading {
-        font-size: 5.5vw;
+    .last-about-btn {
+        font-size: 2vw;
+    }
+
+    .last-about-top-left {
+        width: 65%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
     }
 
     .last-about-card-1, .last-about-card-3 {

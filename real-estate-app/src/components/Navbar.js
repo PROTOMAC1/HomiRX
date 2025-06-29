@@ -116,7 +116,9 @@ const Navbar = () => {
               <li>
                 <Link to="/properties">Properties</Link>
               </li>
-              <li>Property Detail</li>
+              <li>
+                <Link to="/propertiesdetails">Property Detail</Link>
+              </li>
               <li>All Category</li>
               <li>All Locations</li>
             </ul>

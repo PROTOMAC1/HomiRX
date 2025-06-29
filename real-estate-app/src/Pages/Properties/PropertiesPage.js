@@ -9,7 +9,9 @@ export default function PropertiesPage() {
     <div>
         <Navbar />
         <About />
-        <Footer />
+        <section className='propertiesfooter'>
+          <Footer />
+        </section>
     </div>
   )
 }

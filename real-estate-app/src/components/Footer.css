@@ -2,7 +2,7 @@
     margin: 0 auto;
     padding: 0;
     width: 85%;
-    height: 99%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }

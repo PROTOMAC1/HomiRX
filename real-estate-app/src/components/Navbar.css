@@ -306,3 +306,23 @@ ul {
     display: block;
   }
 }
+
+/* Remove underline and blue color from all nav links */
+.navbar .main-nav a,
+.navbar .main-nav a:visited,
+.navbar .main-nav a:active,
+.navbar .main-nav a:focus {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Optionally, for react-router-dom <Link> */
+.navbar .main-nav .menu a,
+.navbar .main-nav .menu a:visited,
+.navbar .main-nav .menu a:active,
+.navbar .main-nav .menu a:focus {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}

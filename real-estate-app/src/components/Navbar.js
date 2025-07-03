@@ -122,7 +122,6 @@ const Navbar = () => {
               <li>
                 <Link to="/allcategorys">All Category</Link>
               </li>
-              <li>All Locations</li>
             </ul>
           </li>
           <li className="dropdown" onClick={() => toggleDropdown(2)}>
@@ -131,9 +130,15 @@ const Navbar = () => {
               {activeDropdown === 2 ? <FaChevronUp /> : <FaChevronDown />}
             </span>
             <ul className={`dropdown-menu ${activeDropdown === 2 ? 'active' : ''}`}>
-              <li>Members</li>
-              <li>Agents Pages</li>
-              <li>Agent Profile</li>
+              <li>
+                <Link to="/members">Members</Link>
+              </li>
+              <li>
+                <Link to="/agentspages">Agents Pages</Link>
+              </li>
+              <li>
+                <Link to="/agentsprofile">Agent Profile</Link>
+              </li>
             </ul>
           </li>
           <li className="dropdown" onClick={() => toggleDropdown(3)}>

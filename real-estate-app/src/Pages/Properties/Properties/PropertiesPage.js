@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import Navbar from '../../components/Navbar'
-import About from '../../components/About'
-import Footer from '../../components/Footer'
+import Navbar from '../../../components/Navbar'
+import About from '../../../components/About'
+import Footer from '../../../components/Footer'
 import './PropertiesPage.css'
-import ApartmentsData from '../../components/Datas/ApartmentsData'
-import Gdata from '../../components/Datas/GeneralData'
-import Vdata from '../../components/Datas/VillaData'
+import ApartmentsData from '../../../components/Datas/ApartmentsData'
+import Gdata from '../../../components/Datas/GeneralData'
+import Vdata from '../../../components/Datas/VillaData'
+import Hiddenimg from '../../../components/Images/Properties1.jpg'
 
 export default function PropertiesPage() {
   const [selectedCategory, setSelectedCategory] = useState('Apartment')
@@ -13,7 +14,13 @@ export default function PropertiesPage() {
   return (
     <div className='propertiespagebody'>
         <Navbar />
-        <div className='propertiespagehidden'></div>
+        <div className='propertiespagehidden'>
+          <img src={Hiddenimg} alt='hiddingimg' />
+          <div className='overflow-hidden-img'>
+            <h1>Future Dream Home</h1>
+            <p>Providing the best Real Estate services</p>
+          </div>
+        </div>
         <div className='propertiespagemaincontent'>
             <div className='propertiespagebox'>
               <div className='propertiespageipperbox'>

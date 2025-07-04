@@ -2,20 +2,14 @@ import React from 'react'
 import './PropertiesDetailsPage.css'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
-import Hiddenimg from '../../../components/Images/Properties5.jpg'
+import Hiddenpage from '../../Hiddenpage'
 import { FaHeart, FaLocationDot, FaShareFromSquare } from 'react-icons/fa6'
 
 export default function PropertiesDetailsPage() {
   return (
     <div>
         <Navbar />
-        <div className='propertiespagehidden'>
-          <img src={Hiddenimg} alt='hiddingimg' />
-          <div className='overflow-hidden-img'>
-            <h1>Future Dream Home</h1>
-            <p>Providing the best Real Estate services</p>
-          </div>
-        </div>
+        <Hiddenpage />
         <section className='propertiesdetailsmain'>
             <div className='propertiesdetailsheadings'>
                 <div>

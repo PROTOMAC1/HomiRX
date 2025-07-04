@@ -9,7 +9,7 @@ import General1 from '../../../components/Images/AllCategorys-Images/General1.jp
 import General2 from '../../../components/Images/AllCategorys-Images/General2.jpg'
 import General3 from '../../../components/Images/AllCategorys-Images/General3.jpg'
 import General4 from '../../../components/Images/AllCategorys-Images/General4.jpg'
-import Hiddenimg from '../../../components/Images/Properties4.jpg'
+import Hiddenpage from '../../Hiddenpage'
 
 export default function AllCategorys() {
     const Allcategory = [
@@ -27,13 +27,7 @@ export default function AllCategorys() {
     return (
         <div className='allcategorybody'>
             <Navbar />
-            <div className='propertiespagehidden'>
-              <img src={Hiddenimg} alt='hiddingimg' />
-              <div className='overflow-hidden-img'>
-                <h1>Future Dream Home</h1>
-                <p>Providing the best Real Estate services</p>
-              </div>
-            </div>
+            <Hiddenpage />
             <section className='allcategorymain'>
                 <div className='allcategorymainsubname'>
                     <p>Facilities</p>

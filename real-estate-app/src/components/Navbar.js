@@ -149,7 +149,9 @@ const Navbar = () => {
             <ul className={`dropdown-menu ${activeDropdown === 3 ? 'active' : ''}`}>
               <li>Shop Page</li>
               <li>Events Page</li>
-              <li>Testimonial</li>
+              <li>
+                <Link to="/pagepage">Testimonial</Link>
+              </li>
               <li>Our Partner</li>
             </ul>
           </li>

@@ -1,22 +1,39 @@
 import React from 'react'
 import './AgentsProfile.css'
 import Navbar from '../../../components/Navbar'
-import Hiddenimg from '../../../components/Images/Properties4.jpg'
-import About from '../../../components/About'
 import Footer from '../../../components/Footer'
+import Hiddenpage from '../../Hiddenpage'
+import About2 from '../../../components/About2'
+import Profile from '../../../components/Images/profile.jpg'
 
 export default function AgentsProfile() {
   return (
     <div>
       <Navbar />
-      <div className='propertiespagehidden'>
-        <img src={Hiddenimg} alt='hiddingimg' />
-        <div className='overflow-hidden-img'>
-          <h1>Future Dream Home</h1>
-          <p>Providing the best Real Estate services</p>
+      <Hiddenpage />
+      <section className='agentsprofilemain'>
+        <div className='agentsprofilecontent'>
+          <div>
+            <div>
+              <div className='agentsprofileimg'>
+                <img src={Profile} alt='profile' />
+              </div>
+              <div>
+                <p>Admin</p>
+                <p>Member since 8 months ago</p>
+              </div>
+            </div>
+            <div></div>
+          </div>
+          <div>
+            <div></div>
+            <div></div>
+          </div>
         </div>
-      </div>
-      <About />
+      </section>
+      <section className='agentsprofileabout'>
+        <About2 />
+      </section>
       <section className='agentsprofilefooter'>
         <Footer />
       </section>

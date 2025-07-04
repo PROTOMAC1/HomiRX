@@ -7,10 +7,13 @@ import AllCategorys from './Pages/Properties/AllCategorys/AllCategorys';
 import Members from './Pages/Agents/Members/Members';
 import AgentsPages from './Pages/Agents/Agents Pages/AgentsPages';
 import AgentsProfile from './Pages/Agents/Agents Profile/AgentsProfile';
+import ScrollToTop from './ScrollToTop';
+import Pagepage from './Pages/Page/Pagepage';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/properties' element={<Propertie />} />
@@ -19,6 +22,7 @@ function App() {
         <Route path='/members' element={<Members />} />
         <Route path='/agentspages' element={<AgentsPages />} />
         <Route path='/agentsprofile' element={<AgentsProfile />} />
+        <Route path='/pagepage' element={<Pagepage />} />
       </Routes>
     </Router>
   );

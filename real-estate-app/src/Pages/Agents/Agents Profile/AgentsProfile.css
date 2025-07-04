@@ -144,6 +144,24 @@
 }
 
 .agentsprofilefooter {
+    margin-top: 70%;
     background-color: #16243E;
     color: #FFF8F2;
+}
+
+.agentsprofilemain {
+    width: 100%;
+}
+
+.agentsprofilecontent {
+    width: 100%;
+}
+
+.agentsprofileimg {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;    
+    overflow: hidden;
+    border-radius: 50%;
 }

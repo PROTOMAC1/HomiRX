@@ -1,11 +1,10 @@
 import React from 'react'
-import Hiddenimg from '../../components/Images/Properties4.jpg'
-import Navbar from '../../components/Navbar'
-import Hiddenpage from '../Hiddenpage'
+import Navbar from '../../../components/Navbar'
+import Hiddenpage from '../../Hiddenpage'
 import Prof from './prof.jpg'
 import { FaStar } from "react-icons/fa"
 import './Pagepage.css'
-import Footer from '../../components/Footer'
+import Footer from '../../../components/Footer'
 
 export default function Pagepage() {
   return (

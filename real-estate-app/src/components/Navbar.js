@@ -147,12 +147,18 @@ const Navbar = () => {
               {activeDropdown === 3 ? <FaChevronUp /> : <FaChevronDown />}
             </span>
             <ul className={`dropdown-menu ${activeDropdown === 3 ? 'active' : ''}`}>
-              <li>Shop Page</li>
-              <li>Events Page</li>
+              <li>
+                <Link to='/shoppage'>Shop Page</Link>
+              </li>
+              <li>
+                <Link to='/eventpage'>Events Page</Link>
+              </li>
               <li>
                 <Link to="/pagepage">Testimonial</Link>
               </li>
-              <li>Our Partner</li>
+              <li>
+                <Link to='/ourpartner'>Our Partner</Link>
+              </li>
             </ul>
           </li>
           <li>Contact</li>

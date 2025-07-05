@@ -8,7 +8,10 @@ import Members from './Pages/Agents/Members/Members';
 import AgentsPages from './Pages/Agents/Agents Pages/AgentsPages';
 import AgentsProfile from './Pages/Agents/Agents Profile/AgentsProfile';
 import ScrollToTop from './ScrollToTop';
-import Pagepage from './Pages/Page/Pagepage';
+import Pagepage from './Pages/Page/Testimonial/Pagepage';
+import EventPage from './Pages/Page/EventPage/EventPage';
+import OurPartner from './Pages/Page/OurPartner/OurPartner';
+import ShopPage from './Pages/Page/ShopPage/ShopPage';
 
 function App() {
   return (
@@ -23,6 +26,9 @@ function App() {
         <Route path='/agentspages' element={<AgentsPages />} />
         <Route path='/agentsprofile' element={<AgentsProfile />} />
         <Route path='/pagepage' element={<Pagepage />} />
+        <Route path='/eventpage' element={<EventPage />} />
+        <Route path='/ourpartner' element={<OurPartner />} />
+        <Route path='/shoppage' element={<ShopPage />} />
       </Routes>
     </Router>
   );

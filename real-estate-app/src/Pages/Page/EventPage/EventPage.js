@@ -3,68 +3,81 @@ import './EventPage.css'
 import Navbar from '../../../components/Navbar'
 import Hiddenimg from '../../Hiddenpage'
 import Footer from '../../../components/Footer'
+import img1 from './photo1.jpg'
+import img2 from './photo2.jpg'
+import img3 from './photo3.jpg'
+import img4 from './photo4.jpg'
+import img5 from './photo5.jpg'
+import img6 from './photo1.jpg'
 
 export default function EventPage() {
+  const eventCard = [
+    {
+      img: img1,
+      alt: 'Architecture Club meetup',
+      dateBadge1: '11',
+      dateBadge2: 'DEC',
+      meta: '⏰ December 11 @ 8:00 am',
+      title: 'Architecture Club meetup',
+    },
+    {
+      img: img2,
+      alt: 'Architecture Week',
+      dateBadge1: '11',
+      dateBadge2: 'DEC',
+      meta: '⏰ December 11 @ 8:00 am',
+      title: 'Architecture Week',
+    },
+    {
+      img: img3,
+      alt: 'Festival of Architecture and Interior',
+      dateBadge1: '11',
+      dateBadge2: 'DEC',
+      meta: '⏰ December 11 @ 8:00 am',
+      title: 'Festival of Architecture and Interior',
+    },
+    {
+      img: img4,
+      alt: 'Designing Club Culture',
+      dateBadge1: '11',
+      dateBadge2: 'DEC',
+      meta: '⏰ December 11 @ 8:00 am',
+      title: 'Designing Club Culture',
+    },
+    {
+      img: img5,
+      alt: 'Nairobi Design Week',
+      dateBadge1: '11',
+      dateBadge2: 'DEC',
+      meta: '⏰ December 11 @ 8:00 am',
+      title: 'Nairobi Design Week',
+    },
+    {
+      img: img6,
+      alt: 'International Architecture 2025',
+      dateBadge1: '11',
+      dateBadge2: 'DEC',
+      meta: '⏰ December 11 @ 8:00 am',
+      title: 'International Architecture 2025',
+    },
+  ]
+  
   return (
     <>
         <Navbar />
         <Hiddenimg />
         <section className='eventpagemain'>
           <div className='event-grid'>
-            {/* Event Card 1 */}
-            <div className='event-card'>
-              <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80' alt='Architecture Club meetup' />
-              <div className='event-date-badge'><span>11</span><br/>DEC</div>
-              <div className='event-card-info'>
-                <div className='event-card-meta'>⏰ December 11 @ 8:00 am</div>
-                <div className='event-card-title'>Architecture Club meetup</div>
+            {eventCard.map((items, i) => (
+              <div className='event-card' key={i}>
+                <img src={items.img} alt={`images-${i+1}`} />
+                <div className='event-date-badge'><span>{items.dateBadge1}</span><br/>{items.dateBadge2}</div>
+                <div className='event-card-info'>
+                  <div className='event-card-meta'>{items.meta}</div>
+                  <div className='event-card-title'>{items.title}</div>
+                </div>
               </div>
-            </div>
-            {/* Event Card 2 */}
-            <div className='event-card'>
-              <img src='https://images.unsplash.com/photo-1460518451285-97b6aa326961?auto=format&fit=crop&w=400&q=80' alt='Architecture Week' />
-              <div className='event-date-badge'><span>11</span><br/>DEC</div>
-              <div className='event-card-info'>
-                <div className='event-card-meta'>⏰ December 11 @ 8:00 am</div>
-                <div className='event-card-title'>Architecture Week</div>
-              </div>
-            </div>
-            {/* Event Card 3 */}
-            <div className='event-card'>
-              <img src='https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80' alt='Festival of Architecture and Interior' />
-              <div className='event-date-badge'><span>11</span><br/>DEC</div>
-              <div className='event-card-info'>
-                <div className='event-card-meta'>⏰ December 11 @ 8:00 am</div>
-                <div className='event-card-title'>Festival of Architecture and Interior</div>
-              </div>
-            </div>
-            {/* Event Card 4 */}
-            <div className='event-card'>
-              <img src='https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=400&q=80' alt='Designing Club Culture' />
-              <div className='event-date-badge'><span>11</span><br/>DEC</div>
-              <div className='event-card-info'>
-                <div className='event-card-meta'>⏰ December 11 @ 8:00 am</div>
-                <div className='event-card-title'>Designing Club Culture</div>
-              </div>
-            </div>
-            {/* Event Card 5 */}
-            <div className='event-card'>
-              <img src='https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80' alt='Nairobi Design Week' />
-              <div className='event-date-badge'><span>11</span><br/>DEC</div>
-              <div className='event-card-info'>
-                <div className='event-card-meta'>⏰ December 11 @ 8:00 am</div>
-                <div className='event-card-title'>Nairobi Design Week</div>
-              </div>
-            </div>
-            {/* Event Card 6 */}
-            <div className='event-card'>
-              <img src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80' alt='International Architecture 2025' />
-              <div className='event-date-badge'><span>11</span><br/>DEC</div>
-              <div className='event-card-info'>
-                <div className='event-card-meta'>⏰ December 11 @ 8:00 am</div>
-                <div className='event-card-title'>International Architecture 2025</div>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
         <section className='eventpagefooter'>

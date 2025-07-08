@@ -161,7 +161,9 @@ const Navbar = () => {
               </li>
             </ul>
           </li>
-          <li>Contact</li>
+          <li>
+            <Link to='/contect'>Contact</Link>
+          </li>
         </ul>
         <div className={`right-btn ${menuActive ? 'active' : ''}`}>
           <button className="cart-btn"><FaShoppingCart /></button>

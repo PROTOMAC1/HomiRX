@@ -8,6 +8,18 @@ import Team4 from './Images/Team-Images/team-4.jpg'
 
 const OurExpert = () => {
 
+  const scrollRef = React.useRef(null);
+
+  const scrollAmount = 430; // 410 card + 20 gap
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  };
+
   const TeamsData = [
     {
       img: Team1,
@@ -46,7 +58,7 @@ const OurExpert = () => {
             <button className='teams-headings-main-btn'><FaHouseUser /> View All Members</button>
           </div>
         </div>
-        <div className='teams-cards-view'>
+        <div className='teams-cards-view' ref={scrollRef}>
           {TeamsData.map((Teams, index) =>(
             <div key={index} className='Teams-crads'>
               <div className='teams-cards-img'>
@@ -60,8 +72,8 @@ const OurExpert = () => {
           ))}
         </div>
         <div className='teams-btn'>
-          <div className='teams-btn-left'>&#11160;</div>
-          <div className='teams-btn-right'>&#11162;</div>
+          <div className='teams-btn-left' onClick={scrollLeft}>&#11160;</div>
+          <div className='teams-btn-right' onClick={scrollRight}>&#11162;</div>
         </div>
       </div>
     </div>

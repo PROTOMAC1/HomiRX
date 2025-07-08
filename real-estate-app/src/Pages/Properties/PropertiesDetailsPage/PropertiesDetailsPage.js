@@ -56,7 +56,7 @@ export default function PropertiesDetailsPage() {
                   </div>
                 </div>
                 {/* Description */}
-                <div className='property-description'>
+                <div className='property-description-'>
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus.</p>
                   <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.</p>
                 </div>

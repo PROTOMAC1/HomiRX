@@ -1,5 +1,6 @@
 .second-about {
-    height: 100vh;
+    padding-top: 5%;
+    padding-bottom: 10%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -9,7 +10,7 @@
 .second-about-inner-page {
     display: flex;
     background: #16243E;
-    height: 75vh;
+    height: auto;
     width: 98%;
     border-radius: 25px;
 }
@@ -68,7 +69,7 @@
     align-items: end;
     overflow: hidden;
     width: 40%;
-    height: 100%;
+    height: auto;
 }
 
 .second-about-right-contect img {

@@ -1,19 +1,21 @@
 .last-about {
-    height: 140vh;
+    height: auto;
     width: 100%;
     display: flex;
-    position: absolute;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .last-about-top-content {
     display: flex;
     justify-content: space-between;
     width: 90%;
-    height: 25%;
+    height: auto;
 }
 
 .last-about-top-left-subheading {
@@ -58,7 +60,10 @@
 
 .last-about-card-content {
     width: 94%;
-    height: 75%;
+    margin-bottom: 0;
+    padding-bottom: 5%;
+    min-height: 0;
+    height: auto;
     display: flex;
     position: relative;
     justify-content: center;
@@ -67,34 +72,27 @@
 }
 
 .last-about-card {
-    height: 80%;
+    min-height: 300px;
+    height: auto;
     width: 30%;
+    padding-bottom: 2%;
     border-radius: 25px;
-    position: absolute;
+    position: relative;
     cursor: pointer;
     background-color: rgb(228, 222, 222);
     transition: all 0.3s ease-in-out;
-    opacity: 0;
-    transform: translateX(-50%);
-}
-
-.last-about-card-1 {
-    left: 25%;
-    opacity: 0.4;
-    transform: translateX(-50%) scale(0.9);
+    opacity: 1;
+    transform: none;
+    margin: 0 1%;
     z-index: 1;
 }
 
-.last-about-card-2 {
-    left: 50%;
-    opacity: 1;
-    z-index: 2;
-}
-
+.last-about-card-1,
+.last-about-card-2,
 .last-about-card-3 {
-    left: 75%;
-    opacity: 0.4;
-    transform: translateX(-50%) scale(0.9);
+    left: unset;
+    opacity: 1;
+    transform: none;
     z-index: 1;
 }
 
@@ -270,7 +268,7 @@
 .about2btns {
     position: absolute;
     display: flex;  
-    width: 81%;
+    width: 100%;
     z-index: 3;
     justify-content: space-between;
 }
@@ -282,7 +280,6 @@
     border-radius: 50%;
     font-size: 35px;
     justify-content: center;
-    /* bottom: 40%; */
     align-items: center;
     display: flex;
     border: none;

@@ -1,6 +1,10 @@
 .properties-1 {
     background-color: #16243E;
-    height: 120vh;
+    min-height: 50vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .properties-1-headings {

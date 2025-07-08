@@ -1,8 +1,12 @@
 .book-body {
-    position: absolute;
     width: 100%;
-    height: 150vh;
+    min-height: 50vh;
+    height: auto;
     background: #16243E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 0;
 }
 
 .book-content {

@@ -12,6 +12,7 @@ import Pagepage from './Pages/Page/Testimonial/Pagepage';
 import EventPage from './Pages/Page/EventPage/EventPage';
 import OurPartner from './Pages/Page/OurPartner/OurPartner';
 import ShopPage from './Pages/Page/ShopPage/ShopPage';
+import Contect from './Pages/Contect/Contect';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/eventpage' element={<EventPage />} />
         <Route path='/ourpartner' element={<OurPartner />} />
         <Route path='/shoppage' element={<ShopPage />} />
+        <Route path='/contect' element={<Contect />} />
       </Routes>
     </Router>
   );

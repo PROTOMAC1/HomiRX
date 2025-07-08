@@ -1,73 +1,83 @@
-import React from 'react'
-import './ShopPage.css'
-import Footer from '../../../components/Footer'
-import Navbar from '../../../components/Navbar'
-import Hiddenpage from '../../Hiddenpage'
+import React from "react";
+import "./ShopPage.css";
+import Footer from "../../../components/Footer";
+import Navbar from "../../../components/Navbar";
+import Hiddenpage from "../../Hiddenpage";
+import shopImg1 from "./product-1.jpg";
+import shopImg2 from "./product-2.jpg";
+import shopImg3 from "./product-3.jpg";
+import shopImg4 from "./product-4.jpg";
+import shopImg5 from "./product-5.jpg";
+import shopImg6 from "./product-6.jpg";
 
 export default function ShopPage() {
+  const shopCard = [
+    {
+      img: shopImg1,
+      meta: "DESIGN, FILM & VIDEOS",
+      title: "Block Ruffle Hem Plaid Print Color",
+      price: "$800.00",
+    },
+    {
+      img: shopImg2,
+      meta: "DESIGN, LUXURY",
+      title: "One Shoulder Cutout High Slit Maxi",
+      price: "$800.00",
+    },
+    {
+      img: shopImg3,
+      meta: "LUXURY, TECHNOLOGY",
+      title: "Solid Color Sleeveless Rushed Body",
+      price: "$1000.00",
+    },
+    {
+      img: shopImg4,
+      meta: "LUXURY, TECHNOLOGY",
+      title: "Spaghetti Strap High Open Back Maxi",
+      price: "$900.00",
+    },
+    {
+      img: shopImg5,
+      meta: "DESIGN, LUXURY",
+      title: "Thick Strap Square Neck Top Hem",
+      price: "$800.00",
+    },
+    {
+      img: shopImg6,
+      meta: "DESIGN, FILM & VIDEOS",
+      title: "Tropical Print Front Mini Night Dress",
+      price: "$800.00",
+    },
+  ];
   return (
     <div>
-        <Navbar />
-        <Hiddenpage />
-        <section className='shoppagemain'>
-          <div className='shop-header-row'>
-            <div className='shop-results'>Showing all 6 results</div>
-            <div className='shop-sort'>
-              <select>
-                <option>Default sorting</option>
-                <option>Price: Low to High</option>
-                <option>Price: High to Low</option>
-              </select>
-            </div>
+      <Navbar />
+      <Hiddenpage />
+      <section className="shoppagemain">
+        <div className="shop-header-row">
+          <div className="shop-results">Showing all 6 results</div>
+          <div className="shop-sort">
+            <select>
+              <option>Default sorting</option>
+              <option>Price: Low to High</option>
+              <option>Price: High to Low</option>
+            </select>
           </div>
-          <div className='shop-grid'>
-            {/* Product Card 1 */}
-            <div className='shop-card'>
-              <img src='https://i.imgur.com/1.png' alt='Block Ruffle Hem Plaid Print Color' />
-              <div className='shop-card-meta'>DESIGN, FILM & VIDEOS</div>
-              <div className='shop-card-title'>Block Ruffle Hem Plaid Print Color</div>
-              <div className='shop-card-price'>$800.00</div>
+        </div>
+        <div className="shop-grid">
+          {shopCard.map((items, i) => (
+            <div key={i} className="shop-card">
+              <img src={items.img} alt={`images-${i + 1}`} />
+              <div className="shop-card-meta">{items.meta}</div>
+              <div className="shop-card-title">{items.title}</div>
+              <div className="shop-card-price">{items.price}</div>
             </div>
-            {/* Product Card 2 */}
-            <div className='shop-card'>
-              <img src='https://i.imgur.com/2.png' alt='One Shoulder Cutout High Slit Maxi' />
-              <div className='shop-card-meta'>DESIGN, LUXURY</div>
-              <div className='shop-card-title'>One Shoulder Cutout High Slit Maxi</div>
-              <div className='shop-card-price'>$800.00</div>
-            </div>
-            {/* Product Card 3 */}
-            <div className='shop-card'>
-              <img src='https://i.imgur.com/3.png' alt='Solid Color Sleeveless Rushed Body' />
-              <div className='shop-card-meta'>LUXURY, TECHNOLOGY</div>
-              <div className='shop-card-title'>Solid Color Sleeveless Rushed Body</div>
-              <div className='shop-card-price'>$800.00</div>
-            </div>
-            {/* Product Card 4 */}
-            <div className='shop-card'>
-              <img src='https://i.imgur.com/4.png' alt='Spaghetti Strap High Open Back Maxi' />
-              <div className='shop-card-meta'>LUXURY, TECHNOLOGY</div>
-              <div className='shop-card-title'>Spaghetti Strap High Open Back Maxi</div>
-              <div className='shop-card-price'>$800.00</div>
-            </div>
-            {/* Product Card 5 */}
-            <div className='shop-card'>
-              <img src='https://i.imgur.com/5.png' alt='Thick Strap Square Neck Top Hem' />
-              <div className='shop-card-meta'>DESIGN, TECHNOLOGY</div>
-              <div className='shop-card-title'>Thick Strap Square Neck Top Hem</div>
-              <div className='shop-card-price'>$800.00</div>
-            </div>
-            {/* Product Card 6 */}
-            <div className='shop-card'>
-              <img src='https://i.imgur.com/6.png' alt='Tropical Print Front Mini Night Dress' />
-              <div className='shop-card-meta'>DESIGN, FILM & VIDEOS</div>
-              <div className='shop-card-title'>Tropical Print Front Mini Night Dress</div>
-              <div className='shop-card-price'>$800.00</div>
-            </div>
-          </div>
-        </section>
-        <section className='shoppagefooter'>
-            <Footer />
-        </section>
+          ))}
+        </div>
+      </section>
+      <section className="shoppagefooter">
+        <Footer />
+      </section>
     </div>
-  )
+  );
 }

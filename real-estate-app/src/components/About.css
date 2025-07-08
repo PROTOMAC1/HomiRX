@@ -1,10 +1,12 @@
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  min-height: 50vh;
+  height: auto;
+  align-items: center;
+  padding-bottom: 5%;
 }
 
-/* for left content */
 .left-content {
   display: flex;
   justify-content: center;
@@ -15,16 +17,12 @@
   width: 45%;
   height: 71%;
   position: absolute;
-  
-  /* Background image to display */
   background-image: url('./Images/About_image.png');
   background-size: cover;
   background-position: center;
-  transition: background-size 2.5s ease-in-out;  /* Smooth transition */
-  
-  /* Mask image (orange house shape) */
+  transition: background-size 2.5s ease-in-out;
   mask-image: url('./Images/polygon-image.png');
-  -webkit-mask-image: url('./Images/polygon-image.png'); /* for Safari */
+  -webkit-mask-image: url('./Images/polygon-image.png');
   mask-size: contain;
   -webkit-mask-size: contain;
   mask-repeat: no-repeat;
@@ -46,7 +44,6 @@
   margin-top: 63px;
 }
 
-/* Rotating Circle */
 .circle {
   position: relative;
   bottom: 20%;
@@ -96,7 +93,6 @@
   z-index: 2;
 }
 
-/* for right contect */
 .right-content {
   position: relative;
   display: flex;

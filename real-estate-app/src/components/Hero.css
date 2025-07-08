@@ -1,5 +1,10 @@
 .hero-container {
-  height: 190vh;
+  min-height: 60vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #16243E;
   width: 100%;
 }
 
@@ -16,14 +21,14 @@
 
 .hero-overlay {
   display: flex;
-  background: rgba(10, 20, 50, 0.4); /* Optional dark overlay */
+  background: rgba(10, 20, 50, 0.4);
   border-radius: 25px;
   height: 100%;
   width: 89.95%;
   color: white;
   flex-direction: column;
   justify-content: center;
-  padding: 0 5%;
+  padding: 5% 5%;
   z-index: 1;
 }
 
@@ -58,9 +63,9 @@
   justify-content: center;
   height: 100%;
   width: 30%;
+  margin-top: 15%;
 }
 
-/* Rotating Circle */
 .rotating-circle {
   position: absolute;
   width: 200px;
@@ -143,7 +148,6 @@
   color: white;
 }
 
-/* Search Section */
 .search-bar {
   width: 95%;
   height: 15%;
@@ -157,7 +161,6 @@
   color: black;
 }
 
-/* Glassmorphism effect */
 .blurred {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -225,12 +228,10 @@
     border: 3px solid white;
 }
 
-/*Tablets + mobile */
-
 @media (max-width: 928px) {
   
   .hero-container {
-    height: 155vh;
+    height: auto;
   }
 
   .hero {

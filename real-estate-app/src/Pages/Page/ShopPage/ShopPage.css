@@ -8,7 +8,7 @@
 .shoppagemain {
   width: 95%;
   margin: 2em auto 0 auto;
-  min-height: 70vh;
+  padding: 5% 0 5% 0;
 }
 .shop-header-row {
   display: flex;

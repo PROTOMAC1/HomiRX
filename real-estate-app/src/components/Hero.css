@@ -235,7 +235,8 @@
   }
 
   .hero {
-    height: 90%;
+    margin-top: 80px;
+    height: 500px;
   }
 
   .hero-overlay {
@@ -295,6 +296,7 @@
 
   .tabs-buttons {
     width: 65%;
+    display: none;
     height: 10%;
   }
 
@@ -304,7 +306,7 @@
 
   .circle-box {
     position: absolute;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     width: 30%;

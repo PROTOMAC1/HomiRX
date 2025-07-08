@@ -134,3 +134,9 @@
     background-color: orangered;
     color: white;
 }
+
+@media (max-width: 928px){
+    .testimonials-left-page{
+        display: none;
+    }
+}

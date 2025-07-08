@@ -1,6 +1,7 @@
 import React from 'react';
 import './Section2.css';
 import { FaWarehouse, FaBuilding, FaHouseUser } from 'react-icons/fa';
+import SlideInDiv from './SlideInDiv'
 
 const Section2 = () => {
 
@@ -25,8 +26,10 @@ const Section2 = () => {
   return (
       <div className="section2">
         <div className="section2-heading">
-          <h3>Property By Requirement</h3>
-          <h1>Explore Apartment <span className="section2-heading-word">Types</span></h1>
+          <SlideInDiv>
+            <h3>Property By Requirement</h3>
+            <h1>Explore Apartment <span className="section2-heading-word">Types</span></h1>
+          </SlideInDiv>
         </div>
         <div className="section2-card">
             {Platform.map((cards, index) => (

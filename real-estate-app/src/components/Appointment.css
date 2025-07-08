@@ -137,3 +137,9 @@
     background-color: orangered;
     color: #FFF8F2;
 }
+
+@media (max-width: 928px) {
+    .appointment-page-right {
+        display: none;
+    }
+}

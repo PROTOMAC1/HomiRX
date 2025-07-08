@@ -1,0 +1,177 @@
+.propertiespagefooter {
+    background-color: #16243E;
+    color: white;
+}
+
+.propertiespagemaincontent {
+    width: 100%;
+    height: 200vh;
+    background-color: #FFF8F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.propertiespagebox {
+    width: 75%;
+    height: 90%;
+}
+
+.propertiespageipperbox {
+    width: 100%;
+    height: 25%;
+}
+
+.propertiespagebtn {
+    width: 30%;
+    display: flex;
+    height: 15%;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.propertiespagebtn button {
+    height: 100%;
+    background-color: white;
+    border: 0.5px solid gainsboro;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-size: 1.5rem;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+.propertiespagesearchbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.5px solid gainsboro;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 100%;
+    height: 40%;
+}
+
+.searchbarcontent {
+    display: flex;
+    width: 31.66667%;
+    margin-left: 2%;
+    height: 80%;
+    border-right: 0.5 solid gainsboro;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.searchbarcontent span {
+    color: gray;
+}
+
+.searchbarlogo {
+    width: 5%;
+    margin-right: 2%;
+}
+
+.propertiespagesorting {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.propertiespagesorting button {
+    font-size: 1.5rem;
+    width: 15%;
+    height: 50%;
+    background-color: white;
+    border: 0.5px solid gainsboro;
+    border-radius: 25px;
+}
+
+.propertiespagebelowbox {
+    width: 100%;
+    height: 75%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px 0;
+}
+
+.property-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+}
+
+.property-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+}
+
+.property-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.property-card-content {
+    padding: 12px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.property-card-content h3 {
+    margin: 0 0 6px 0;
+    font-size: 1.1rem;
+}
+
+.property-card-content p {
+    margin: 0 0 4px 0;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.property-card-details {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.property-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.property-card-bottom button {
+    background: #16243E;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 14px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+.property-card-bottom button:hover {
+    background: #223a6a;
+}
+
+.selected-category-btn {
+    background: orangered !important;
+    color: #fff !important;
+    border: none !important;
+    transition: background 0.2s, color 0.2s;
+}

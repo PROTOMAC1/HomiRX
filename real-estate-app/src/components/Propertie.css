@@ -1,0 +1,173 @@
+.properties-1 {
+    background-color: #16243E;
+    min-height: 50vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.properties-1-headings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 25%;
+}
+
+.properties-1-h1 {
+    font-size: 20px;
+    color: orange;
+}
+
+.properties-1-h2 {
+    margin-top: -8px;
+    color: white;
+    font-size: 50px;  
+    font-weight: bolder;  
+}
+
+.properties-1-body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 75%;
+    margin: 0;
+    padding: 0;
+}
+ 
+.properties-1-gallery{
+    max-width: 1200px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    gap: 1px;
+    overflow: hidden;
+    margin: 40px auto;
+}
+ 
+.properties-1-gallery-container{
+    position: relative;
+    width: 20%;
+    height: inherit;
+    padding: 20px;
+    background: rgb(150,150,150);
+    cursor: pointer;
+    transition: width .5s ease;
+    border-radius: 25px;
+    overflow: hidden;
+}
+ 
+.properties-1-gallery-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s ease;
+    border-radius: 25px;
+}
+
+.property-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    border-radius: 25px;
+    color: white;
+}
+
+.property-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40px;
+    right: 60px;
+    background: white;
+    color: red;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 25px;
+}
+
+.property-button:hover {
+    background: #ff8c00;
+    color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.property-info {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.property-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.property-description {
+    font-size: 14px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+    color: #e0e0e0;
+}
+
+.property-count {
+    font-size: 16px;
+    font-weight: bold;
+    color: orange;
+    margin-bottom: 8px;
+}
+
+.property-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+ 
+.properties-1-gallery-container:hover img{
+    opacity: 0.3;
+}
+ 
+.properties-1-gallery-container:hover{
+    width: 80%;
+}
+
+.properties-1-gallery-container:hover .property-overlay {
+    opacity: 1;
+}
+
+@media (max-width: 928px) {
+
+    .properties-1-headings {
+        height: 20%;
+    }
+
+    .properties-1-gallery {
+        max-width: 98%;
+    }
+
+    .properties-1-h1 {
+        font-size: 1rem;
+    }
+
+    .properties-1-h2 {
+        font-size: 1.2rem;
+    }
+}

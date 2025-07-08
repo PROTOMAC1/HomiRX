@@ -1,0 +1,122 @@
+.membersfooter {
+    width: 100%;
+    background-color: #16243E;
+    color: white;
+}
+
+.memberspageabout {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.memberspagecontent {
+    display: flex;
+    align-items: center;
+    margin: 7%;
+}
+
+.memberspageleft {
+    width: 50%;
+    height: 100%;
+}
+
+.memberspageleftcontent {
+    width: 80%;
+    margin-left: 7%;
+}
+
+.abus {
+    color: orangered;
+    font-size: large;
+    font-weight: 600;
+    margin-bottom: -7%;
+}
+
+.memberspagecontent h1 {
+    font-size: 2.9rem;
+    font-weight: 500;
+}
+
+.abcont {
+    margin-top: -1%;
+    margin-bottom: 7%;
+    font-weight: 300;
+    font-size: large;
+    color: gray;
+}
+
+.memberspageleft button {
+    width: 35%;
+    height: 50px;
+    border-radius: 25px;
+    font-size: large;
+    background: #16243E;
+    color: #d4f3b5;
+    border: none;
+    cursor: pointer;
+    transition: btn 0.3s ease-in;
+}
+
+.memberspageleft button:hover {
+    background: orangered;
+    color: white;
+}
+
+.memberspageright {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.memberspagerightvdo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.memberspagerightvdo button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 15%;
+    height: 25%;
+    font-size: xx-large;
+    border-radius: 50%;
+    border: 0.5px solid #fff;
+    color: #fff;
+    cursor: pointer;
+    background: rgba(10,20,50,0.4);
+}
+
+/* Overlay for video popup */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10,20,50,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.videocontainer {
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+  padding: 0;
+  position: relative;
+  z-index: 1001;
+}

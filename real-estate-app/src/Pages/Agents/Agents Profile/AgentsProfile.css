@@ -1,0 +1,251 @@
+.allcategorymain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    width: 100%;
+    background-color: #FFF8F2;
+}
+
+.allcategorymainsubname {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.allcategorymainsubname p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: orangered;
+}
+
+.allcategorymainsubname h1 {
+    margin-top: -5px;
+    font-size: xx-large;
+}
+
+.allcategorybtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+
+.allcategorybtn button {
+    font-size: 1.5rem;
+    margin-top: 4%;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.allcategory-selected-btn {
+    border-color: orangered !important;
+    color: orangered;
+    background: #fff8f2;
+    font-weight: bold;
+}
+
+.allcategory-image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 80%;
+    margin: 30px auto 0 auto;
+}
+
+.allcategory-image-item {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+.allcategory-image-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,20,50,0.4);
+    z-index: 1;
+}
+
+.allcategory-image-text {
+    color: #fff;
+    position: absolute;
+    z-index: 1;
+}
+
+.allcategory-image-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.allcategory-text {
+    grid-column: 1 / span 2;
+    text-align: center;
+    font-size: 2rem;
+    color: orangered;
+    font-weight: bold;
+    align-self: center;
+    justify-self: center;
+    padding: 40px 0;
+}
+
+.allcategoryabout {
+    background-color: #FFF8F2;
+}
+
+.agentsprofilefooter {
+    background-color: #16243E;
+    color: #FFF8F2;
+}
+
+.agentsprofilemain {
+    margin: 5% auto;
+    width: 100%;
+}
+
+.agentsprofilecontent {
+    width: 100%;
+}
+
+.agentsprofileimg {
+    width: 20%; /* Responsive width */
+    max-width: 120px;
+    min-width: 70px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 1.5em auto;
+}
+
+.agentsprofileimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.agentsprofilecontent p:first-of-type {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.3em;
+    text-align: center;
+}
+
+.agentsprofilecontent p:last-of-type {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+@media (max-width: 600px) {
+  .agentsprofileimg {
+    width: 40%;
+    max-width: 90px;
+    min-width: 50px;
+  }
+  .agentsprofilecontent p:first-of-type {
+    font-size: 1.1rem;
+  }
+  .agentsprofilecontent p:last-of-type {
+    font-size: 0.95rem;
+  }
+}
+
+/* --- Contact & About Section Layout --- */
+.agentsprofilecontectandabout {
+  display: flex;
+  gap: 2%;
+  width: 90%;
+  margin: 2em auto 0 auto;
+}
+
+.agentsprofilecontect, .agentsprofilesideabout {
+  background: #fff;
+  border: 1.5px solid #eee;
+  border-radius: 1em;
+  padding: 2em 1.5em 1.5em 1.5em;
+  box-sizing: border-box;
+  width: 48%;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.agentsprofilecontect h3, .agentsprofilesideabout h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.agentsprofilecontect-details {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.agentsprofilecontect-details div {
+  font-size: 1.05rem;
+  margin-bottom: 0.7em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  color: #444;
+}
+
+.agentsprofilecontect-socials {
+  display: flex;
+  gap: 0.7em;
+  margin-top: 0.5em;
+}
+
+.agentsprofilecontect-socials span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2em;
+  height: 2.2em;
+  background: #f5f5f5;
+  border-radius: 0.4em;
+  font-size: 1.2em;
+  color: #888;
+  border: 1px solid #eee;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.agentsprofilecontect-socials span:hover {
+  background: #eee;
+}
+
+.agentsprofilesideabout p {
+  font-size: 1.05rem;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .agentsprofilecontectandabout {
+    flex-direction: column;
+    gap: 1.5em;
+    width: 98%;
+  }
+  .agentsprofilecontect, .agentsprofilesideabout {
+    width: 100%;
+    min-width: 0;
+  }
+}

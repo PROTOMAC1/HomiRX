@@ -1,0 +1,199 @@
+.section2 {
+    /* min-height: 50vh; */
+    height: auto;
+    padding: 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #16243E;
+}
+
+.section2-heading {
+    text-align: center;
+    width: 100%;
+    height: 28%;
+}
+
+.section2-heading h3 {
+    color: chocolate;
+    font-size: 2vw;
+}
+
+.section2-heading h1 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    font-size: 3.5vw;
+}
+
+.section2-heading-word {
+    color: #a0c9a0;
+}
+
+/* Cards Section */
+.section2-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5%;
+    justify-content: center;
+    margin-top: 1%;
+    width: 100%;
+    height: 72%;
+    padding-bottom: 5%;
+}
+
+.card-border {
+    position: relative;
+    width: 27vw;
+    height: 38vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* centers vertically */
+    align-items: center;     /* centers horizontally */
+    cursor: pointer;
+    background-size: 100% 200%;
+    z-index: 1;
+    border-radius: 1.5vw;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.card-border::before {
+    content: "";
+    position: absolute;
+    top: 1.5vw;
+    left: 0vw;
+    right: 0vw;
+    bottom: 1.5vw;
+    border-radius: 1.5vw;
+    background: linear-gradient(to bottom, white 50%, lime 50%);
+    background-size: 100% 200%;
+    background-position: 0% 0%;
+    transition: background-position 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.card-border:hover::before {
+    background-position: 0% 100%;
+}
+
+.platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #16243E;
+    width: 26vw;
+    height: 35vw;
+    border-radius: 1.5vw;
+}
+
+/* Icon wrapper */
+.section2 .section2-card .icon-border {
+    border: 0.1vw solid white;
+    border-radius: 1.5vw;
+    padding: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1vw;
+    transition: all 0.3s ease-in;
+}
+
+.icon-border {
+    margin-top: 5%;
+}
+
+/* Icon inside card */
+.ic-icon {
+    height: 2.5vw;
+    width: 2.5vw;
+    color: white;
+    transition: all 0.3s ease-in;
+}
+
+.card-border:hover .ic-icon {
+    color: red;
+}
+
+.card-border:hover {
+    border-color: red;
+}
+
+.card-border:hover .icon-border {
+    border-color: red;
+}
+
+/* Text inside cards */
+.card-name {
+    font-size: 3.5vw;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.card-subname {
+    font-size: 1.4vw;
+}
+
+.card-words {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.1vw;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 928px) {
+
+    .section2 {
+        width: 100%;
+        height: 140vw;
+    }
+
+    .section2-heading {
+        height: 10%;
+        width: 100%;
+    }
+
+    .section2-card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        height: 85%;
+        gap: 2%;
+    }
+
+    .section2 .section2-card .icon-border {
+        padding: 3vw;
+    }
+
+    .card-border {
+        width: 35%;
+        height: 32%;
+    }
+
+    .platform {
+        width: 110%;
+        height: 100%;
+    }
+
+    .ic-icon {
+        height: 5vw;
+        width: 5vw;
+    }
+
+    .card-name1,
+    .card-name2,
+    .card-name3 {
+        font-size: 4vw;
+    }
+
+    .section2 .section2-card .icon-border {
+        padding: 4vw;
+    }
+}

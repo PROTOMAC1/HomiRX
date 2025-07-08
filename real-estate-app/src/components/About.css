@@ -1,0 +1,265 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 50vh;
+  height: auto;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.left-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.masked-image {
+  width: 45%;
+  height: 71%;
+  position: absolute;
+  background-image: url('./Images/About_image.png');
+  background-size: cover;
+  background-position: center;
+  transition: background-size 2.5s ease-in-out;
+  mask-image: url('./Images/polygon-image.png');
+  -webkit-mask-image: url('./Images/polygon-image.png');
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  cursor: pointer;
+}
+
+.masked-image:hover {
+  background-size: 130%;
+}
+
+.grid-background {
+  position: relative;
+  border-radius: 25px;
+  width: 420px;
+  height: 450px;
+  margin-top: 63px;
+}
+
+.circle {
+  position: relative;
+  bottom: 20%;
+  left: 55%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 136, 0, 0.89);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.circletext {
+  position: absolute;
+  width: 115.5%;
+  height: 115.5%;
+  color: white;
+  animation: anim 10s linear infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circletext span {
+  position: absolute;
+  left: 50%;
+  font-size: 1.2rem;
+  transform-origin: 0 100px;
+}
+
+.play-button1 {
+  font-size: 30px;
+  color: rgba(255, 136, 0, 0.89);
+  border: 2px solid rgba(255, 136, 0, 0.89);
+  border-radius: 50%;
+  background-color: white;
+  padding: 35px 35px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.right-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 9vw;
+}
+
+.heading1 {
+  color: rgba(255, 136, 0, 0.89);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: -50px;
+}
+
+.heading2 {
+  font-size: 4rem;
+  margin-bottom: -1px;
+}
+
+.para {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: -1px;
+}
+
+.table {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+}
+
+.bullet {
+  color: rgba(255, 136, 0, 0.89);
+  height: 1.3rem;
+  width: 4rem;
+}
+
+.table li {
+  margin-bottom: 1.5vw;
+}
+
+.about-right-flex {
+  display: flex;
+}
+
+.about-right-circle1 {
+  display: grid;
+  border: 1px solid;
+  border-radius: 50%;
+  justify-content: center;
+  margin-top: 2vw;
+  margin-left: 2vw;
+  width: 130px;
+  height: 130px;
+}
+
+.about-right-heading1 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: -30px;
+  margin-left: 16px;
+}
+
+.about-right-contect1 {
+  color: gray;
+  margin-bottom: -120px;
+  margin-left: 5px;
+}
+
+.about-right-contect3 {
+  color: gray;
+  margin-left: 15px;
+}
+
+.about-right-circle2 {
+  display: grid;
+  border: 1px solid;
+  border-radius: 50%;
+  justify-content: center;
+  margin-top: 2vw;
+  margin-left: -1.4vw;
+  width: 130px;
+  height: 130px;
+}
+
+.about-right-heading2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: -55px;
+  margin-left: 16px;
+}
+
+.about-right-contect2 {
+  color: gray;
+  margin-left: 15px;
+}
+
+.about-btn {
+  margin-top: 30px;
+  margin-left: 10px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 20px;
+  color: #d4f3b5;
+  background: #16243E;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.about-btn:hover {
+  background-color: rgba(255, 136, 0, 0.89);
+  color: white;
+}
+
+@media (max-width: 928px) {
+
+  .about {
+    display: flex;
+    height: 130vh;
+    flex-direction: column-reverse;
+    grid-template-columns: none;
+  }
+
+  .circle {
+    display: none;
+  }
+
+  .grid-background {
+    height: 350px;
+  }
+
+  .left-content, .right-content {
+    height: 50%;
+  }
+
+  .right-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .masked-image {
+    width: 360px;
+    height: 375px;
+  }
+
+  .about-right-circle1, .about-right-circle2 {
+    display: none;
+  }
+
+  .heading1 {
+    font-size: 3.5vw;
+    margin-bottom: -9vw;
+  }
+
+  .heading2 {
+    font-size: 7.5vw;
+    margin-bottom: -0.1vw;
+  }
+
+  .para {
+    font-size: 2vw;
+    margin: -0.1rem 4rem;
+  }
+
+  .table {
+    font-size: 3vw;
+  }
+}

@@ -1,0 +1,200 @@
+.contect {
+    background: #fff;
+}
+
+.contect-middle {
+    display: flex;
+    width: 100%;
+    padding-top: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.contect-middle-lol {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contect-middle-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(22,36,62,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    min-width: 260px;
+    max-width: 340px;
+    width: 100%;
+    border: 1px solid #f2f2f2;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.18s, border 0.18s;
+}
+
+.contect-middle-card:hover {
+    box-shadow: 0 8px 32px rgba(22,36,62,0.13);
+    border-color: #ff5a1f;
+}
+
+.contect-middle-icon-bg {
+    background: #ff5a1f;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.contect-middle-icon {
+    font-size: 2rem;
+    color: #fff;
+    animation: none;
+}
+
+.contect-middle-card h1 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1a2236;
+    text-align: center;
+}
+
+.contect-middle-card p {
+    font-size: 1rem;
+    color: #6b7280;
+    text-align: center;
+    margin: 0;
+}
+
+.contect-appointment {
+    display: flex;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+}
+
+.contect-appointment-formwrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contect-appointment-page-left-headings {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+.contect-appointment-subhead {
+    color: #ff5a1f;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.contect-appointment-mainhead {
+    font-size: 2.7rem;
+    font-weight: 800;
+    color: #1a2236;
+    margin-bottom: 0.2rem;
+}
+
+.contect-appointment-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contect-form-row {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.contect-form-row input {
+    flex: 1;
+    font-size: 1.1rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9f9f9;
+    margin-bottom: 0;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.contect-appointment-form input:focus,
+.contect-appointment-form textarea:focus {
+    border: 1.5px solid #ff5a1f;
+    outline: none;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(255,90,31,0.08);
+}
+
+.contect-appointment-form textarea {
+    width: 100%;
+    min-height: 140px;
+    font-size: 1.1rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #f9f9f9;
+    resize: vertical;
+    margin-bottom: 0;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.contect-form-button-row {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+
+.contect-form-button-row button {
+    background: #ff5a1f;
+    color: #fff;
+    border: none;
+    border-radius: 28px;
+    padding: 1rem 2.8rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(255,90,31,0.08);
+}
+
+.contect-form-button-row button:hover {
+    background: #1a2236;
+}
+
+@media (max-width: 1100px) {
+    .contect-middle-lol {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .contect-appointment-formwrap {
+        padding: 0 1rem;
+    }
+    .contect-appointment-mainhead {
+        font-size: 2rem;
+    }
+    .contect-form-row {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+}

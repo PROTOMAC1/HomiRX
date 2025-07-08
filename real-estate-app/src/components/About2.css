@@ -1,0 +1,349 @@
+.last-about {
+    height: auto;
+    width: 100%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.last-about-top-content {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: auto;
+}
+
+.last-about-top-left-subheading {
+    font-size: 2vw;
+    font-weight: 500;
+    margin-bottom: -50px;
+    color: rgba(255, 136, 0, 0.89);
+}
+
+.last-about-top-left-heading {
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+.last-about-top-right {
+    border: 1px solid rgb(228, 222, 222);
+    display: flex;
+    justify-content: center;
+    width: 360px;
+    border-radius: 10px;
+    height: 50px;
+    gap: 10px;
+    align-items: center;
+    margin-top: 120px;
+}
+
+.last-about-btn {
+    border-radius: 5px;
+    height: 35px;
+    border: none;
+    background-color: rgb(241, 236, 236);
+    font-size: 20px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.last-about-btn:hover,
+.last-about-btn.active {
+    background-color: #E3572B;
+    color: white;
+}
+
+.last-about-card-content {
+    width: 94%;
+    margin-bottom: 0;
+    padding-bottom: 5%;
+    min-height: 0;
+    height: auto;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.last-about-card {
+    min-height: 300px;
+    height: auto;
+    width: 30%;
+    padding-bottom: 2%;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    background-color: rgb(228, 222, 222);
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: none;
+    margin: 0 1%;
+    z-index: 1;
+}
+
+.last-about-card-1,
+.last-about-card-2,
+.last-about-card-3 {
+    left: unset;
+    opacity: 1;
+    transform: none;
+    z-index: 1;
+}
+
+.animating-next .last-about-card-1 {
+    animation: slideOutLeft 0.3s forwards;
+}
+
+.animating-next .last-about-card-2 {
+    animation: slideCenterToLeft 0.3s forwards;
+}
+
+.animating-next .last-about-card-3 {
+    animation: slideRightToCenter 0.3s forwards;
+}
+
+.animating-prev .last-about-card-1 {
+    animation: slideLeftToCenter 0.3s forwards;
+}
+
+.animating-prev .last-about-card-2 {
+    animation: slideCenterToRight 0.3s forwards;
+}
+
+.animating-prev .last-about-card-3 {
+    animation: slideInRight 0.3s forwards;
+}
+
+@keyframes slideOutLeft {
+    to {
+        left: 0%;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+@keyframes slideCenterToLeft {
+    to {
+        left: 25%;
+        opacity: 0.4;
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+@keyframes slideRightToCenter {
+    to {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes slideLeftToCenter {
+    to {
+        left: 50%;
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@keyframes slideCenterToRight {
+    to {
+        left: 75%;
+        opacity: 0.4;
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        left: 100%;
+        opacity: 0;
+        transform: translateX(-50%) scale(0.8);
+    }
+}
+
+.last-about-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+}
+
+.last-about-card-details {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.author-profile img {
+    border-radius: 50%;
+    margin-top: -25px;
+    margin-left: 250px;
+    width: 50px;
+}
+
+.last-about-card-raiting-and-numerical {
+    display: flex;
+    gap: 2px;
+    margin-left: 20px;
+}
+
+.last-about-card-raiting-and-numerical span {
+    margin-top: -3px;
+}
+
+.last-about-card-heading {
+    margin-left: 20px;
+    margin-top: 0;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.last-about-card-loaction {
+    margin-top: -12px;
+    margin-left: 25px;
+    color: gray;
+}
+
+.last-about-card-loaction .symbollo {
+    margin-bottom: -1px;
+}
+
+.last-about-card-paragraph {
+    margin-left: 20px;
+    color: gray;
+}
+
+.last-about-card-area-icon {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+    color: gray;
+}
+
+.last-about-card-bottom-margin {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    height: 45px;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.last-about-card-bottom-price {
+    color: #E3572B;
+    margin-left: 10px;
+}
+
+.last-about-bottom-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+    width: 90px;
+    border: none;
+    background: #16243E;
+    color: #C2DF93;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.last-about-bottom-btn:hover {
+    background-color: #E3572B;
+    color: white;
+}
+
+.about2btns {
+    position: absolute;
+    display: flex;  
+    width: 100%;
+    z-index: 3;
+    justify-content: space-between;
+}
+
+.last-about-card-left-btn,
+.last-about-card-right-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: none;
+    color: #E3572B;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.last-about-card-left-btn:hover,
+.last-about-card-right-btn:hover {
+    background-color: #E3572B;
+    color: white;
+}
+
+@media (max-width: 928px) {
+    
+    .last-about {
+        position: relative;
+    }
+
+    .last-about-top-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        gap: 0;
+    }
+    
+    .last-about-top-right {
+        margin-top: 0;
+        width: 45%;
+        justify-content: space-around;
+        gap: 0;
+        height: 20%;
+    }
+    
+    .last-about-top-left-subheading {
+        height: 50%;
+        font-size: 2.5vw;
+    }
+    
+    .last-about-top-left-heading {
+        height: 50%;
+        font-size: 5.5vw;
+    }
+
+    .last-about-btn {
+        font-size: 2vw;
+    }
+
+    .last-about-top-left {
+        width: 65%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+    }
+
+    .last-about-card-1, .last-about-card-3 {
+        display: none;
+    }
+
+    .last-about-card {
+        height: auto;
+        width: auto;
+    }
+}

@@ -1,0 +1,468 @@
+.propertiesdetailsfooter {
+    width: 100%;
+    background-color: #16243E;
+    color: white;
+}
+
+.propertiesdetailsmain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.propertiesdetailsheadings {
+    margin-top: 5%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.propertiesdetailsheadingsbtn {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.propertiesdetailsheadingsbtn button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3% 5%;
+    font-size: 1.2rem !important;
+    border: 0.5px solid rgb(221, 221, 221);
+    font-size: x-large;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: btn 0.3s ease-in;
+}
+
+.propertiesdetailsheadingsbtn button:hover {
+    border: 0.5px solid orangered;
+}
+
+.propertiesdetailsbottemmain {
+    width: 90%;
+    margin: 2em auto 0 auto;
+    display: flex;
+    gap: 2%;
+}
+
+.propertiesdetailsleft {
+    width: 68%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.propertiesdetailsright {
+    width: 30%;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+/* --- Card Styles --- */
+.property-author-card, .property-contact-card, .property-contact-form {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 2em 1.5em 1.5em 1.5em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    margin-bottom: 1.5em;
+}
+
+/* --- Author Card --- */
+.author-img {
+    width: 4.5em;
+    height: 4.5em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1em;
+}
+.author-info {
+    text-align: center;
+}
+.author-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.author-member {
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 1em;
+}
+.author-contact div {
+    font-size: 1rem;
+    margin-bottom: 0.5em;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+.author-socials {
+    display: flex;
+    justify-content: center;
+    gap: 0.7em;
+    margin: 1em 0;
+}
+.author-socials span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2em;
+    height: 2.2em;
+    background: #f5f5f5;
+    border-radius: 0.4em;
+    font-size: 1.2em;
+    color: #888;
+    border: 1px solid #eee;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.author-socials span:hover {
+    background: #eee;
+}
+.author-profile-btn {
+    background: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    margin-top: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.author-profile-btn:hover {
+    background: #e65c00;
+}
+
+/* --- Contact Card --- */
+.property-contact-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.property-contact-card div {
+    font-size: 1rem;
+    margin-bottom: 0.5em;
+    color: #444;
+}
+.property-contact-socials {
+    display: flex;
+    gap: 0.7em;
+    margin-top: 0.5em;
+}
+.property-contact-socials span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2em;
+    height: 2.2em;
+    background: #f5f5f5;
+    border-radius: 0.4em;
+    font-size: 1.2em;
+    color: #888;
+    border: 1px solid #eee;
+    transition: background 0.2s;
+    cursor: pointer;
+}
+.property-contact-socials span:hover {
+    background: #eee;
+}
+
+/* --- Contact Form --- */
+.property-contact-form h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.property-contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+}
+.property-contact-form input,
+.property-contact-form textarea {
+    padding: 0.7em 1em;
+    border: 1px solid #eee;
+    border-radius: 0.4em;
+    font-size: 1rem;
+    background: #fafafa;
+    resize: none;
+}
+.property-contact-form button {
+    background: #ff6a00;
+    color: #fff;
+    border: none;
+    border-radius: 0.5em;
+    padding: 0.7em 1.5em;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.property-contact-form button:hover {
+    background: #e65c00;
+}
+
+/* --- Main Image & Gallery --- */
+.property-main-image img {
+    width: 100%;
+    border-radius: 1em;
+    object-fit: cover;
+    max-height: 350px;
+}
+.property-gallery {
+    display: flex;
+    gap: 0.7em;
+    margin: 1em 0;
+}
+.property-gallery img {
+    width: 5em;
+    height: 3.5em;
+    object-fit: cover;
+    border-radius: 0.5em;
+    border: 1.5px solid #eee;
+    cursor: pointer;
+    transition: border 0.2s;
+}
+.property-gallery img:hover {
+    border: 1.5px solid #ff6a00;
+}
+
+/* --- Tags --- */
+.property-tags {
+    display: flex;
+    gap: 0.7em;
+    margin-bottom: 1em;
+}
+.property-tags span {
+    background: #f5f5f5;
+    color: #ff6a00;
+    border-radius: 0.4em;
+    padding: 0.4em 1em;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* --- Overview --- */
+.property-overview {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 1.5em;
+    margin-bottom: 1em;
+}
+.property-overview h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+}
+.overview-grid div {
+    background: #fafafa;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+    font-size: 1rem;
+}
+
+/* --- Description --- */
+.property-description- {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 1.5em;
+    font-size: 1.05rem;
+    color: #666;
+}
+
+/* --- Features & Amenities --- */
+.property-features {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+.property-features h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7em;
+}
+.features-list span {
+    background: #f5f5f5;
+    color: #444;
+    border-radius: 0.4em;
+    padding: 0.4em 1em;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* --- Location --- */
+.property-location {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+.property-location h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.location-address {
+    margin-top: 0.7em;
+    color: #444;
+    font-size: 1rem;
+}
+
+/* --- Floor Plan --- */
+.property-floorplan {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+.property-floorplan h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.floorplan-tabs {
+    display: flex;
+    gap: 0.7em;
+    margin-bottom: 1em;
+}
+.floorplan-tabs button {
+    background: #f5f5f5;
+    color: #444;
+    border: none;
+    border-radius: 0.4em 0.4em 0 0;
+    padding: 0.5em 1.2em;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.floorplan-tabs .active {
+    background: #ff6a00;
+    color: #fff;
+}
+.floorplan-image img {
+    width: 100%;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+}
+.floorplan-desc {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* --- Reviews --- */
+.property-reviews {
+    background: #fff;
+    border: 1.5px solid #eee;
+    border-radius: 1em;
+    padding: 1.5em;
+}
+.property-reviews h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 1em;
+}
+.review-summary {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.review-score {
+    background: #ff6a00;
+    color: #fff;
+    border-radius: 0.4em;
+    padding: 0.4em 1em;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.review-login {
+    background: #f5f5f5;
+    color: #ff6a00;
+    border: none;
+    border-radius: 0.4em;
+    padding: 0.4em 1em;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: auto;
+}
+.review-list {
+    margin-top: 1em;
+}
+.review-item {
+    display: flex;
+    gap: 1em;
+    align-items: flex-start;
+    border-top: 1px solid #eee;
+    padding-top: 1em;
+}
+.review-user img {
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.7em;
+}
+.review-username {
+    font-weight: 600;
+    font-size: 1rem;
+}
+.review-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+.review-text {
+    font-size: 1rem;
+    color: #444;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1100px) {
+    .propertiesdetailsbottemmain {
+        flex-direction: column;
+        gap: 2em;
+    }
+    .propertiesdetailsleft, .propertiesdetailsright {
+        width: 100%;
+        min-width: 0;
+    }
+}
+@media (max-width: 700px) {
+    .property-gallery img {
+        width: 3.5em;
+        height: 2.5em;
+    }
+    .overview-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 500px) {
+    .property-main-image img {
+        max-height: 180px;
+    }
+    .property-author-card, .property-contact-card, .property-contact-form, .property-overview, .property-description, .property-features, .property-location, .property-floorplan, .property-reviews {
+        padding: 1em;
+    }
+}

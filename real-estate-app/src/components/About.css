@@ -228,6 +228,10 @@
     height: 50%;
   }
 
+  .left-content {
+    width: 100%;
+  }
+
   .right-content {
     display: flex;
     flex-direction: column;

@@ -333,3 +333,9 @@ ul {
   text-decoration: none;
   outline: none;
 }
+
+@media (max-width: 500px) {
+  .logo {
+    width: 150px;
+  }
+}

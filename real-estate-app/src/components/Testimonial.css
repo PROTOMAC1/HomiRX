@@ -140,7 +140,11 @@
         display: none;
     }
     .testimonials-right-page {
-        width: 100%;
+        width: 95%;
+    }
+    .testimonial-right-page-btn {
+        margin-left: auto;
+        justify-content: center;
     }
 }
 

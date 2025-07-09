@@ -150,3 +150,9 @@
 .teams-btn-right:hover {
     color: #E3572B;
 }
+
+@media (max-width: 400px) {
+    .teams-body {
+        display: none;
+    }
+}

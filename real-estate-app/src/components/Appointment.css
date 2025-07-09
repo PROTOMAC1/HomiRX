@@ -142,4 +142,14 @@
     .appointment-page-right {
         display: none;
     }
+
+    .appointment-page-left {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .appointment-page-left {
+        width: 100%;
+    }
 }

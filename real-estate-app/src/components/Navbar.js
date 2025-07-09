@@ -6,12 +6,20 @@ import {
   FaSearch, FaBars, FaChevronDown, FaChevronUp
 } from 'react-icons/fa';
 import './Navbar.css';
+import { motion } from 'framer-motion';
 import Logo from "./Images/logo.png";
 
 const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const menuRef = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const topBar = document.getElementById('topBar');
@@ -73,7 +81,13 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="top-bar" id="topBar">
+      <motion.div 
+        className="top-bar" 
+        id="topBar"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="top-bar-left">
           <button><FaEnvelope /> contact@example.com</button>
           <button><FaPhone /> +92 (880) 68396</button>
@@ -85,8 +99,14 @@ const Navbar = () => {
           <button><FaInstagram /></button>
           <button><FaPinterestP /></button>
         </div>
-      </div>
-      <div className="main-nav" id="mainNav">
+      </motion.div>
+      <motion.div 
+        className="main-nav" 
+        id="mainNav"
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.2, duration: 0.6 }}  
+      >
         <div className="logo"
           style={{
             backgroundImage: `url(${Logo})`
@@ -104,10 +124,10 @@ const Navbar = () => {
           className={`menu ${menuActive ? 'active' : ''}`}
           onClick={handleMenuClick}
         >
-          <li>
+          <motion.li whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }}>
             <Link to="/">Home</Link>
-          </li>
-          <li className="dropdown" onClick={() => toggleDropdown(1)}>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }} className="dropdown" onClick={() => toggleDropdown(1)}>
             Properties 
             <span className="arrow">
               {activeDropdown === 1 ? <FaChevronUp /> : <FaChevronDown />}
@@ -123,8 +143,8 @@ const Navbar = () => {
                 <Link to="/allcategorys">All Category</Link>
               </li>
             </ul>
-          </li>
-          <li className="dropdown" onClick={() => toggleDropdown(2)}>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }} className="dropdown" onClick={() => toggleDropdown(2)}>
             Agents 
             <span className="arrow">
               {activeDropdown === 2 ? <FaChevronUp /> : <FaChevronDown />}
@@ -140,8 +160,8 @@ const Navbar = () => {
                 <Link to="/agentsprofile">Agent Profile</Link>
               </li>
             </ul>
-          </li>
-          <li className="dropdown" onClick={() => toggleDropdown(3)}>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }} className="dropdown" onClick={() => toggleDropdown(3)}>
             Pages 
             <span className="arrow">
               {activeDropdown === 3 ? <FaChevronUp /> : <FaChevronDown />}
@@ -160,17 +180,17 @@ const Navbar = () => {
                 <Link to='/ourpartner'>Our Partner</Link>
               </li>
             </ul>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }}>
             <Link to='/contect'>Contact</Link>
-          </li>
+          </motion.li>
         </ul>
         <div className={`right-btn ${menuActive ? 'active' : ''}`}>
-          <button className="cart-btn"><FaShoppingCart /></button>
-          <button className="sea-btn"><FaSearch /></button>
-          <button className="add-btn"><FaHouseUser /> Add Properties</button>
+          <motion.button className="cart-btn" whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }}><FaShoppingCart /></motion.button>
+          <motion.button className="sea-btn" whileHover={{ scale: 1.05, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }}><FaSearch /></motion.button>
+          <motion.button className="add-btn" whileHover={{ scale: 1.1, rotate: [0, -5, 5, 0] }} transition={{ duration: 0.4 }}><FaHouseUser /> Add Properties</motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

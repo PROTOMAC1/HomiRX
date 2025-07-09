@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaHouseUser, FaUser, FaCalendar, FaArrowRight } from 'react-icons/fa6'
 
 // brands images
@@ -81,9 +81,25 @@ function Blog() {
   ];
 
   const [currentCard, setCurrentCard] = useState(0);
+  const [cardsInView, setCardsInView] = useState(3);
+
+  useEffect(() => {
+    function handleResize() {
+      if (window.innerWidth <= 400) {
+        setCardsInView(1);
+      } else if (window.innerWidth <= 928) {
+        setCardsInView(2);
+      } else {
+        setCardsInView(3);
+      }
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextCard = () => {
-    if(currentCard + 3 >= Posts.length){
+    if(currentCard + cardsInView >= Posts.length){
       setCurrentCard(0);
     } else {
       setCurrentCard(currentCard + 1);
@@ -92,7 +108,7 @@ function Blog() {
 
   const previewCard = () => {
     if(currentCard === 0){
-      setCurrentCard(Posts.length - 3);
+      setCurrentCard(Posts.length - cardsInView);
     } else {
       setCurrentCard(currentCard - 1);
     }
@@ -109,7 +125,7 @@ function Blog() {
           </div>
         </div>
         <div className='blog-cards-view'>
-          {Posts.slice(currentCard, currentCard + 3).map((blogpost, i)=>(
+          {Posts.slice(currentCard, currentCard + cardsInView).map((blogpost, i)=>(
             <div key={i} className='blog-card'>
               <div className='blog-card-top'><img src={blogpost.img} alt={`post${i + 1}`}/></div>
               <div className='blog-card-gap'></div>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Footer.css';
 import Footerlogo from './Images/logo.png';
 import { FaLocationDot, FaEnvelope, FaPhone, FaFacebook, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa6';
@@ -18,6 +18,17 @@ function Footer() {
         gallery5,
         gallery6
     ];
+
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        function handleResize() {
+            setIsMobile(window.innerWidth <= 750);
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div style={{ width: '100%', backgroundColor: '#16243E', color: '#fff' }}>
@@ -86,22 +97,37 @@ function Footer() {
                         <h2>Gallery</h2>
                         <div className='bottom-line-4'></div>
                         <div className='gallery-img-box'>
-                            {[0, 1, 2].map(col => (
-                                <div className='gallery-column' key={col}>
-                                    {[0, 1].map(row => {
-                                        const index = row * 3 + col;
-                                        const gimg = Galleryimages.slice(0, 6)[index];
-                                        return (
-                                            <div key={row} className='gallery-cell'>
-                                                {gimg && (
-                                                    <img className='image-size' src={gimg} alt={`img ${index + 1}`} />
-                                                )}
-                                                <div className='overlay'></div>
-                                            </div>
-                                        );
-                                    })}
+                            {isMobile ? (
+                                // Single column for mobile
+                                <div className='gallery-column'>
+                                    {Galleryimages.slice(0, 6).map((gimg, index) => (
+                                        <div key={index} className='gallery-cell'>
+                                            {gimg && (
+                                                <img className='image-size' src={gimg} alt={`img ${index + 1}`} />
+                                            )}
+                                            <div className='overlay'></div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                            ) : (
+                                // 3 columns for desktop
+                                [0, 1, 2].map(col => (
+                                    <div className='gallery-column' key={col}>
+                                        {[0, 1].map(row => {
+                                            const index = row * 3 + col;
+                                            const gimg = Galleryimages.slice(0, 6)[index];
+                                            return (
+                                                <div key={row} className='gallery-cell'>
+                                                    {gimg && (
+                                                        <img className='image-size' src={gimg} alt={`img ${index + 1}`} />
+                                                    )}
+                                                    <div className='overlay'></div>
+                                                </div>
+                                            );
+                                        })}
+                                    </div>
+                                ))
+                            )}
                         </div>
                     </div>
                 </div>

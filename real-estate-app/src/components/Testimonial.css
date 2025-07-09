@@ -139,4 +139,14 @@
     .testimonials-left-page{
         display: none;
     }
+    .testimonials-right-page {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .testimonials-cards {
+        min-width: calc(100% - 7.5px);
+        max-width: calc(100% - 7.5px);
+    }
 }

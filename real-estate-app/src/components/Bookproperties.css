@@ -70,15 +70,14 @@
 .book-content-view {
     display: flex;
     width: 98%;
-    height: 75%;
     border-radius: 25px;
     background-color: aliceblue;
     overflow: hidden;
     position: relative;
+    min-height: 80vh;
 }
 
 .book-content-img-view{
-    height: 100%;
     width: 100%;
     position: relative;
     overflow: hidden;

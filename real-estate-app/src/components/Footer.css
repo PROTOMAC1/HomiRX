@@ -200,3 +200,34 @@
 .footer-below-right p:hover {
     color: white;
 }
+
+@media (max-width: 928px) {
+    .footer-upper {
+        flex-direction: column;
+    }
+    .footer-address, .footer-email, .footer-phone {
+        width: 100%;
+        justify-content: start;
+        margin: 0 0 5% 5%;
+    }
+    .footer-middle {
+        flex-direction: column;
+    }
+    .footer-middle-1, .footer-middle-2, .footer-middle-3, .footer-middle-4 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+    .footer-middle-4 {
+        flex-direction: column;
+    }
+    .gallery-cell {
+        display: flex;
+        margin-top: 5%;
+    }
+    .image-size {
+        width: 330px;
+        height: 220px;
+    }
+}

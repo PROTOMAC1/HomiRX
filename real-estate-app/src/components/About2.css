@@ -347,3 +347,9 @@
         width: auto;
     }
 }
+
+@media (max-width: 400px) {
+    .last-about-top-left-subheading {
+        display: none;
+    }
+}

@@ -7,9 +7,8 @@
 /* --- Event Page Main Grid & Cards --- */
 .eventpagemain {
   width: 95%;
-  margin: 2em auto 0 auto;
   min-height: 70vh;
-  padding: 5% 0 5% 0;
+  margin: 5% auto;
 }
 .event-grid {
   display: grid;

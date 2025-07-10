@@ -465,4 +465,7 @@
     .property-author-card, .property-contact-card, .property-contact-form, .property-overview, .property-description, .property-features, .property-location, .property-floorplan, .property-reviews {
         padding: 1em;
     }
+    .propertiesdetailsheadingsbtn {
+        flex-direction: column;
+    }
 }

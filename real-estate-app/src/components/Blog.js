@@ -85,7 +85,7 @@ function Blog() {
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth <= 400) {
+      if (window.innerWidth <= 500) {
         setCardsInView(1);
       } else if (window.innerWidth <= 928) {
         setCardsInView(2);

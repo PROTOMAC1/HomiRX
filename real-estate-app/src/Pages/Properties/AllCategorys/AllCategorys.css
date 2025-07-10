@@ -3,7 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+    margin-top: 3%;
+    margin-bottom: 3%;
     width: 100%;
     background-color: #FFF8F2;
 }
@@ -108,4 +109,17 @@
 .allcategoryfooter {
     background-color: #16243E;
     color: #FFF8F2;
+}
+
+@media (max-width: 850px) {
+    .allcategorybtn {
+        width: 100% !important;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 550px) {
+    .allcategory-image-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
 }

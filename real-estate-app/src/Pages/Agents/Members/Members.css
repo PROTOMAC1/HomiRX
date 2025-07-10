@@ -16,6 +16,7 @@
     display: flex;
     align-items: center;
     margin: 7%;
+    width: 100%;
 }
 
 .memberspageleft {
@@ -114,9 +115,22 @@
 
 .videocontainer {
   background: #000;
+  width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 32px rgba(0,0,0,0.3);
   padding: 0;
   position: relative;
   z-index: 1001;
+}
+
+@media (max-width: 1000px) {
+    .memberspagecontent {
+        flex-direction: column;
+    }
+    .memberspageleft, .memberspageright {
+        width: 95%;
+    }
+    .memberspageleft {
+        margin-bottom: 4%;
+    }
 }

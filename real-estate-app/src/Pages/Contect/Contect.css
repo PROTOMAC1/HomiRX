@@ -1,5 +1,6 @@
 .contect {
     background: #fff;
+    width: 99%;
 }
 
 .contect-middle {
@@ -143,7 +144,7 @@
 }
 
 .contect-appointment-form textarea {
-    width: 100%;
+    width: 90%;
     min-height: 140px;
     font-size: 1.1rem;
     padding: 1rem 1.2rem;
@@ -196,5 +197,17 @@
     .contect-form-row {
         flex-direction: column;
         gap: 0.7rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .contect-middle-lol {
+        width: 100%;
+    }
+    .contect-middle-card {
+        width: 79%;
+    }
+    .contect-appointment-form textarea {
+        width: 88%;
     }
 }

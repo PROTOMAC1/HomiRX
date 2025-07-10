@@ -40,7 +40,7 @@ export default function Members() {
           <div className="video-overlay" onClick={() => setShowVideo(false)}>
             <div className="videocontainer" onClick={e => e.stopPropagation()}>
               <iframe 
-                width="700" 
+                width="100%" 
                 height="415" 
                 src="https://www.youtube.com/embed/QmfVLaBan5I?si=hs08WcSRB9J8Fw71" 
                 title="YouTube video player" 

@@ -198,3 +198,15 @@
     background: orangered;
     color: #fff;
 }
+
+@media (max-width: 800px) {
+    .agentsbelow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .agentsbelow {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

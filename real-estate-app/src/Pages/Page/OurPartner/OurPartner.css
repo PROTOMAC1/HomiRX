@@ -245,4 +245,10 @@
     gap: 1.2rem;
     text-align: center;
   }
+  .partner-card {
+    width: 85%;
+  }
+  .ourpartner-sidebar {
+    flex-direction: column;
+  }
 }

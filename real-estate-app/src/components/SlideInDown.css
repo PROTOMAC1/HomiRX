@@ -1,0 +1,11 @@
+/* SlideInLeft.css */
+.slide-in-down {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.5s ease-out;
+}
+
+.slide-in-down.show {
+  opacity: 1;
+  transform: translateY(0);
+}

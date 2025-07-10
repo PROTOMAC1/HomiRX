@@ -169,3 +169,13 @@
     background: rgba(22, 36, 62, 1);
     transform: scale(1.1);
 }
+
+@media (max-width: 500px) {
+    .book-image-info {
+        flex-direction: column;
+        align-items: start;
+    }
+    .book-image-info button {
+        width: 30%;
+    }
+}

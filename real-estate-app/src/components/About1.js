@@ -1,6 +1,6 @@
 import React from 'react'
 import './About1.css';
-import Secondaboutimg from './Images/second-about-img'
+import Secondaboutimg from './Images/second-about-img';
 import { FaHouseUser } from 'react-icons/fa';
 
 function About1() {

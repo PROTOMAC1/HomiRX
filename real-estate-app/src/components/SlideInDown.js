@@ -1,8 +1,8 @@
 // SlideInDiv.jsx
 import React, { useRef, useEffect, useState } from 'react';
-import './SlideInLeft.css';
+import './SlideInDown.css';
 
-const SlideInDiv = ({ children }) => {
+const SlideInDown = ({ children }) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -23,10 +23,10 @@ const SlideInDiv = ({ children }) => {
   }, []);
 
   return (
-    <div ref={ref} className={`slide-in-left ${isVisible ? 'show' : ''}`}>
+    <div ref={ref} className={`slide-in-down ${isVisible ? 'show' : ''}`}>
       {children}
     </div>
   );
 };
 
-export default SlideInDiv;
+export default SlideInDown;

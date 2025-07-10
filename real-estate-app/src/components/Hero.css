@@ -319,3 +319,12 @@
     display: none;
   }
 }
+
+@media (max-width: 500px) {
+  .tabs {
+    margin-left: -45%;
+  }
+  .search-bar {
+    width: 75%;
+  }
+}

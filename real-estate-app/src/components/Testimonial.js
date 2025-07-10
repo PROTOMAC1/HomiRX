@@ -5,6 +5,8 @@ import Kevin from './Images/Testimonials-Images/testimonial-2.jpg'
 import Jessica from './Images/Testimonials-Images/testimonial-3.jpg'
 import './Testimonial.css'
 import { FaStar } from 'react-icons/fa6'
+import SlideInDiv from './SlideInDiv';
+import SlideInDivRight from './SlideInDivRight';
 
 function Testimonial() {
   const cardData = [
@@ -57,7 +59,7 @@ function Testimonial() {
   return (
     <div className='testimonials-body'>
         <div className='testimonials-splite-page'>
-            <div className='testimonials-left-page'><img className='testimonials-left-img' src={LeftImage} /></div>
+            <div className='testimonials-left-page'><SlideInDiv><img className='testimonials-left-img' src={LeftImage} /></SlideInDiv></div>
             <div className='testimonials-right-page'>
               <div className='testimonials-right-page-headings'>
                 <p>Testimonials</p>

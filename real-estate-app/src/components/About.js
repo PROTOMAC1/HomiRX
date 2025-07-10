@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaArrowRight, FaHouseUser } from 'react-icons/fa';
+import { motion, useInView } from 'framer-motion';
 import './About.css'
 
 const About = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   useEffect(() => {
     const textElement = document.querySelector('.circletext p');
     if (textElement) {
@@ -19,7 +22,10 @@ const About = () => {
 
   return (
     <div className='about'>
-      <div className='left-content'>
+      <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='left-content'>
         <div className="circle">
           <div className="circletext">
             <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
@@ -28,8 +34,11 @@ const About = () => {
         </div>
         <div className='grid-background'></div>
         <div class="masked-image"></div>
-      </div>
-      <div className='right-content'>
+      </motion.div>
+      <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='right-content'>
         <p className='heading1'>About Company</p>
         <p className='heading2'>Welcome To Properties</p>
         <p className='para'>It is a long established fact that a reader will be distracted the readable content 
@@ -52,7 +61,7 @@ const About = () => {
           </div>
         </div>
         <button className='about-btn'><FaHouseUser /> Explor More</button>
-      </div>
+      </motion.div>
     </div>
   )
 }

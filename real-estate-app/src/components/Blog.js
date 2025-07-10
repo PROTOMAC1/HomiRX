@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { FaHouseUser, FaUser, FaCalendar, FaArrowRight } from 'react-icons/fa6'
+import { motion, useInView } from 'framer-motion'
 
 // brands images
 import Brand1 from './Images/Brand-Images/brand-1.png'
@@ -83,6 +84,9 @@ function Blog() {
   const [currentCard, setCurrentCard] = useState(0);
   const [cardsInView, setCardsInView] = useState(3);
 
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
+
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth <= 500) {
@@ -118,10 +122,19 @@ function Blog() {
     <div className='blog-body'>
       <div className='blog-content-view'>
         <div className='blog-headings'>
-          <h3>Blog & News</h3>
+          <motion.h3 ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} >Blog & News</motion.h3>
           <div className='blog-heading-pluse-btn'>
-            <h1 className='h1'>Our Latest News Update</h1>
-            <button><FaHouseUser /> View All Post</button>
+            <motion.h1 ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='h1'>Our Latest News Update</motion.h1>
+            <motion.button ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} ><FaHouseUser /> View All Post</motion.button>
           </div>
         </div>
         <div className='blog-cards-view'>

@@ -1,11 +1,17 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './Appointment.css'
+import { motion, useInView } from 'framer-motion'
 
 function Appointment() {
+    const ref = useRef(null);
+    const isInView = useInView(ref, {once: true});
   return (
     <div className='appointment-body'>
         <div className='appointment-page'>
-            <div className='appointment-page-left'>
+            <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='appointment-page-left'>
                 <div className='appointment-page-left-headings'>
                     <h5>Book Appointment</h5>
                     <h1>Send Message Anytime</h1>
@@ -27,8 +33,11 @@ function Appointment() {
                         </div>
                     </form>
                 </div>
-            </div>
-            <div className='appointment-page-right'>
+            </motion.div>
+            <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='appointment-page-right'>
                 <div className='appointment-page-right-card background-cover'>
                     <div className='appointment-card-content'>
                         <p>Address:</p>
@@ -38,7 +47,7 @@ function Appointment() {
                         <button>Direction</button>
                     </div>
                 </div>
-            </div>
+            </motion.div>
         </div>
     </div>
   )

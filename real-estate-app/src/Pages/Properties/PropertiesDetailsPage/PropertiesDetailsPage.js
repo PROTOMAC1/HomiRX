@@ -1,27 +1,36 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './PropertiesDetailsPage.css'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import Hiddenpage from '../../Hiddenpage'
 import About2 from '../../../components/About2'
 import { FaHeart, FaLocationDot, FaShareFromSquare } from 'react-icons/fa6'
+import { motion, useInView } from 'framer-motion'
 
 export default function PropertiesDetailsPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   return (
     <div>
         <Navbar />
         <Hiddenpage />
         <section className='propertiesdetailsmain'>
             <div className='propertiesdetailsheadings'>
-                <div>
+                <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}>
                   <h1>Elevation Small Apartments</h1>
                   <p style={{color: 'gray'}}><FaLocationDot style={{color: 'orangered'}} />18 Broklyn Street, New York</p>
-                </div>
-                <div className='propertiesdetailsheadingsbtn'>
+                </motion.div>
+                <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} className='propertiesdetailsheadingsbtn'>
                   <button><FaHeart /></button>
                   <button><FaShareFromSquare style={{color: 'rgb(221, 221, 221)'}} /> Share</button>
                   <button>Report</button>
-                </div>
+                </motion.div>
             </div>
             <div className='propertiesdetailsbottemmain'>
               <div className='propertiesdetailsleft'>

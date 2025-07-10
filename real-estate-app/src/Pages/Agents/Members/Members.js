@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Members.css'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
@@ -6,12 +6,16 @@ import OurExpert from '../../../components/OurExpert'
 import MembersBgimg from './bg-11.jpg'
 import { FaHouseUser, FaPlay } from 'react-icons/fa6'
 import Hiddenpage from '../../Hiddenpage'
+import { motion, useInView } from 'framer-motion'
 
 export default function Members() {
   const [showVideo, setShowVideo] = useState(false);
   const openVideo = () => {
     setShowVideo(true);
   }
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   
   return (
     <div className='memberspage'>
@@ -20,7 +24,10 @@ export default function Members() {
       <OurExpert />
       <section className='memberspageabout'>
         <div className='memberspagecontent'>
-          <div className='memberspageleft'>
+          <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} className='memberspageleft'>
             <div className='memberspageleftcontent'>
               <p className='abus'>About Us</p>
               <h1>Let's Find The Right Selling Option For You</h1>
@@ -28,13 +35,16 @@ export default function Members() {
                 point of using lorem the is Ipsum less normal distribution of letters.</p>
               <button><FaHouseUser /> Explore More</button>
             </div>
-          </div>
-          <div className='memberspageright'>
+          </motion.div>
+          <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} className='memberspageright'>
             <div className='memberspagerightvdo'>
               <img src={MembersBgimg} alt='membersbgimg' />
               <button onClick={openVideo}><FaPlay /></button>
             </div>
-          </div>
+          </motion.div>
         </div>
         { showVideo && (
           <div className="video-overlay" onClick={() => setShowVideo(false)}>

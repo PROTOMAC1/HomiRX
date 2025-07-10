@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import './Hero.css';
 
 const images = [
@@ -9,6 +10,8 @@ const images = [
 ];
 
 const Hero = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const [currentImage, setCurrentImage] = useState(0);
   const [activeTab, setActiveTab] = useState('General');
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -68,20 +71,26 @@ const Hero = () => {
         <div className="hero-overlay">
           <div className='hero-overlay-content'>
             <div className='hero-overlay-upper-content'>
-              <div className='hero-overlay-heading'>
+              <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} className='hero-overlay-heading'>
                 <h1>
                   Let's Find Your
                   {!isMobile && <br />} Dream House.
                 </h1>
-              </div>
-              <div className='circle-box'>
+              </motion.div>
+              <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='circle-box'>
                 <div className="rotating-circle">
                   <div className="circle-text">
                     <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
                   </div>
                   <button className="play-button">▶</button>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className='below-content'>
         

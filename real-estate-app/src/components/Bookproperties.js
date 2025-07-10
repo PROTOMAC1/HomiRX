@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './Bookproperties.css'
 import { FaHouseUser, FaArrowRight, FaExpand, FaBed, FaShower } from 'react-icons/fa6'
 import Book1 from './Images/Book-Images/book-image1.jpg'
 import Book2 from './Images/Book-Images/book-image2.jpg'
+import { motion, useInView } from 'framer-motion'
 
 const Bookproperties = () => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, {once: true});
+
     const [currentImage, setCurrentImage] = useState(0);
 
     const BookImages = [
@@ -40,11 +44,20 @@ const Bookproperties = () => {
         <div className='book-body'>
             <div className='book-content'>
                 <div className='book-content-headings-1'>
-                    <h1>Bookproperties</h1>
+                    <motion.h1 ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} >Bookproperties</motion.h1>
                 </div>
                 <div className='book-content-headings-2'>
-                    <span>Discover Your Perfect Property Match</span>
-                    <button><FaHouseUser /> Add Properties</button>
+                    <motion.span ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} >Discover Your Perfect Property Match</motion.span>
+                    <motion.button ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} ><FaHouseUser /> Add Properties</motion.button>
                 </div>
                 <div className='book-content-view'>
                     <div className='book-content-img-view'>

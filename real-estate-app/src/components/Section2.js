@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './Section2.css';
 import { FaWarehouse, FaBuilding, FaHouseUser } from 'react-icons/fa';
-import SlideInDiv from './SlideInDiv'
+import { motion, useInView } from 'framer-motion';
 
 const Section2 = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
 
   const Platform = [
       {
@@ -26,10 +28,14 @@ const Section2 = () => {
   return (
       <div className="section2">
         <div className="section2-heading">
-          <SlideInDiv>
-            <h3>Property By Requirement</h3>
-            <h1>Explore Apartment <span className="section2-heading-word">Types</span></h1>
-          </SlideInDiv>
+            <motion.h3 ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} >Property By Requirement</motion.h3>
+            <motion.h1 ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }} >Explore Apartment <span className="section2-heading-word">Types</span></motion.h1>
         </div>
         <div className="section2-card">
             {Platform.map((cards, index) => (

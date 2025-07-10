@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaBuilding, FaLocationDot, FaHouseUser, FaStar } from 'react-icons/fa6';
 import './About2.css';
 import ApartmentsData from './Datas/ApartmentsData';
 import Gdata from './Datas/GeneralData';
 import Vdata from './Datas/VillaData';
+import { motion, useInView } from 'framer-motion';
 
 function About2() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const [activeTab, setActiveTab] = useState('ApartmentsData');
   const [carouselItems, setCarouselItems] = useState([]);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -53,11 +56,17 @@ function About2() {
   return (
     <div className='last-about'>
       <div className='last-about-top-content'>
-        <div className='last-about-top-left'>
+        <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='last-about-top-left'>
           <p className='last-about-top-left-subheading'>Our Listing</p>
           <p className='last-about-top-left-heading'>Find Home Listing<br /> in Your Area</p>
-        </div>
-        <div className='last-about-top-right'>
+        </motion.div>
+        <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='last-about-top-right'>
           <button
             className={`last-about-btn ${activeTab === 'ApartmentsData' ? 'active' : ''}`}
             onClick={() => handleBtnClick('ApartmentsData')}
@@ -76,7 +85,7 @@ function About2() {
           >
             <FaHouseUser />Villa
           </button>
-        </div>
+        </motion.div>
       </div>
       <div className={`last-about-card-content ${isAnimating ? `animating-${direction}` : ''}`}>
         {carouselItems.slice(0, 3).map((item, index) => (

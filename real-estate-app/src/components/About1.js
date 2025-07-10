@@ -1,20 +1,29 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './About1.css';
 import Secondaboutimg from './Images/second-about-img';
+import { motion, useInView } from 'framer-motion';
 import { FaHouseUser } from 'react-icons/fa';
 
 function About1() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   return (
     <div className='second-about'>
         <div className='second-about-inner-page'>
-          <div className='second-about-left-contect'>
+          <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='second-about-left-contect'>
               <p className='second-about-subheading'>Properties</p>
               <p className='second-about-heading'>Welcome To Our <span>Luxurious Properties</span> With All The Conveniences.</p>
               <button className='second-about-btn'><FaHouseUser />View Properties</button>
-          </div>
-          <div className='second-about-right-contect'>
+          </motion.div>
+          <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='second-about-right-contect'>
             <img src={Secondaboutimg} />
-          </div>
+          </motion.div>
         </div>
     </div>
   )

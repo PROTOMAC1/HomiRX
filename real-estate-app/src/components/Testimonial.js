@@ -5,10 +5,11 @@ import Kevin from './Images/Testimonials-Images/testimonial-2.jpg'
 import Jessica from './Images/Testimonials-Images/testimonial-3.jpg'
 import './Testimonial.css'
 import { FaStar } from 'react-icons/fa6'
-import SlideInDiv from './SlideInDiv';
-import SlideInDivRight from './SlideInDivRight';
+import { motion, useInView } from 'framer-motion'
 
 function Testimonial() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const cardData = [
     {
       img: Christine,
@@ -59,8 +60,14 @@ function Testimonial() {
   return (
     <div className='testimonials-body'>
         <div className='testimonials-splite-page'>
-            <div className='testimonials-left-page'><SlideInDiv><img className='testimonials-left-img' src={LeftImage} /></SlideInDiv></div>
-            <div className='testimonials-right-page'>
+            <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='testimonials-left-page'><img className='testimonials-left-img' src={LeftImage} /></motion.div>
+            <motion.div ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='testimonials-right-page'>
               <div className='testimonials-right-page-headings'>
                 <p>Testimonials</p>
                 <h1>What Our Clients Say?</h1>
@@ -92,7 +99,7 @@ function Testimonial() {
                     &#11162;
                 </button>
               </div>
-            </div>
+            </motion.div>
         </div>
     </div>
   )

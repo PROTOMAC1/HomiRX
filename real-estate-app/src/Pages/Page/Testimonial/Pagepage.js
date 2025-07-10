@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useRef } from "react";
 import Navbar from "../../../components/Navbar";
 import Hiddenpage from "../../Hiddenpage";
 import Prof from "./prof.jpg";
 import { FaStar } from "react-icons/fa";
 import "./Pagepage.css";
 import Footer from "../../../components/Footer";
+import { motion, useInView } from "framer-motion";
 
 export default function Pagepage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const testimonialCard = [
     {
       img: Prof,
@@ -45,8 +48,14 @@ export default function Pagepage() {
       <section>
         <div className="header">
           <div className="testimonials-page">
-            <p>Testimonials</p>
-            <h1>What Our Clients Say?</h1>
+            <motion.p ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}>Testimonials</motion.p>
+            <motion.h1 ref={ref}
+                  initial={{ x: 100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}>What Our Clients Say?</motion.h1>
           </div>
           <div className="cards-div">
             <div className="cards">

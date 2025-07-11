@@ -36,10 +36,7 @@ export default function Members() {
               <button><FaHouseUser /> Explore More</button>
             </div>
           </motion.div>
-          <motion.div ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }} className='memberspageright'>
+          <motion.div className='memberspageright'>
             <div className='memberspagerightvdo'>
               <img src={MembersBgimg} alt='membersbgimg' />
               <button onClick={openVideo}><FaPlay /></button>

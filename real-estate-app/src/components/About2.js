@@ -63,10 +63,7 @@ function About2() {
           <p className='last-about-top-left-subheading'>Our Listing</p>
           <p className='last-about-top-left-heading'>Find Home Listing<br /> in Your Area</p>
         </motion.div>
-        <motion.div ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='last-about-top-right'>
+        <motion.div className='last-about-top-right'>
           <button
             className={`last-about-btn ${activeTab === 'ApartmentsData' ? 'active' : ''}`}
             onClick={() => handleBtnClick('ApartmentsData')}

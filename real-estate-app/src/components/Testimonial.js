@@ -64,10 +64,7 @@ function Testimonial() {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }}  className='testimonials-left-page'><img className='testimonials-left-img' src={LeftImage} /></motion.div>
-            <motion.div ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='testimonials-right-page'>
+            <motion.div className='testimonials-right-page'>
               <div className='testimonials-right-page-headings'>
                 <p>Testimonials</p>
                 <h1>What Our Clients Say?</h1>

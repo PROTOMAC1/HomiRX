@@ -54,10 +54,7 @@ const Bookproperties = () => {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }} >Discover Your Perfect Property Match</motion.span>
-                    <motion.button ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }} ><FaHouseUser /> Add Properties</motion.button>
+                    <motion.button><FaHouseUser /> Add Properties</motion.button>
                 </div>
                 <div className='book-content-view'>
                     <div className='book-content-img-view'>

@@ -53,10 +53,7 @@ export default function AgentsPages() {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }} className='agentsabovesubheading'>Our Expert</motion.p>
-            <motion.p ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }} className='agentsaboveheading'>Meet All Our Agencies</motion.p>
+            <motion.p className='agentsaboveheading'>Meet All Our Agencies</motion.p>
           </div>
           <div className='agentsbelow'>
             {AgentCard.map((agents, index)=>(

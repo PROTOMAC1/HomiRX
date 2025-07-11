@@ -52,10 +52,7 @@ export default function Pagepage() {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }}>Testimonials</motion.p>
-            <motion.h1 ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}>What Our Clients Say?</motion.h1>
+            <motion.h1>What Our Clients Say?</motion.h1>
           </div>
           <div className="cards-div">
             <div className="cards">

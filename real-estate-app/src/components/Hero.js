@@ -80,10 +80,7 @@ const Hero = () => {
                   {!isMobile && <br />} Dream House.
                 </h1>
               </motion.div>
-              <motion.div ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='circle-box'>
+              <motion.div className='circle-box'>
                 <div className="rotating-circle">
                   <div className="circle-text">
                     <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>

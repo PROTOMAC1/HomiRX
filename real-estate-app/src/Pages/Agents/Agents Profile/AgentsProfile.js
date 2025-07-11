@@ -47,10 +47,7 @@ export default function AgentsProfile() {
                 <span>▶️</span>
               </div>
             </motion.div>
-            <motion.div ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }} className='agentsprofilesideabout'>
+            <motion.div className='agentsprofilesideabout'>
               <h3>About</h3>
               <p>Nullam quis ante tiam sit amet orci eget eros faucibus tincidunt. Donec quam felis ultricies nec pellentesque eu pretium quis, sem.</p>
             </motion.div>

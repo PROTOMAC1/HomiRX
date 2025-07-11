@@ -57,10 +57,7 @@ const Propertie = () => {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }}  className='properties-1-h1'>Our Property List</motion.p>
-        <motion.p ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='properties-1-h2'>Our Top Location For You Property</motion.p>
+        <motion.p className='properties-1-h2'>Our Top Location For You Property</motion.p>
       </div>
       <div className='properties-1-body'>
         <div className='properties-1-gallery'>

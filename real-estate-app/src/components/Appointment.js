@@ -34,10 +34,7 @@ function Appointment() {
                     </form>
                 </div>
             </motion.div>
-            <motion.div ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='appointment-page-right'>
+            <motion.div className='appointment-page-right'>
                 <div className='appointment-page-right-card background-cover'>
                     <div className='appointment-card-content'>
                         <p>Address:</p>

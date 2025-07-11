@@ -131,10 +131,7 @@ function Blog() {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }}  className='h1'>Our Latest News Update</motion.h1>
-            <motion.button ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }} ><FaHouseUser /> View All Post</motion.button>
+            <motion.button><FaHouseUser /> View All Post</motion.button>
           </div>
         </div>
         <div className='blog-cards-view'>

@@ -5,11 +5,8 @@ import Team1 from './Images/Team-Images/team-1.jpg'
 import Team2 from './Images/Team-Images/team-2.jpg'
 import Team3 from './Images/Team-Images/team-3.jpg'
 import Team4 from './Images/Team-Images/team-4.jpg'
-import { motion, useInView } from 'framer-motion';
 
 const OurExpert = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {once: true});
 
   const scrollRef = React.useRef(null);
 
@@ -55,19 +52,10 @@ const OurExpert = () => {
     <div className='teams-body'>
       <div className='teams-page'>
         <div className='teams-headings'>
-          <motion.p ref={ref}
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='teams-headings-sub-heading'>Our Expert</motion.p>
+          <p className='teams-headings-sub-heading'>Our Expert</p>
           <div className='teams-headings-main'>
-            <motion.span ref={ref}
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='teams-headings-main-heading'>Meet Our Real Estate Team</motion.span>
-            <motion.button ref={ref}
-                  initial={{ x: 100, opacity: 0 }}
-                  animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='teams-headings-main-btn'><FaHouseUser /> View All Members</motion.button>
+            <span className='teams-headings-main-heading'>Meet Our Real Estate Team</span>
+            <button className='teams-headings-main-btn'><FaHouseUser /> View All Members</button>
           </div>
         </div>
         <div className='teams-cards-view' ref={scrollRef}>

@@ -41,7 +41,7 @@ export default function OurPartner() {
     { label: 'Our Shop', to: '/shoppage' },
     { label: 'Events Page', to: '/eventpage' },
     { label: 'Our Partner', to: '/ourpartner' },
-    { label: 'Contact', to: '/contact' }
+    { label: 'Contact', to: '/contect' }
   ];
 
   return (

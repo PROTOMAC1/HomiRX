@@ -55,7 +55,10 @@ export default function AgentsPages() {
                   transition={{ duration: 0.8, ease: 'easeOut' }} className='agentsabovesubheading'>Our Expert</motion.p>
             <motion.p className='agentsaboveheading'>Meet All Our Agencies</motion.p>
           </div>
-          <div className='agentsbelow'>
+          <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='agentsbelow'>
             {AgentCard.map((agents, index)=>(
               <div key={index} className='agentcard'>
                 <div className='agentcardimg'><img src={agents.img} alt={`agents-${index+1}`} /></div>
@@ -63,7 +66,7 @@ export default function AgentsPages() {
                 <button className='agentcardbtn'>View All Listings</button>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
       <About />

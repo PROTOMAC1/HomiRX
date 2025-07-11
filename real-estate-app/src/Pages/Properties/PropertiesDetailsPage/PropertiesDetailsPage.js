@@ -23,7 +23,10 @@ export default function PropertiesDetailsPage() {
                   <h1>Elevation Small Apartments</h1>
                   <p style={{color: 'gray'}}><FaLocationDot style={{color: 'orangered'}} />18 Broklyn Street, New York</p>
                 </motion.div>
-                <motion.div className='propertiesdetailsheadingsbtn'>
+                <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='propertiesdetailsheadingsbtn'>
                   <button><FaHeart /></button>
                   <button><FaShareFromSquare style={{color: 'rgb(221, 221, 221)'}} /> Share</button>
                   <button>Report</button>

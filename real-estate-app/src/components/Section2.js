@@ -32,9 +32,15 @@ const Section2 = () => {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }} >Property By Requirement</motion.h3>
-            <motion.h1>Explore Apartment <span className="section2-heading-word">Types</span></motion.h1>
+            <motion.h1 ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }}>Explore Apartment <span className="section2-heading-word">Types</span></motion.h1>
         </div>
-        <div className="section2-card">
+        <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className="section2-card">
             {Platform.map((cards, index) => (
               <div key={index} className="card-border">
                   <div className="platform">
@@ -46,7 +52,7 @@ const Section2 = () => {
                   </div>
               </div>
             ))}
-        </div>
+        </motion.div>
       </div>
   );
 };

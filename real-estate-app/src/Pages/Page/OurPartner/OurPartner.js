@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './OurPartner.css'
 import { Link } from 'react-router-dom'
 import Navbar from '../../../components/Navbar'
 import Hiddenpage from '../../Hiddenpage'
 import Footer from '../../../components/Footer'
+import { motion, useInView } from 'framer-motion'
 
 export default function OurPartner() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const ourCard = [
     {
       logo: require('../../../components/Images/Brand-Images/brand-1.png'),
@@ -50,7 +53,10 @@ export default function OurPartner() {
       <Hiddenpage />
       <section className='ourpartnermain'>
         <div className='ourpartner-flex'>
-          <div className='ourpartnermaincontent'>
+          <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='ourpartnermaincontent'>
             {ourCard.map((partner, idx) => (
               <div className='partner-card' key={idx}>
                 <div className='partner-logo'><img src={partner.logo} alt={partner.name} /></div>
@@ -60,8 +66,11 @@ export default function OurPartner() {
                 <a className='partner-link' href={partner.link}>Read More <span>&rarr;</span></a>
               </div>
             ))}
-          </div>
-          <div className='ourpartner-sidebar'>
+          </motion.div>
+          <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='ourpartner-sidebar'>
             <div className='ourpartner-menu'>
               {sidebarMenu.map((item, idx) => (
                 <Link
@@ -79,16 +88,19 @@ export default function OurPartner() {
               <div className='consult-desc'>Quis autem vel eum iure repreh ende</div>
               <button className='consult-btn'>Get A Quote</button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <div className='ourpartner-story-section-styling'>
-        <div className='ourpartner-story-section'>
+        <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='ourpartner-story-section'>
           <div className='story-content'>
             <div className='story-left'>Your story starts from here<br /><span>Let's visit the best places</span></div>
             <button className='story-btn'>Make it Happen</button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <section className='ourpartnerfooter'>
         <Footer />

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import './EventPage.css'
 import Navbar from '../../../components/Navbar'
 import Hiddenimg from '../../Hiddenpage'
@@ -9,8 +9,11 @@ import img3 from './photo3.jpg'
 import img4 from './photo4.jpg'
 import img5 from './photo5.jpg'
 import img6 from './photo1.jpg'
+import { motion, useInView } from 'framer-motion'
 
 export default function EventPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const eventCard = [
     {
       img: img1,
@@ -67,7 +70,10 @@ export default function EventPage() {
         <Navbar />
         <Hiddenimg />
         <section className='eventpagemain'>
-          <div className='event-grid'>
+          <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='event-grid'>
             {eventCard.map((items, i) => (
               <div className='event-card' key={i}>
                 <img src={items.img} alt={`images-${i+1}`} />
@@ -78,7 +84,7 @@ export default function EventPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </section>
         <section className='eventpagefooter'>
             <Footer />

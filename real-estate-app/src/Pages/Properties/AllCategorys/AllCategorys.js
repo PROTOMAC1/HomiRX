@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './AllCategorys.css'
 import Navbar from '../../../components/Navbar'
 import About from '../../../components/About'
@@ -10,8 +10,11 @@ import General2 from '../../../components/Images/AllCategorys-Images/General2.jp
 import General3 from '../../../components/Images/AllCategorys-Images/General3.jpg'
 import General4 from '../../../components/Images/AllCategorys-Images/General4.jpg'
 import Hiddenpage from '../../Hiddenpage'
+import { motion, useInView } from 'framer-motion'
 
 export default function AllCategorys() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
     const Allcategory = [
         Apertment1,
         Apertment2,
@@ -30,9 +33,18 @@ export default function AllCategorys() {
             <Hiddenpage />
             <section className='allcategorymain'>
                 <div className='allcategorymainsubname'>
-                    <p>Facilities</p>
-                    <h1>Top Categories</h1>
-                    <div className='allcategorybtn'>
+                    <motion.p ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }}>Facilities</motion.p>
+                    <motion.h1 ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }}>Top Categories</motion.h1>
+                    <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='allcategorybtn'>
                         {['All', 'Apartment', 'General', 'Villa'].map((cat) => (
                           <button
                             key={cat}
@@ -42,9 +54,12 @@ export default function AllCategorys() {
                             {cat}
                           </button>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
-                <div className='allcategory-image-grid'>
+                <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='allcategory-image-grid'>
                   {selected === 'All' && (
                     Allcategory.map((img, idx) => (
                       <div key={idx} className='allcategory-image-item'>
@@ -83,7 +98,7 @@ export default function AllCategorys() {
                       </div>
                     ))
                   )}
-                </div>
+                </motion.div>
             </section>
             <section className='allcategoryabout'>
                 <About />

@@ -80,7 +80,10 @@ const Hero = () => {
                   {!isMobile && <br />} Dream House.
                 </h1>
               </motion.div>
-              <motion.div className='circle-box'>
+              <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='circle-box'>
                 <div className="rotating-circle">
                   <div className="circle-text">
                     <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
@@ -89,7 +92,10 @@ const Hero = () => {
                 </div>
               </motion.div>
             </div>
-            <div className='below-content'>
+            <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='below-content'>
         
               {/* Tabs with active class toggle */}
               <div className="tabs">
@@ -132,7 +138,7 @@ const Hero = () => {
                 <button className="villa">Villa →</button>
                 <button className="sales">Sales →</button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

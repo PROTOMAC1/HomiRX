@@ -134,7 +134,10 @@ function Blog() {
             <motion.button><FaHouseUser /> View All Post</motion.button>
           </div>
         </div>
-        <div className='blog-cards-view'>
+        <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='blog-cards-view'>
           {Posts.slice(currentCard, currentCard + cardsInView).map((blogpost, i)=>(
             <div key={i} className='blog-card'>
               <div className='blog-card-top'><img src={blogpost.img} alt={`post${i + 1}`}/></div>
@@ -147,7 +150,7 @@ function Blog() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
         <div className='blog-logos'>
           <div className='logos-slide'>
             {BrandsImg.map((Brandimg, index) => (

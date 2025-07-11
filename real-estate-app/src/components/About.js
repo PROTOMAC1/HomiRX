@@ -25,7 +25,7 @@ const About = () => {
       <motion.div ref={ref}
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='left-content'>
+                  transition={{ duration: 2, ease: 'easeOut' }}  className='left-content'>
         <div className="circle">
           <div className="circletext">
             <p> - PLAY INTRO VIDEO - PLAY INTRO VIDEO </p>
@@ -35,7 +35,10 @@ const About = () => {
         <div className='grid-background'></div>
         <div class="masked-image"></div>
       </motion.div>
-      <motion.div className='right-content'>
+      <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='right-content'>
         <p className='heading1'>About Company</p>
         <p className='heading2'>Welcome To Properties</p>
         <p className='para'>It is a long established fact that a reader will be distracted the readable content 

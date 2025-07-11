@@ -57,10 +57,16 @@ const Propertie = () => {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }}  className='properties-1-h1'>Our Property List</motion.p>
-        <motion.p className='properties-1-h2'>Our Top Location For You Property</motion.p>
+        <motion.p ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='properties-1-h2'>Our Top Location For You Property</motion.p>
       </div>
       <div className='properties-1-body'>
-        <div className='properties-1-gallery'>
+        <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='properties-1-gallery'>
           {propertiesData.map((property, index) =>(
             <div key={index} className='properties-1-gallery-container'>
               <img src={property.img} alt={`Property ${index + 1}`} />
@@ -74,7 +80,7 @@ const Propertie = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   )

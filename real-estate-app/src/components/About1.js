@@ -13,12 +13,15 @@ function About1() {
           <motion.div ref={ref}
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}  className='second-about-left-contect'>
+                  transition={{ duration: 2, ease: 'easeOut' }}  className='second-about-left-contect'>
               <p className='second-about-subheading'>Properties</p>
               <p className='second-about-heading'>Welcome To Our <span>Luxurious Properties</span> With All The Conveniences.</p>
               <button className='second-about-btn'><FaHouseUser />View Properties</button>
           </motion.div>
-          <motion.div className='second-about-right-contect'>
+          <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='second-about-right-contect'>
             <img src={Secondaboutimg} />
           </motion.div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Navbar from '../../../components/Navbar'
 import About from '../../../components/About'
 import Footer from '../../../components/Footer'
@@ -7,8 +7,11 @@ import ApartmentsData from '../../../components/Datas/ApartmentsData'
 import Gdata from '../../../components/Datas/GeneralData'
 import Vdata from '../../../components/Datas/VillaData'
 import Hiddenpage from '../../Hiddenpage'
+import { motion, useInView } from 'framer-motion'
 
 export default function PropertiesPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const [selectedCategory, setSelectedCategory] = useState('Apartment')
 
   return (
@@ -18,7 +21,10 @@ export default function PropertiesPage() {
         <div className='propertiespagemaincontent'>
             <div className='propertiespagebox'>
               <div className='propertiespageipperbox'>
-                <div className='propertiespagebtn'>
+                <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='propertiespagebtn'>
                   {['Apartment', 'General', 'Villa'].map((cat) => (
                     <button
                       key={cat}
@@ -28,18 +34,27 @@ export default function PropertiesPage() {
                       {cat}
                     </button>
                   ))}
-                </div>
-                <div className='propertiespagesearchbar'>
+                </motion.div>
+                <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='propertiespagesearchbar'>
                   <div className='searchbarcontent'><span>Keywoard</span><h4>Looking for?</h4></div>
                   <div className='searchbarcontent'><span>Category</span><h4>Select Category</h4></div>
                   <div className='searchbarcontent'><span>Loaction</span><h4>Location</h4></div>
                   <div className='searchbarlogo'>More</div>
-                </div>
-                <div className='propertiespagesorting'>
+                </motion.div>
+                <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='propertiespagesorting'>
                   <button>Sort By</button>
-                </div>
+                </motion.div>
               </div>
-              <div className='propertiespagebelowbox'>
+              <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='propertiespagebelowbox'>
                 {(
                   selectedCategory === 'Apartment' ? ApartmentsData :
                   selectedCategory === 'General' ? Gdata :
@@ -63,7 +78,7 @@ export default function PropertiesPage() {
                     </div>
                   </div>
                 ))}
-              </div>
+              </motion.div>
             </div>
         </div>
         <div className='propertiespageabout'>

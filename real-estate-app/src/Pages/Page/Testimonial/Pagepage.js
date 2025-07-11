@@ -52,10 +52,16 @@ export default function Pagepage() {
                   initial={{ x: -100, opacity: 0 }}
                   animate={isInView ? { x: 0, opacity: 1 } : {}}
                   transition={{ duration: 0.8, ease: 'easeOut' }}>Testimonials</motion.p>
-            <motion.h1>What Our Clients Say?</motion.h1>
+            <motion.h1 ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }}>What Our Clients Say?</motion.h1>
           </div>
           <div className="cards-div">
-            <div className="cards">
+            <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className="cards">
               {testimonialCard.map((items, i) => (
                 <div className="item" key={i}>
                   <div className="item-content">
@@ -75,7 +81,7 @@ export default function Pagepage() {
                   <div className="testimonial-text">{items.text}</div>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

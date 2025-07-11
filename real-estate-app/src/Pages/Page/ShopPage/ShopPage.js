@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./ShopPage.css";
 import Footer from "../../../components/Footer";
 import Navbar from "../../../components/Navbar";
@@ -9,8 +9,11 @@ import shopImg3 from "./product-3.jpg";
 import shopImg4 from "./product-4.jpg";
 import shopImg5 from "./product-5.jpg";
 import shopImg6 from "./product-6.jpg";
+import { motion, useInView } from "framer-motion";
 
 export default function ShopPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
   const shopCard = [
     {
       img: shopImg1,
@@ -55,16 +58,25 @@ export default function ShopPage() {
       <Hiddenpage />
       <section className="shoppagemain">
         <div className="shop-header-row">
-          <div className="shop-results">Showing all 6 results</div>
-          <div className="shop-sort">
+          <motion.div ref={ref}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className="shop-results">Showing all 6 results</motion.div>
+          <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className="shop-sort">
             <select>
               <option>Default sorting</option>
               <option>Price: Low to High</option>
               <option>Price: High to Low</option>
             </select>
-          </div>
+          </motion.div>
         </div>
-        <div className="shop-grid">
+        <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className="shop-grid">
           {shopCard.map((items, i) => (
             <div key={i} className="shop-card">
               <img src={items.img} alt={`images-${i + 1}`} />
@@ -73,7 +85,7 @@ export default function ShopPage() {
               <div className="shop-card-price">{items.price}</div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </section>
       <section className="shoppagefooter">
         <Footer />

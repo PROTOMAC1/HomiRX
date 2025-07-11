@@ -62,7 +62,10 @@ const Bookproperties = () => {
                             src={BookImages[currentImage].img} 
                             alt={`Property ${currentImage + 1}`}
                         />
-                        <div className='book-image-overlay'>
+                        <motion.div ref={ref}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='book-image-overlay'>
                             <div className='book-image-info'>
                                 <div className='bii1'>
                                     <p>Premium</p>
@@ -78,7 +81,7 @@ const Bookproperties = () => {
                                 <h2>$456.00<span><img /></span></h2>
                                 <button>View Details <FaArrowRight /></button>
                             </div>
-                        </div>
+                        </motion.div>
                         <div className='book-navigation'>
                             <button className='book-nav-btn book-nav-left' onClick={prevImage}>
                                 &#11160;

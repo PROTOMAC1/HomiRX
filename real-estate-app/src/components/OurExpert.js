@@ -5,10 +5,12 @@ import Team1 from './Images/Team-Images/team-1.jpg'
 import Team2 from './Images/Team-Images/team-2.jpg'
 import Team3 from './Images/Team-Images/team-3.jpg'
 import Team4 from './Images/Team-Images/team-4.jpg'
+import { motion, useInView } from 'framer-motion';
 
 const OurExpert = () => {
-
   const scrollRef = React.useRef(null);
+  const isInView = useInView(scrollRef, {once: true});
+
 
   const scrollAmount = 430; // 410 card + 20 gap
 
@@ -52,13 +54,25 @@ const OurExpert = () => {
     <div className='teams-body'>
       <div className='teams-page'>
         <div className='teams-headings'>
-          <p className='teams-headings-sub-heading'>Our Expert</p>
+          <motion.p ref={scrollRef}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='teams-headings-sub-heading'>Our Expert</motion.p>
           <div className='teams-headings-main'>
-            <span className='teams-headings-main-heading'>Meet Our Real Estate Team</span>
-            <button className='teams-headings-main-btn'><FaHouseUser /> View All Members</button>
+            <motion.span ref={scrollRef}
+                  initial={{ x: -100, opacity: 0 }}
+                  animate={isInView ? { x: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='teams-headings-main-heading'>Meet Our Real Estate Team</motion.span>
+            <motion.button ref={scrollRef}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='teams-headings-main-btn'><FaHouseUser /> View All Members</motion.button>
           </div>
         </div>
-        <div className='teams-cards-view' ref={scrollRef}>
+        <motion.div ref={scrollRef}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={isInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='teams-cards-view'>
           {TeamsData.map((Teams, index) =>(
             <div key={index} className='Teams-crads'>
               <div className='teams-cards-img'>
@@ -70,7 +84,7 @@ const OurExpert = () => {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
         <div className='teams-btn'>
           <div className='teams-btn-left' onClick={scrollLeft}>&#11160;</div>
           <div className='teams-btn-right' onClick={scrollRight}>&#11162;</div>

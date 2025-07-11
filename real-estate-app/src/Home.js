@@ -17,19 +17,19 @@ import Footer from './components/Footer';
 function Home() {
   return (
     <div className="App">
-        <Navbar />
-        <Hero />
-        <Section2 />
-        <About />
-        <About1 />
-        <About2 />
-        <Propertie />
-        <OurExpert />
-        <Bookproperties />
-        <Testimonial />
-        <Appointment />
-        <Blog />
-        <Footer />
+      <Navbar />
+      <Hero />
+      <Section2 />
+      <About />
+      <About1 />
+      <About2 />
+      <Propertie />
+      <OurExpert />
+      <Bookproperties />
+      <Testimonial />
+      <Appointment />
+      <Blog />
+      <Footer />
     </div>
   );
 }

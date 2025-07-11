@@ -252,11 +252,12 @@ ul {
   .right-btn .add-btn {
     font-size: 14px;
     padding: 8px 12px;
+    z-index: -1;
   }
   
   .menu {
     position: fixed;
-    top: 92px;
+    top: 100px;
     left: 0;
     right: 0;
     background: #16243E;

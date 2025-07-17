@@ -8,6 +8,7 @@ import gallery3 from './Images/Gallery/gallery-3.jpg'
 import gallery4 from './Images/Gallery/gallery-4.jpg'
 import gallery5 from './Images/Gallery/gallery-5.jpg'
 import gallery6 from './Images/Gallery/gallery-5.jpg'
+import { Link } from 'react-router-dom';
 
 function Footer() {
     const Galleryimages = [
@@ -77,10 +78,10 @@ function Footer() {
                         <h2>Discover</h2>
                         <div className='bottom-line'></div>
                         <p><span className='symbol-color'>&#8811; </span>About</p>
-                        <p><span className='symbol-color'>&#8811; </span>Our Team</p>
+                        <p><span className='symbol-color'>&#8811; </span><Link to="/members" style={{ textDecoration: 'none', color: 'white' }}>Our Team</Link></p>
                         <p><span className='symbol-color'>&#8811; </span>Testimonials</p>
                         <p><span className='symbol-color'>&#8811; </span>Gallery</p>
-                        <p><span className='symbol-color'>&#8811; </span>Contact</p>
+                        <p><span className='symbol-color'>&#8811; </span><Link to="/contect" style={{ textDecoration: 'none', color: 'white' }}>Contact</Link></p>
                     </div>
                     <div className='footer-middle-4'>
                         <h2>Gallery</h2>

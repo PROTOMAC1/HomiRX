@@ -5,6 +5,7 @@ import Team1 from './Images/Team-Images/team-1.jpg'
 import Team2 from './Images/Team-Images/team-2.jpg'
 import Team3 from './Images/Team-Images/team-3.jpg'
 import Team4 from './Images/Team-Images/team-4.jpg'
+import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 
 const OurExpert = () => {
@@ -66,7 +67,7 @@ const OurExpert = () => {
             <motion.button ref={scrollRef}
                   initial={{ y: 100, opacity: 0 }}
                   animate={isInView ? { y: 0, opacity: 1 } : {}}
-                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='teams-headings-main-btn'><FaHouseUser /> View All Members</motion.button>
+                  transition={{ duration: 2, ease: [0.25, 0.46, 0.45, 0.94] }} className='teams-headings-main-btn'><FaHouseUser /> <Link to="/members" className='link-btn-ourexpert'>View All Members</Link></motion.button>
           </div>
         </div>
         <motion.div ref={scrollRef}

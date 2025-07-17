@@ -48,10 +48,21 @@
     height: 100%;
     border-radius: 50px;
     cursor: pointer;
-    transition: btn 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+.link-btn-ourexpert {
+    text-decoration: none;
+    color: #d4f3b5;
+    transition: color 0.3s ease;
+}
+
+.teams-headings-main-btn:hover .link-btn-ourexpert{
+    color: #FFF8F2;
 }
 
 .teams-headings-main-btn:hover {
+    text-decoration: none;
     background: #ff5200;
     color: #FFF8F2;
 }

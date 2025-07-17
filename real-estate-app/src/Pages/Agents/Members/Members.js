@@ -1,12 +1,15 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import './Members.css'
 import Navbar from '../../../components/Navbar'
 import Footer from '../../../components/Footer'
 import OurExpert from '../../../components/OurExpert'
 import MembersBgimg from './bg-11.jpg'
 import { FaHouseUser, FaPlay } from 'react-icons/fa6'
+import ManagementDatas from './BoardOfDirectors'
+import CommitteeData from './CommitteeOfHPL'
 import Hiddenpage from '../../Hiddenpage'
 import { motion, useInView } from 'framer-motion'
+
 
 export default function Members() {
   const [showVideo, setShowVideo] = useState(false);
@@ -16,12 +19,49 @@ export default function Members() {
 
   const ref = useRef(null);
   const isInView = useInView(ref, {once: true});
+
+  const [activeTab, setActiveTab] = useState('ManagementDatas');
+  const [optionData, setOptionData] = useState([]);
+
+  const handleBtnClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  useEffect(() => {
+    const tabOption = {
+      ManagementDatas,
+      CommitteeData
+    };
+    setOptionData(tabOption[activeTab] || []);
+  }, [activeTab]);
   
   return (
     <div className='memberspage'>
       <Navbar />
       <Hiddenpage />
-      <OurExpert />
+      <section className='managements'>
+        <div className='mamagementsview'>
+          <div className='managementcontent'>
+            <div onClick={() => handleBtnClick('ManagementDatas')} className={`managementbtn ${activeTab === 'ManagementDatas' ? 'active' : ''}`}>Board of Directors</div>
+            <div onClick={() => handleBtnClick('CommitteeData')} className={`managementbtn ${activeTab === 'CommitteeData' ? 'active' : ''}`}>Committees of HPL</div>
+          </div>
+          <div className='managementmain'>
+            {optionData.map((groupData, groupIndex) => (
+              <div key={groupIndex} className='managementcardgroup'>
+                {groupData.data.map((item, index) => (
+                  <div key={index} className='managementcard'>
+                    <h1 className='managementcardname'>{item.name}</h1>
+                    <p className='managementcarddec'>{item.dec}</p>
+                    <div className='managementcardimages'>
+                      <img src={item.img} alt={`profile-${index+1}`} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className='memberspageabout'>
         <div className='memberspagecontent'>
           <motion.div ref={ref}

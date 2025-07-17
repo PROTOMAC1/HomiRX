@@ -24,51 +24,41 @@
     -->
     <title>React App</title>
     <style>
-      /* Hide by default */
-.app-scroll-area::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-}
+      /* Universal selector for all scrollable elements */
+      * {
+        scrollbar-width: thin; /* Firefox */
+        scrollbar-color: rgba(60, 175, 90, 0.5) transparent; /* WhatsApp greenish */
+      }
 
-.app-scroll-area::-webkit-scrollbar-track {
-  background: transparent;
-}
+      /* Chrome, Edge, Safari */
+      *::-webkit-scrollbar {
+        width: 0.5px;
+        transition: width 0.3s;
+      }
 
-.app-scroll-area::-webkit-scrollbar-thumb {
-  background: transparent;
-  border-radius: 10px;
-  transition: background-color 0.3s ease, background 0.3s ease;
-}
+      *::-webkit-scrollbar-track {
+        background: transparent !important;
+        background-color: transparent !important;
+      }
 
-::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
-}
+      *::-webkit-scrollbar-thumb {
+        background: rgba(60, 175, 90, 0.5); /* WhatsApp greenish */
+        border-radius: 8px;
+        transition: background 0.3s;
+      }
 
-::-webkit-scrollbar-track {
-  background-color: transparent; 
-}
+      *:hover::-webkit-scrollbar {
+        width: 2px;
+      }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: transparent; 
-}
+      *:hover::-webkit-scrollbar-thumb {
+        background: rgba(60, 175, 90, 0.8);
+      }
     </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div className="app-scroll-area"></div>
-    </div>
+    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
